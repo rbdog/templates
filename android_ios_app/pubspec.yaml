@@ -1,0 +1,34 @@
+name: my_app
+description: A new Flutter project.
+publish_to: "none"
+version: 0.1.0
+
+environment:
+  sdk: ^3.0.0
+
+# パッケージ一覧
+dependencies:
+  flutter: # フレームワーク本体
+    sdk: flutter
+  uuid: # ID生成
+  flutter_riverpod: # 状態管理 - グローバル
+  flutter_hooks: # 状態管理 -ローカル
+  go_router: # 画面遷移
+  freezed_annotation: # 不変インスタンス作成
+
+dev_dependencies:
+  freezed: # 不変インスタンス作成 コマンド
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/fonts/OFL.txt
+    - assets/images/
+  fonts:
+    - family: NotoSansJP
+      fonts:
+        - asset: assets/fonts/NotoSansJP-Bold.otf
+        - asset: assets/fonts/NotoSansJP-Regular.otf
