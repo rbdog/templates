@@ -1,0 +1,12 @@
+{
+  "hello": "Hello",
+  "statusTodo": "Todo",
+  "statusDoing": "Doing",
+  "statusDone": "Done",
+  "edit": "Edit",
+  "createNew": "Create new",
+  "delete": "Delete",
+  "save": "Save",
+  "ok": "OK",
+  "tooLongTextMesage": "Text is Too Long"
+}
