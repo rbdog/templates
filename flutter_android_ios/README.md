@@ -1,7 +1,7 @@
 # アプリ テンプレート(Android iOS v0.1)
 
 > **Warning**
-> まだ仮の部分が含まれており、今後大きく変更される可能性があります。
+> まだ仮の部分が含まれています。今後大きく変更される可能性があります。
 
 <br />
 
@@ -43,7 +43,7 @@ flutter gen-l10n --arb-dir=scripts/l10n
 ✅ 複雑なUI例は提供せず、アプリアップデートやサインイン機能など面倒な構成をサポートします
 ✅ オニオンアーキテクチャとDDD設計 を簡易化して採用しています
 
-![image](https://github.com/RubydogJP/templates/blob/main/docs/static/images/minimal-archit.png?raw=true)
+![image](https://github.com/rubydog-jp/templates/blob/main/docs/static/images/minimal-archit.png?raw=true)
 
 - `ui`: ... `presentation` を簡易化
 - `core`: ... `domain` を簡易化
