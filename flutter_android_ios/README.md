@@ -1,5 +1,7 @@
 # アプリ テンプレート(Android iOS v0.1)
 
+[ダウンロードはこちらから](https://github.com/rubydog-jp/templates)
+
 > **Warning**
 > まだ仮の部分が含まれています。今後大きく変更される可能性があります。
 
