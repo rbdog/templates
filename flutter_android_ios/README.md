@@ -1,6 +1,6 @@
 # アプリ テンプレート(Android iOS v0.1)
 
-[ダウンロードはこちらから](https://github.com/rubydog-jp/templates)
+[ダウンロードはこちらから](https://github.com/rbdog/templates)
 
 > **Warning**
 > まだ仮の部分が含まれています。今後大きく変更される可能性があります。
@@ -42,10 +42,10 @@ flutter gen-l10n --arb-dir=scripts/l10n
 # 設計
 
 ✅ できるだけシンプルに必要最低限で、実務に耐えられる構成を目指しています。  
-✅ 複雑なUI例は提供せず、アプリアップデートやサインイン機能など面倒な構成をサポートします。  
-✅ オニオンアーキテクチャとDDD設計 を簡易化して採用しています
+✅ 複雑な UI 例は提供せず、アプリアップデートやサインイン機能など面倒な構成をサポートします。  
+✅ オニオンアーキテクチャと DDD 設計 を簡易化して採用しています
 
-![image](https://github.com/rubydog-jp/templates/blob/main/docs/static/images/minimal-archit.png?raw=true)
+![image](https://github.com/rbdog/templates/blob/main/docs/static/images/minimal-archit.png?raw=true)
 
 - `ui`: ... `presentation` を簡易化
 - `core`: ... `domain` を簡易化
@@ -56,11 +56,7 @@ flutter gen-l10n --arb-dir=scripts/l10n
 
 ✅ 質問は以下までお願いします。気軽にどうぞ！
 
-- [X (旧Twitter) ルビーDog](https://twitter.com/rubydog725)
-
-<br />
-
-✅ 作成に協力いただける方もお声がけお願いします。
+- [X (旧 Twitter) ルビー Dog](https://twitter.com/rubydog725)
 
 <br />
 
