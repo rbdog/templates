@@ -1,4 +1,4 @@
-# アプリ テンプレート(Android iOS v0.1)
+# アプリ テンプレート(Android iOS v0.2)
 
 [ダウンロードはこちらから](https://github.com/rbdog/templates)
 
@@ -48,9 +48,9 @@ flutter gen-l10n --arb-dir=scripts/l10n
 ![image](https://github.com/rbdog/templates/blob/main/docs/static/images/minimal-archit.png?raw=true)
 
 - `ui`: ... `presentation` を簡易化
-- `core`: ... `domain` を簡易化
-- `runner`: ... `application` を簡易化
-- `api`: ... `infrastructure` を簡易化
+- `logic`: ... `domain` を簡易化
+- `state`: ... `application` を簡易化
+- `external`: ... `infrastructure` を簡易化
 
 <br />
 
