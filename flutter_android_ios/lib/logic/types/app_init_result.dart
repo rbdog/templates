@@ -1,7 +1,7 @@
 /// アプリ初期化の結果
 enum AppInitResult {
   /// 強制アップデートが見つかったため中断
-  immidiateUpdate,
+  forceUpdate,
 
   /// ユーザーはサインアウト中
   signedOut,

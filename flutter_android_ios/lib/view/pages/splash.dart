@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:my_app/logic/features/logger.dart';
+import 'package:my_app/state/notifiers/logger.dart';
 import 'package:my_app/logic/types/app_init_result.dart';
 import 'package:my_app/state/providers/app_init_result.dart';
 import 'package:my_app/view/router/go_router.dart';
@@ -12,6 +12,9 @@ class SplashPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    /// ログ
+    logger.info('スプラッシュ画面をビルドします');
+
     /// 初期化の進捗を監視
     ref.listen(
       appInitResultProvider,
@@ -21,7 +24,7 @@ class SplashPage extends ConsumerWidget {
         logger.info('初期化完了を検知しました');
 
         switch (result) {
-          case AppInitResult.immidiateUpdate:
+          case AppInitResult.forceUpdate:
             logger.warn('スプラッシュ画面中に強制アップデートが検知されました');
             break;
           case AppInitResult.signedOut:

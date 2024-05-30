@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:my_app/logic/features/logger.dart';
+import 'package:my_app/state/notifiers/logger.dart';
 import 'package:my_app/state/providers/editting_memo.dart';
 import 'package:my_app/view/theme/l10n.dart';
 import 'package:my_app/view/theme/colors.dart';

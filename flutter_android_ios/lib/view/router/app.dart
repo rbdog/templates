@@ -4,7 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
 import 'package:my_app/state/providers/api.dart';
 import 'package:my_app/state/providers/flavor.dart';
-import 'package:my_app/view/router/browser_adapter.dart';
+import 'package:my_app/view/router/mobile_simulator.dart';
 import 'package:my_app/view/theme/fonts.dart';
 import 'package:my_app/view/router/go_router.dart';
 
@@ -29,7 +29,9 @@ class App extends ConsumerWidget {
       routeInformationProvider: router.routeInformationProvider, // GoRouter
       debugShowCheckedModeBanner: false,
       builder: (_, child) {
-        return BrowserDebugView(child: child);
+        return MobileSimulatorView(
+          child: child ?? const SizedBox.shrink(),
+        );
       },
       localizationsDelegates:
           AppLocalizations.localizationsDelegates, // localizations
