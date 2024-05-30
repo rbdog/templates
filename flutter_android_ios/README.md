@@ -1,4 +1,6 @@
-# アプリ テンプレート(Android iOS v0.2)
+# アプリ テンプレート v0.3
+
+## for iOS & Android
 
 [ダウンロードはこちらから](https://github.com/rbdog/templates)
 
@@ -20,12 +22,11 @@
 - データベース接続
 - 実機が不要なブラウザでのデバッグ実行
 
-実際に通信はしないようにダミーとなっておりますので、各自で書き換えて使ってください。(通信クラスは `api` フォルダの中。 詳細は以下の設計へ)
+実際に通信はしないようにダミーとなっておりますので、各自で書き換えて使ってください。(通信クラスは `external` フォルダの中。 詳細は以下の設計へ)
 
 <br />
 
-✅ アプリ実行前にプロジェクト直下で以下のコマンドを実行してください  
-✅ `scripts/l10n` フォルダ内にある多言語翻訳が適用されます
+✅ アプリ実行前にプロジェクト直下で以下のコマンドを実行してください. `scripts/l10n` フォルダ内にある多言語翻訳が適用されます.
 
 ```sh
 flutter gen-l10n --arb-dir=scripts/l10n
@@ -41,13 +42,12 @@ flutter gen-l10n --arb-dir=scripts/l10n
 
 # 設計
 
-✅ できるだけシンプルに必要最低限で、実務に耐えられる構成を目指しています。  
-✅ 複雑な UI 例は提供せず、アプリアップデートやサインイン機能など面倒な構成をサポートします。  
+✅ できるだけシンプルに必要最低限で、実務に耐えられる構成を目指しています。
 ✅ オニオンアーキテクチャと DDD 設計 を簡易化して採用しています
 
 ![image](https://github.com/rbdog/templates/blob/main/docs/static/images/minimal-archit.png?raw=true)
 
-- `ui`: ... `presentation` を簡易化
+- `view`: ... `presentation` を簡易化
 - `logic`: ... `domain` を簡易化
 - `state`: ... `application` を簡易化
 - `external`: ... `infrastructure` を簡易化

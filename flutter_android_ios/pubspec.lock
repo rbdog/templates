@@ -273,10 +273,10 @@ packages:
     dependency: "direct main"
     description:
       name: go_router
-      sha256: "6ad5662b014c06c20fa46ab78715c96b2222a7fe4f87bf77e0289592c2539e86"
+      sha256: abec47eb8c8c36ebf41d0a4c64dbbe7f956e39a012b3aafc530e951bdc12fe3f
       url: "https://pub.dev"
     source: hosted
-    version: "14.1.3"
+    version: "14.1.4"
   graphs:
     dependency: transitive
     description:
@@ -441,10 +441,10 @@ packages:
     dependency: transitive
     description:
       name: pubspec_parse
-      sha256: c63b2876e58e194e4b0828fcb080ad0e06d051cb607a6be51a9e084f47cb9367
+      sha256: c799b721d79eb6ee6fa56f00c04b472dcd44a30d258fac2174a6ec57302678f8
       url: "https://pub.dev"
     source: hosted
-    version: "1.2.3"
+    version: "1.3.0"
   riverpod:
     dependency: transitive
     description:
@@ -590,10 +590,10 @@ packages:
     dependency: transitive
     description:
       name: vm_service
-      sha256: "7475cb4dd713d57b6f7464c0e13f06da0d535d8b2067e188962a59bac2cf280b"
+      sha256: "3923c89304b715fb1eb6423f017651664a03bf5f4b29983627c4da791f74a4ec"
       url: "https://pub.dev"
     source: hosted
-    version: "14.2.2"
+    version: "14.2.1"
   watcher:
     dependency: transitive
     description:
@@ -614,10 +614,10 @@ packages:
     dependency: transitive
     description:
       name: web_socket
-      sha256: "217f49b5213796cb508d6a942a5dc604ce1cb6a0a6b3d8cb3f0c314f0ecea712"
+      sha256: "24301d8c293ce6fe327ffe6f59d8fd8834735f0ec36e4fd383ec7ff8a64aa078"
       url: "https://pub.dev"
     source: hosted
-    version: "0.1.4"
+    version: "0.1.5"
   web_socket_channel:
     dependency: transitive
     description:

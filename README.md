@@ -2,10 +2,9 @@
 
 <br />
 
-## 1. Flutter
+### /flutter_android_ios
 
-Android, iOS のアプリ開発用に作成しました。  
-[詳細はこちら /flutter_android_ios](https://github.com/rbdog/templates/tree/main/flutter_android_ios)
+Flutter で iOS, Android のアプリを開発するときのテンプレート。[詳細はこちら](https://github.com/rbdog/templates/tree/main/flutter_android_ios)
 
 <br />
 

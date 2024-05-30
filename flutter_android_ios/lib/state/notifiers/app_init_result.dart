@@ -1,8 +1,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:my_app/logic/features/app_updater.dart';
-import 'package:my_app/logic/features/logger.dart';
+import 'package:my_app/logic/validators/app_version.dart';
+import 'package:my_app/state/notifiers/logger.dart';
 import 'package:my_app/logic/types/app_init_result.dart';
-import 'package:my_app/logic/types/app_update_action.dart';
+import 'package:my_app/logic/types/app_update_urgency.dart';
 import 'package:my_app/state/providers/api.dart';
 
 /// アプリ初期化の結果
@@ -34,11 +34,11 @@ class AppInitResultNotifier extends AsyncNotifier<AppInitResult> {
     final appVersion = await appInfo.getAppVersion();
 
     /// 2つのバージョンを比較
-    const updater = AppUpdater();
-    final action = updater.makeAction(available, appVersion);
-    if (action == AppUpdateAction.showImmidiateUpdate) {
-      logger.info('強制アップデートを発見したため 初期化を中断します');
-      return AppInitResult.immidiateUpdate;
+    const updater = AppVersionValidator();
+    final action = updater.validateAppVersion(available, appVersion);
+    if (action == AppUpdateUrgency.force) {
+      logger.info('アップデートを強制されたため 初期化を中断します');
+      return AppInitResult.forceUpdate;
     }
 
     // サインインしているかどうか

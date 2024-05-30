@@ -1,8 +1,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:my_app/logic/config/memo.dart';
-import 'package:my_app/logic/features/logger.dart';
-import 'package:my_app/logic/features/memo_updater.dart';
-import 'package:my_app/logic/features/memo_validater.dart';
+import 'package:my_app/state/notifiers/logger.dart';
+import 'package:my_app/logic/updaters/memo.dart';
+import 'package:my_app/logic/validators/memo.dart';
 import 'package:my_app/logic/types/memo.dart';
 import 'package:my_app/state/providers/memo_list.dart';
 

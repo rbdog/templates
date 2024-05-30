@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:my_app/logic/features/logger.dart';
+import 'package:my_app/state/notifiers/logger.dart';
 import 'package:my_app/logic/types/sign_in_with.dart';
 import 'package:my_app/state/providers/api.dart';
 import 'package:my_app/state/providers/user.dart';
@@ -13,6 +13,9 @@ class SignInPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    /// ログ
+    logger.info('サインイン画面をビルドします');
+
     // ユーザーを監視
     ref.listen(userProvider, (_, u) {
       switch (u) {
