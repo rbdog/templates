@@ -1,5 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:my_app/logic/features/logger.dart';
+import 'package:my_app/state/notifiers/logger.dart';
 import 'package:my_app/state/providers/api.dart';
 
 /// デバッグ用

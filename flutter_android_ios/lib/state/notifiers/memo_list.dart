@@ -1,10 +1,11 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:my_app/logic/config/memo.dart';
-import 'package:my_app/logic/features/logger.dart';
-import 'package:my_app/logic/features/memo_creator.dart';
+import 'package:my_app/state/notifiers/logger.dart';
+import 'package:my_app/logic/creators/memo.dart';
 import 'package:my_app/logic/types/analytics_event.dart';
 import 'package:my_app/logic/types/memo.dart';
 import 'package:my_app/state/providers/api.dart';
+import 'package:my_app/state/providers/user.dart';
 
 /// メモ一覧を管理するノティファイヤ
 class MemoListNotifier extends AsyncNotifier<List<Memo>> {
@@ -14,7 +15,8 @@ class MemoListNotifier extends AsyncNotifier<List<Memo>> {
     logger.info('メモ一覧を初期化します');
     // Firestore から取得
     final firestore = ref.read(firestoreProvider);
-    final memos = await firestore.findMemosByUserId('TEST_USER_ID');
+    final user = await ref.read(userProvider.future);
+    final memos = await firestore.findMemosByUserId(user!.id);
     return memos;
   }
 

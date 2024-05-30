@@ -1,12 +1,12 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:my_app/logic/types/app_update_action.dart';
+import 'package:my_app/logic/types/app_update_urgency.dart';
 import 'package:my_app/state/notifiers/app_update_action.dart';
 
-typedef _Notifier = AppUpdateActionNotifier;
-typedef _State = AppUpdateAction;
+typedef _Notifier = AppUpdateUrgencyNotifier;
+typedef _State = AppUpdateUrgency;
 
 /// アプリアップデート
-final appUpdateActionProvider = AsyncNotifierProvider<_Notifier, _State>(
+final appUpdateUrgencyProvider = AsyncNotifierProvider<_Notifier, _State>(
   () {
     return _Notifier();
   },

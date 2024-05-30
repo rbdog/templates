@@ -1,13 +1,17 @@
 /// 利用可能なアプリバージョン
 class AvailableAppVersion {
   const AvailableAppVersion({
-    required this.immediateUpdate,
-    required this.flexibleUpdate,
+    required this.latest,
+    required this.old,
+    required this.tooOld,
   });
 
-  /// 強制アップデートするバージョン
-  final String immediateUpdate;
+  /// 最新
+  final String latest;
 
-  /// 任意アップデートするバージョン
-  final String flexibleUpdate;
+  /// 古い
+  final String old;
+
+  /// 古すぎる
+  final String tooOld;
 }
