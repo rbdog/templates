@@ -2,7 +2,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:my_app/logic/validators/app_version.dart';
 import 'package:my_app/state/notifiers/logger.dart';
 import 'package:my_app/logic/types/app_init_result.dart';
-import 'package:my_app/logic/types/app_update_urgency.dart';
+import 'package:my_app/logic/types/app_update_policy.dart';
 import 'package:my_app/state/providers/api.dart';
 
 /// アプリ初期化の結果
@@ -27,16 +27,19 @@ class AppInitResultNotifier extends AsyncNotifier<AppInitResult> {
     // アップデートを確認
     /// 利用可能なアプリバージョンを取得
     final remoteConfig = ref.read(remoteConfigProvider);
-    final available = await remoteConfig.getAvailableAppVersion();
+    final appVersionConfig = await remoteConfig.getAppVersionConfig();
 
     /// このアプリのバージョンを取得
     final appInfo = ref.read(appInfoProvider);
     final appVersion = await appInfo.getAppVersion();
 
     /// 2つのバージョンを比較
-    const updater = AppVersionValidator();
-    final action = updater.validateAppVersion(available, appVersion);
-    if (action == AppUpdateUrgency.force) {
+    const validator = AppVersionValidator();
+    final urgency = validator.validate(
+      config: appVersionConfig,
+      appVersion: appVersion,
+    );
+    if (urgency == AppUpdatePolicy.force) {
       logger.info('アップデートを強制されたため 初期化を中断します');
       return AppInitResult.forceUpdate;
     }

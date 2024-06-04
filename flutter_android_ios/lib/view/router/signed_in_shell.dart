@@ -7,8 +7,8 @@ import 'package:my_app/view/router/page_path.dart';
 import 'package:my_app/view/widgets/loading.dart';
 
 /// サインイン限定の画面範囲
-class SignedInScope extends ConsumerWidget {
-  const SignedInScope({
+class SignedInShell extends ConsumerWidget {
+  const SignedInShell({
     super.key,
     required this.child,
   });

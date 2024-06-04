@@ -1,20 +1,20 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:my_app/logic/validators/app_version.dart';
-import 'package:my_app/logic/types/app_update_urgency.dart';
+import 'package:my_app/logic/types/app_update_policy.dart';
 import 'package:my_app/state/providers/api.dart';
 
 /// アプリアップデート対応
-class AppUpdateUrgencyNotifier extends AsyncNotifier<AppUpdateUrgency> {
+class AppUpdatePolicyNotifier extends AsyncNotifier<AppUpdatePolicy> {
   @override
-  Future<AppUpdateUrgency> build() async {
+  Future<AppUpdatePolicy> build() async {
     return _getUrgency();
   }
 
   /// 最新バージョン情報を取得
-  Future<AppUpdateUrgency> _getUrgency() async {
+  Future<AppUpdatePolicy> _getUrgency() async {
     /// 利用可能なアプリバージョンを取得
     final remoteConfig = ref.read(remoteConfigProvider);
-    final available = await remoteConfig.getAvailableAppVersion();
+    final config = await remoteConfig.getAppVersionConfig();
 
     /// このアプリのバージョンを取得
     final appInfo = ref.read(appInfoProvider);
@@ -22,9 +22,9 @@ class AppUpdateUrgencyNotifier extends AsyncNotifier<AppUpdateUrgency> {
 
     /// 2つの情報を比較
     const validator = AppVersionValidator();
-    final urgency = validator.validateAppVersion(
-      available,
-      appVersion,
+    final urgency = validator.validate(
+      config: config,
+      appVersion: appVersion,
     );
     return urgency;
   }
