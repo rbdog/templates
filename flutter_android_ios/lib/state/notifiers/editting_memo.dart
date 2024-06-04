@@ -20,7 +20,7 @@ class EdittingMemoNotifier extends FamilyNotifier<Memo, String> {
   Future<void> editStatus() async {
     // ログ
     logger.info('ステータスを編集します');
-    // ドメインを呼んでステータスを変更する
+    // ロジックを呼んでステータスを変更する
     const updater = MemoUpdater();
     final memo = updater.switchStatus(state);
     // 編集中のメモの状態を変更する
@@ -31,7 +31,7 @@ class EdittingMemoNotifier extends FamilyNotifier<Memo, String> {
   Future<void> editText(String newText) async {
     // ログ
     logger.info('テキストを編集します');
-    // ドメインを呼んでステータスを変更する
+    // ロジックを呼んでステータスを変更する
     const updater = MemoUpdater();
     final memo = updater.updateText(
       state,
@@ -48,12 +48,12 @@ class EdittingMemoNotifier extends FamilyNotifier<Memo, String> {
   }) async {
     // ログ
     logger.info('編集内容を保存します');
-    // ドメインを呼んで内容をチェックする
+    // ロジックを呼んで内容をチェックする
     final validater = MemoValidater(
       maxLength: memoConfig.maxLength,
     );
     final ok = validater.validateLength(state);
-    // ルール違反のときはダイアログを表示して終了
+    // ルール違反のときはコールバックして終了
     if (!ok) {
       onValidateFailure();
       return;

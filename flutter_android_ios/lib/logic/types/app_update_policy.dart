@@ -1,5 +1,5 @@
 /// アプリのアップデート緊急度
-enum AppUpdateUrgency {
+enum AppUpdatePolicy {
   /// 対応不要
   none,
 
@@ -16,10 +16,10 @@ enum AppUpdateUrgency {
 
 // ここにいるユーザー | 対応不要 none
 
-// --- old ---
+// --- min_recommended ---
 
 // ここにいるユーザー | アップデートをおすすめする recommend
 
-// --- too_old ---
+// --- min_supported ---
 
 // ここにいるユーザー | アップデートを強制する force

@@ -23,34 +23,34 @@ class MobileSimulatorView extends ConsumerWidget {
         body: CallbackShortcuts(
           bindings: {
             const SingleActivator(LogicalKeyboardKey.digit0, meta: true): () {
-              ref.read(debugEventProvider.notifier).onEvent(0);
+              ref.read(debugEventProvider.notifier).executeEvent(0);
             },
             const SingleActivator(LogicalKeyboardKey.digit1, meta: true): () {
-              ref.read(debugEventProvider.notifier).onEvent(1);
+              ref.read(debugEventProvider.notifier).executeEvent(1);
             },
             const SingleActivator(LogicalKeyboardKey.digit2, meta: true): () {
-              ref.read(debugEventProvider.notifier).onEvent(2);
+              ref.read(debugEventProvider.notifier).executeEvent(2);
             },
             const SingleActivator(LogicalKeyboardKey.digit3, meta: true): () {
-              ref.read(debugEventProvider.notifier).onEvent(3);
+              ref.read(debugEventProvider.notifier).executeEvent(3);
             },
             const SingleActivator(LogicalKeyboardKey.digit4, meta: true): () {
-              ref.read(debugEventProvider.notifier).onEvent(4);
+              ref.read(debugEventProvider.notifier).executeEvent(4);
             },
             const SingleActivator(LogicalKeyboardKey.digit5, meta: true): () {
-              ref.read(debugEventProvider.notifier).onEvent(5);
+              ref.read(debugEventProvider.notifier).executeEvent(5);
             },
             const SingleActivator(LogicalKeyboardKey.digit6, meta: true): () {
-              ref.read(debugEventProvider.notifier).onEvent(6);
+              ref.read(debugEventProvider.notifier).executeEvent(6);
             },
             const SingleActivator(LogicalKeyboardKey.digit7, meta: true): () {
-              ref.read(debugEventProvider.notifier).onEvent(7);
+              ref.read(debugEventProvider.notifier).executeEvent(7);
             },
             const SingleActivator(LogicalKeyboardKey.digit8, meta: true): () {
-              ref.read(debugEventProvider.notifier).onEvent(8);
+              ref.read(debugEventProvider.notifier).executeEvent(8);
             },
             const SingleActivator(LogicalKeyboardKey.digit9, meta: true): () {
-              ref.read(debugEventProvider.notifier).onEvent(9);
+              ref.read(debugEventProvider.notifier).executeEvent(9);
             },
           },
           child: Focus(

@@ -8,7 +8,7 @@ class DebugEventNotifier extends Notifier<void> {
   void build() {}
 
   // キーボードで入力された数字
-  void onEvent(int number) {
+  void executeEvent(int number) {
     logger.info('---- デバッグイベント ----');
     if (number == 1) {
       logger.info('DEBUG: 1. 遠隔操作でサインアウト');

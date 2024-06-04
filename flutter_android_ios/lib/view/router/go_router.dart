@@ -5,7 +5,7 @@ import 'package:my_app/view/pages/home.dart';
 import 'package:my_app/view/pages/sign_in.dart';
 import 'package:my_app/view/pages/splash.dart';
 import 'package:my_app/view/router/page_path.dart';
-import 'package:my_app/view/router/signed_in_scope.dart';
+import 'package:my_app/view/router/signed_in_shell.dart';
 import 'package:my_app/view/router/version_updater.dart';
 
 /// Provide GoRouter
@@ -47,7 +47,7 @@ final goRouterProvider = Provider(
       // 一般画面たち全員
       routes: nomalPages,
       builder: (_, __, child) {
-        return SignedInScope(child: child);
+        return SignedInShell(child: child);
       },
     );
 
@@ -60,7 +60,7 @@ final goRouterProvider = Provider(
         signedinRoute,
       ],
       builder: (_, __, child) {
-        return VersionUpdaterView(child: child);
+        return VersionUpdaterShell(child: child);
       },
     );
 

@@ -12,7 +12,7 @@ extension PagePath on PageId {
         PageId.home => '/',
         PageId.splash => '/splash',
         PageId.signIn => '/sign-in',
-        PageId.edit => '/edit/:id',
+        PageId.edit => '/:id/edit',
       };
 }
 
