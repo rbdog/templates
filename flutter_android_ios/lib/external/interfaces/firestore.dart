@@ -1,7 +1,7 @@
-import 'package:my_app/logic/types/memo.dart';
+import 'package:my_app/logic/types/todo.dart';
 
 /// Firestore
 abstract interface class Firestore {
-  /// ユーザーIDでメモを取得
-  Future<List<Memo>> findMemosByUserId(String userId);
+  /// ユーザーIDでTodoを取得
+  Future<List<Todo>> findTodosByUserId(String userId);
 }

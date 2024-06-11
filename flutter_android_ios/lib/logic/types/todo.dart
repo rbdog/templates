@@ -1,10 +1,10 @@
 import 'package:my_app/logic/types/status.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-part 'memo.freezed.dart';
+part 'todo.freezed.dart';
 
 @freezed
-class Memo with _$Memo {
-  const factory Memo({
+class Todo with _$Todo {
+  const factory Todo({
     /// ID
     required String id,
 
@@ -13,5 +13,5 @@ class Memo with _$Memo {
 
     /// 書かれた文字
     required String text,
-  }) = _Memo;
+  }) = _Todo;
 }

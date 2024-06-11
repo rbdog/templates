@@ -4,7 +4,7 @@ import 'package:my_app/view/theme/colors.dart';
 import 'package:my_app/view/theme/fonts.dart';
 import 'package:my_app/view/theme/sizes.dart';
 
-/// カスタムダイアログ 警告用
+/// 警告ダイアログ
 class WarnDialog extends StatelessWidget {
   const WarnDialog({
     super.key,
@@ -23,7 +23,7 @@ class WarnDialog extends StatelessWidget {
         alignment: Alignment.center,
         child: Text(
           message,
-          style: BrandText.bodyM,
+          style: BrandTextStyle.bodyM,
           maxLines: 5,
         ),
       ),
@@ -42,7 +42,7 @@ class WarnDialog extends StatelessWidget {
         onPressed: onPressedOk,
         child: Text(
           context.l10n.ok,
-          style: BrandText.titleS.copyWith(
+          style: BrandTextStyle.titleS.copyWith(
             color: BrandColor.white,
           ),
         ),

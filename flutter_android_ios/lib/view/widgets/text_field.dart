@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:my_app/view/theme/fonts.dart';
 
-/// 文字編集フォーム
-class TextEditForm extends HookWidget {
-  const TextEditForm({
+/// 文字編集フィールド
+class MyTextField extends HookWidget {
+  const MyTextField({
     super.key,
     required this.value,
     required this.onChanged,
@@ -26,7 +26,7 @@ class TextEditForm extends HookWidget {
     }
 
     return TextField(
-      style: BrandText.bodyL,
+      style: BrandTextStyle.bodyL,
       decoration: const InputDecoration(
         border: OutlineInputBorder(),
         errorText: null,

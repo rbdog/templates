@@ -4,7 +4,7 @@ import 'package:my_app/view/theme/colors.dart';
 import 'package:my_app/view/theme/fonts.dart';
 import 'package:my_app/view/theme/sizes.dart';
 
-/// /// アップデートを強制ダイアログ
+/// アップデートを強制ダイアログ
 class ForceUpdateDialog extends StatelessWidget {
   const ForceUpdateDialog({
     super.key,
@@ -21,7 +21,7 @@ class ForceUpdateDialog extends StatelessWidget {
         alignment: Alignment.center,
         child: const Text(
           '強制アップデートのお知らせ',
-          style: BrandText.bodyM,
+          style: BrandTextStyle.bodyM,
           maxLines: 5,
         ),
       ),
@@ -40,7 +40,7 @@ class ForceUpdateDialog extends StatelessWidget {
         onPressed: onPressedOk,
         child: Text(
           context.l10n.ok,
-          style: BrandText.titleS.copyWith(
+          style: BrandTextStyle.titleS.copyWith(
             color: BrandColor.white,
           ),
         ),
