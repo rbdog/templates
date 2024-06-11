@@ -1,6 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:my_app/logic/types/user.dart';
-import 'package:my_app/state/providers/api.dart';
+import 'package:my_app/state/di/external.dart';
 
 /// User
 class UserNotifier extends StreamNotifier<User?> {

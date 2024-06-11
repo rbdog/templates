@@ -21,7 +21,7 @@ class ReccomendUpdateDialog extends StatelessWidget {
         alignment: Alignment.center,
         child: const Text(
           '任意でアップデートしてください',
-          style: BrandText.bodyM,
+          style: BrandTextStyle.bodyM,
           maxLines: 5,
         ),
       ),
@@ -40,7 +40,7 @@ class ReccomendUpdateDialog extends StatelessWidget {
         onPressed: onPressedOk,
         child: Text(
           context.l10n.ok,
-          style: BrandText.titleS.copyWith(
+          style: BrandTextStyle.titleS.copyWith(
             color: BrandColor.white,
           ),
         ),

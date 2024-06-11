@@ -5,6 +5,9 @@ class User {
     required this.nickname,
   });
 
+  /// ユーザーID
   final String id;
+
+  /// ニックネーム
   final String nickname;
 }

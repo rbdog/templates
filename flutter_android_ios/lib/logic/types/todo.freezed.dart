@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'memo.dart';
+part of 'todo.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$Memo {
+mixin _$Todo {
   /// ID
   String get id => throw _privateConstructorUsedError;
 
@@ -26,21 +26,21 @@ mixin _$Memo {
   String get text => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $MemoCopyWith<Memo> get copyWith => throw _privateConstructorUsedError;
+  $TodoCopyWith<Todo> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $MemoCopyWith<$Res> {
-  factory $MemoCopyWith(Memo value, $Res Function(Memo) then) =
-      _$MemoCopyWithImpl<$Res, Memo>;
+abstract class $TodoCopyWith<$Res> {
+  factory $TodoCopyWith(Todo value, $Res Function(Todo) then) =
+      _$TodoCopyWithImpl<$Res, Todo>;
   @useResult
   $Res call({String id, Status status, String text});
 }
 
 /// @nodoc
-class _$MemoCopyWithImpl<$Res, $Val extends Memo>
-    implements $MemoCopyWith<$Res> {
-  _$MemoCopyWithImpl(this._value, this._then);
+class _$TodoCopyWithImpl<$Res, $Val extends Todo>
+    implements $TodoCopyWith<$Res> {
+  _$TodoCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -72,20 +72,20 @@ class _$MemoCopyWithImpl<$Res, $Val extends Memo>
 }
 
 /// @nodoc
-abstract class _$$MemoImplCopyWith<$Res> implements $MemoCopyWith<$Res> {
-  factory _$$MemoImplCopyWith(
-          _$MemoImpl value, $Res Function(_$MemoImpl) then) =
-      __$$MemoImplCopyWithImpl<$Res>;
+abstract class _$$TodoImplCopyWith<$Res> implements $TodoCopyWith<$Res> {
+  factory _$$TodoImplCopyWith(
+          _$TodoImpl value, $Res Function(_$TodoImpl) then) =
+      __$$TodoImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String id, Status status, String text});
 }
 
 /// @nodoc
-class __$$MemoImplCopyWithImpl<$Res>
-    extends _$MemoCopyWithImpl<$Res, _$MemoImpl>
-    implements _$$MemoImplCopyWith<$Res> {
-  __$$MemoImplCopyWithImpl(_$MemoImpl _value, $Res Function(_$MemoImpl) _then)
+class __$$TodoImplCopyWithImpl<$Res>
+    extends _$TodoCopyWithImpl<$Res, _$TodoImpl>
+    implements _$$TodoImplCopyWith<$Res> {
+  __$$TodoImplCopyWithImpl(_$TodoImpl _value, $Res Function(_$TodoImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -95,7 +95,7 @@ class __$$MemoImplCopyWithImpl<$Res>
     Object? status = null,
     Object? text = null,
   }) {
-    return _then(_$MemoImpl(
+    return _then(_$TodoImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -114,8 +114,8 @@ class __$$MemoImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$MemoImpl implements _Memo {
-  const _$MemoImpl(
+class _$TodoImpl implements _Todo {
+  const _$TodoImpl(
       {required this.id, required this.status, required this.text});
 
   /// ID
@@ -132,14 +132,14 @@ class _$MemoImpl implements _Memo {
 
   @override
   String toString() {
-    return 'Memo(id: $id, status: $status, text: $text)';
+    return 'Todo(id: $id, status: $status, text: $text)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$MemoImpl &&
+            other is _$TodoImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.text, text) || other.text == text));
@@ -151,15 +151,15 @@ class _$MemoImpl implements _Memo {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$MemoImplCopyWith<_$MemoImpl> get copyWith =>
-      __$$MemoImplCopyWithImpl<_$MemoImpl>(this, _$identity);
+  _$$TodoImplCopyWith<_$TodoImpl> get copyWith =>
+      __$$TodoImplCopyWithImpl<_$TodoImpl>(this, _$identity);
 }
 
-abstract class _Memo implements Memo {
-  const factory _Memo(
+abstract class _Todo implements Todo {
+  const factory _Todo(
       {required final String id,
       required final Status status,
-      required final String text}) = _$MemoImpl;
+      required final String text}) = _$TodoImpl;
 
   @override
 
@@ -175,6 +175,6 @@ abstract class _Memo implements Memo {
   String get text;
   @override
   @JsonKey(ignore: true)
-  _$$MemoImplCopyWith<_$MemoImpl> get copyWith =>
+  _$$TodoImplCopyWith<_$TodoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:my_app/state/notifiers/logger.dart';
 import 'package:my_app/logic/types/sign_in_with.dart';
-import 'package:my_app/state/providers/api.dart';
+import 'package:my_app/state/di/external.dart';
 import 'package:my_app/state/providers/user.dart';
 import 'package:my_app/view/router/go_router.dart';
 import 'package:my_app/view/router/page_path.dart';

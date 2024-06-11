@@ -7,7 +7,7 @@ class BrandFont {
 }
 
 /// 文字スタイル
-class BrandText {
+class BrandTextStyle {
   static const titleL = TextStyle(
     fontSize: RawSize.p28,
     fontFamily: BrandFont.general,

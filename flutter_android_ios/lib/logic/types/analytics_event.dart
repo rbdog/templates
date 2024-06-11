@@ -1,8 +1,8 @@
 /// Firebase Analytics 対象のイベント
 enum AnalyticsEvent {
-  /// 新しいメモを追加した
-  addNewMemo,
+  /// 新しいTodoを追加した
+  addNewTodo,
 
-  /// メモを削除した
-  deleteMemo,
+  /// Todoを削除した
+  deleteTodo,
 }

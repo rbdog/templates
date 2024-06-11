@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:my_app/state/notifiers/logger.dart';
-import 'package:my_app/state/providers/editting_memo.dart';
+import 'package:my_app/state/providers/editting_todo.dart';
 import 'package:my_app/view/theme/l10n.dart';
 import 'package:my_app/view/theme/colors.dart';
 import 'package:my_app/view/theme/sizes.dart';
 import 'package:my_app/view/widgets/gap.dart';
 import 'package:my_app/view/widgets/save_button.dart';
 import 'package:my_app/view/widgets/status_button.dart';
-import 'package:my_app/view/widgets/text_edit_form.dart';
+import 'package:my_app/view/widgets/text_field.dart';
 import 'package:my_app/view/widgets/status_text.dart';
 import 'package:my_app/view/dialogs/warn.dart';
 import 'package:my_app/view/router/go_router.dart';
@@ -17,42 +17,48 @@ import 'package:my_app/view/router/go_router.dart';
 class EditPage extends ConsumerWidget {
   const EditPage({
     super.key,
-    required this.memoId,
+    required this.todoId,
   });
 
-  final String memoId;
+  final String todoId;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     /// ログ
-    logger.info('メモ編集画面をビルドします');
+    logger.info('Todo編集画面をビルドします');
 
-    /// 編集中のメモ
-    final memo = ref.watch(edittingMemoProvider(memoId));
+    /// 編集中のTodo
+    final todo = ref.watch(
+      edittingTodoProvider(todoId),
+    );
 
     /// ステータスボタン
     final statusButton = SizedBox(
       width: RawSize.p60,
       height: RawSize.p60,
       child: StatusButton(
-        status: memo.status,
+        status: todo.status,
         onPressed: () {
           // ユースケースを呼び出す
-          final usecase = ref.read(edittingMemoProvider(memoId).notifier);
+          final usecase = ref.read(
+            edittingTodoProvider(todoId).notifier,
+          );
           usecase.editStatus();
         },
       ),
     );
 
     /// ステータス文字
-    final statusText = StatusText(status: memo.status);
+    final statusText = StatusText(status: todo.status);
 
     /// テキスト編集フォーム
-    final editForm = TextEditForm(
-      value: memo.text,
+    final field = MyTextField(
+      value: todo.text,
       onChanged: (value) {
         // ユースケースを呼び出す
-        final usecase = ref.read(edittingMemoProvider(memoId).notifier);
+        final usecase = ref.read(
+          edittingTodoProvider(todoId).notifier,
+        );
         usecase.editText(value);
       },
     );
@@ -61,7 +67,9 @@ class EditPage extends ConsumerWidget {
     final saveButton = SaveButton(
       onPressed: () {
         // ユースケースを呼び出す
-        final usecase = ref.read(edittingMemoProvider(memoId).notifier);
+        final usecase = ref.read(
+          edittingTodoProvider(todoId).notifier,
+        );
         usecase.save(
           onValidateFailure: () {
             // 失敗したらダイアログを表示
@@ -101,7 +109,7 @@ class EditPage extends ConsumerWidget {
               ],
             ),
             Gap.h(RawSize.p20),
-            editForm,
+            field,
             const Spacer(flex: 2),
           ],
         ),

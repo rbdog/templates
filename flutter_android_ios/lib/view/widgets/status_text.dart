@@ -8,7 +8,7 @@ class StatusText extends StatelessWidget {
   const StatusText({
     super.key,
     required this.status,
-    this.style = BrandText.titleL,
+    this.style = BrandTextStyle.titleL,
   });
 
   /// ステータス

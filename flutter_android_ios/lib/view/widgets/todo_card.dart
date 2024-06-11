@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/logic/types/memo.dart';
+import 'package:my_app/logic/types/todo.dart';
 import 'package:my_app/view/theme/colors.dart';
 import 'package:my_app/view/theme/fonts.dart';
 import 'package:my_app/view/theme/sizes.dart';
 import 'package:my_app/view/widgets/delete_button.dart';
 import 'package:my_app/view/widgets/status_image.dart';
 
-/// メモカード
-class MemoCard extends StatelessWidget {
-  const MemoCard({
+/// Todoカード
+class TodoCard extends StatelessWidget {
+  const TodoCard({
     super.key,
-    required this.memo,
+    required this.todo,
     required this.onPressed,
     required this.onPressedDelete,
   });
 
-  /// 表示するメモ
-  final Memo memo;
+  /// 表示するTodo
+  final Todo todo;
 
   /// コールバック カード全体
   final VoidCallback onPressed;
@@ -32,16 +32,16 @@ class MemoCard extends StatelessWidget {
       alignment: Alignment.center,
       padding: const EdgeInsets.all(RawSize.p8),
       color: BrandColor.bananaYellow,
-      child: StatusImage(status: memo.status),
+      child: StatusImage(status: todo.status),
     );
 
-    /// メモの文字を表示するエリア
+    /// Todoの文字を表示するエリア
     final textArea = Container(
       alignment: Alignment.centerLeft,
       child: Text(
-        memo.text,
+        todo.text,
         textAlign: TextAlign.left,
-        style: BrandText.bodyS,
+        style: BrandTextStyle.bodyS,
         maxLines: 1,
       ),
     );

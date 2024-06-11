@@ -23,7 +23,7 @@ class SaveButton extends StatelessWidget {
     /// 文字
     final text = Text(
       context.l10n.save,
-      style: BrandText.bodyL,
+      style: BrandTextStyle.bodyL,
     );
 
     /// レイアウト

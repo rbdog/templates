@@ -1,13 +1,4 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:my_app/external/implements/app_info/default.dart';
-import 'package:my_app/external/implements/example/stg.dart';
-import 'package:my_app/external/implements/example/dev.dart';
-import 'package:my_app/external/implements/example/prd.dart';
-import 'package:my_app/external/implements/remote_config/dev.dart';
-import 'package:my_app/external/implements/remote_config/prd.dart';
-import 'package:my_app/external/implements/remote_config/stg.dart';
-import 'package:my_app/external/implements/system_locale/default.dart';
-import 'package:my_app/state/notifiers/logger.dart';
 import 'package:my_app/external/interfaces/analytics.dart';
 import 'package:my_app/external/interfaces/app_info.dart';
 import 'package:my_app/external/interfaces/auth.dart';
@@ -17,7 +8,14 @@ import 'package:my_app/external/interfaces/firestore.dart';
 import 'package:my_app/external/interfaces/console.dart';
 import 'package:my_app/external/interfaces/remote_config.dart';
 import 'package:my_app/external/interfaces/systems_locale.dart';
-import 'package:my_app/logic/types/flavor.dart';
+import 'package:my_app/external/implements/app_info/default.dart';
+import 'package:my_app/external/implements/example/stg.dart';
+import 'package:my_app/external/implements/example/dev.dart';
+import 'package:my_app/external/implements/example/prd.dart';
+import 'package:my_app/external/implements/remote_config/dev.dart';
+import 'package:my_app/external/implements/remote_config/prd.dart';
+import 'package:my_app/external/implements/remote_config/stg.dart';
+import 'package:my_app/external/implements/system_locale/default.dart';
 import 'package:my_app/external/implements/console/dev.dart';
 import 'package:my_app/external/implements/console/prd.dart';
 import 'package:my_app/external/implements/console/stg.dart';
@@ -33,7 +31,19 @@ import 'package:my_app/external/implements/firestore/dev.dart';
 import 'package:my_app/external/implements/firestore/prd.dart';
 import 'package:my_app/external/implements/firestore/stg.dart';
 import 'package:my_app/external/implements/firebase_core/dev.dart';
+import 'package:my_app/state/notifiers/logger.dart';
+import 'package:my_app/logic/types/flavor.dart';
 import 'package:my_app/state/providers/flavor.dart';
+
+/// Example
+final exampleServiceProvider = Provider<ExampleService>((ref) {
+  final flavor = ref.watch(flavorProvider);
+  return switch (flavor) {
+    Flavor.dev => DevExampleService(),
+    Flavor.stg => StgExampleService(),
+    Flavor.prd => PrdExampleService(),
+  };
+});
 
 /// Console
 final consoleProvider = Provider<Console>((ref) {
@@ -46,16 +56,6 @@ final consoleProvider = Provider<Console>((ref) {
   // 毎回ref.watchは大変なので コンソールは特別に グローバルにキャッシュする
   logger = console;
   return console;
-});
-
-/// Example
-final exampleApiProvider = Provider<ExampleApi>((ref) {
-  final flavor = ref.watch(flavorProvider);
-  return switch (flavor) {
-    Flavor.dev => DevExampleApi(),
-    Flavor.stg => StgExampleApi(),
-    Flavor.prd => PrdExampleApi(),
-  };
 });
 
 /// Firebase Core

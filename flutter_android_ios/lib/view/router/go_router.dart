@@ -6,7 +6,7 @@ import 'package:my_app/view/pages/sign_in.dart';
 import 'package:my_app/view/pages/splash.dart';
 import 'package:my_app/view/router/page_path.dart';
 import 'package:my_app/view/router/signed_in_shell.dart';
-import 'package:my_app/view/router/version_updater.dart';
+import 'package:my_app/view/router/version_updater_shell.dart';
 
 /// Provide GoRouter
 final goRouterProvider = Provider(
@@ -26,7 +26,7 @@ final goRouterProvider = Provider(
     );
 
     /// 一般画面たち
-    final nomalPages = [
+    final signedInPages = [
       GoRoute(
         path: PageId.home.path,
         name: PageId.home.routeName,
@@ -37,15 +37,14 @@ final goRouterProvider = Provider(
         name: PageId.edit.routeName,
         builder: (context, state) {
           final id = state.pathParameters['id']!;
-          return EditPage(memoId: id);
+          return EditPage(todoId: id);
         },
       ),
     ];
 
     /// サインイン限定の画面範囲
-    final signedinRoute = ShellRoute(
-      // 一般画面たち全員
-      routes: nomalPages,
+    final signedInRoute = ShellRoute(
+      routes: signedInPages,
       builder: (_, __, child) {
         return SignedInShell(child: child);
       },
@@ -57,7 +56,7 @@ final goRouterProvider = Provider(
         // サインイン画面
         signIn,
         // サインイン限定の画面範囲
-        signedinRoute,
+        signedInRoute,
       ],
       builder: (_, __, child) {
         return VersionUpdaterShell(child: child);
