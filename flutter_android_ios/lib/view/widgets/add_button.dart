@@ -23,7 +23,7 @@ class AddButton extends StatelessWidget {
     /// 文字
     final text = Text(
       context.l10n.createNew,
-      style: BrandText.bodyL,
+      style: BrandTextStyle.bodyL,
     );
 
     /// レイアウト

@@ -1,2 +1,2 @@
 /// Example
-abstract interface class ExampleApi {}
+abstract interface class ExampleService {}

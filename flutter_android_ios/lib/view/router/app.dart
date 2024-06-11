@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
-import 'package:my_app/state/providers/api.dart';
+import 'package:my_app/state/di/external.dart';
 import 'package:my_app/state/providers/flavor.dart';
 import 'package:my_app/view/router/mobile_simulator.dart';
 import 'package:my_app/view/theme/fonts.dart';
@@ -38,7 +38,7 @@ class App extends ConsumerWidget {
       supportedLocales: AppLocalizations.supportedLocales, // localizations
       locale: Locale(Intl.systemLocale),
       theme: ThemeData(
-        fontFamily: BrandText.bodyS.fontFamily,
+        fontFamily: BrandTextStyle.bodyS.fontFamily,
       ),
     );
   }

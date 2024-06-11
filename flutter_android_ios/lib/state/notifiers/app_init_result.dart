@@ -3,7 +3,7 @@ import 'package:my_app/logic/validators/app_version.dart';
 import 'package:my_app/state/notifiers/logger.dart';
 import 'package:my_app/logic/types/app_init_result.dart';
 import 'package:my_app/logic/types/app_update_policy.dart';
-import 'package:my_app/state/providers/api.dart';
+import 'package:my_app/state/di/external.dart';
 
 /// アプリ初期化の結果
 class AppInitResultNotifier extends AsyncNotifier<AppInitResult> {

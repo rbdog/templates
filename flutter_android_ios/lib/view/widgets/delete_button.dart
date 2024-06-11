@@ -19,7 +19,7 @@ class DeleteButton extends StatelessWidget {
       onPressed: onPressed,
       child: Text(
         context.l10n.delete,
-        style: BrandText.bodyS.copyWith(
+        style: BrandTextStyle.bodyS.copyWith(
           color: BrandColor.dangerRed,
         ),
       ),

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:my_app/state/notifiers/logger.dart';
-import 'package:my_app/logic/types/memo.dart';
-import 'package:my_app/state/providers/memo_list.dart';
+import 'package:my_app/logic/types/todo.dart';
+import 'package:my_app/state/providers/todo_list.dart';
 import 'package:my_app/view/router/page_path.dart';
 import 'package:my_app/view/router/go_router.dart';
 import 'package:my_app/view/widgets/add_button.dart';
 import 'package:my_app/view/widgets/loading.dart';
-import 'package:my_app/view/widgets/memo_card.dart';
+import 'package:my_app/view/widgets/todo_card.dart';
 import 'package:my_app/view/theme/sizes.dart';
 
 /// ホーム画面
@@ -21,25 +21,25 @@ class HomePage extends ConsumerWidget {
     /// ログ
     logger.info('ホーム画面をビルドします');
 
-    /// メモ一覧
-    final asyncMemoList = ref.watch(memoListProvider);
-    final memoList = asyncMemoList;
+    /// Todo一覧
+    final asyncTodoList = ref.watch(todoListProvider);
+    final todoList = asyncTodoList;
 
     /// 追加ボタン
-    /// メモ取得前は非表示
-    final addButton = memoList.value == null
+    /// Todo取得前は非表示
+    final addButton = todoList.value == null
         ? null
         : AddButton(
             onPressed: () {
               // ユースケースを呼び出す
-              final usecase = ref.read(memoListProvider.notifier);
+              final usecase = ref.read(todoListProvider.notifier);
               usecase.add();
             },
           );
 
     /// body
-    final body = switch (asyncMemoList) {
-      AsyncData(:final value) => _ListView(key: key, memoList: value),
+    final body = switch (asyncTodoList) {
+      AsyncData(:final value) => _ListView(key: key, todoList: value),
       _ => const LoadingView(),
     };
 
@@ -55,37 +55,37 @@ class HomePage extends ConsumerWidget {
   }
 }
 
-/// メモ一覧
+/// Todo一覧
 class _ListView extends ConsumerWidget {
   const _ListView({
     super.key,
-    required this.memoList,
+    required this.todoList,
   });
 
-  final List<Memo> memoList;
+  final List<Todo> todoList;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Padding(
       padding: const EdgeInsets.all(RawSize.p4),
       child: ListView.builder(
-        itemCount: memoList.length,
+        itemCount: todoList.length,
         itemBuilder: (context, index) {
-          final memo = memoList[index];
-          return MemoCard(
-            memo: memoList[index],
+          final todo = todoList[index];
+          return TodoCard(
+            todo: todoList[index],
             onPressed: () {
               // 編集画面へ進む
               final router = ref.read(goRouterProvider);
               router.pushNamed(
                 PageId.edit.routeName,
-                pathParameters: {'id': memo.id},
+                pathParameters: {'id': todo.id},
               );
             },
             onPressedDelete: () {
               // ユースケースを呼び出す
-              final usecase = ref.read(memoListProvider.notifier);
-              usecase.delete(memo.id);
+              final usecase = ref.read(todoListProvider.notifier);
+              usecase.delete(todo.id);
             },
           );
         },
