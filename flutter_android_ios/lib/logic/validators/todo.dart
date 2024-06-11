@@ -8,7 +8,7 @@ class TodoValidater {
 
   /// チェックする
   TodoValidationResult validate(Todo todo) {
-    if (todo.text.length <= todoConfig.maxTextLength) {
+    if (todo.text.length > todoConfig.maxTextLength) {
       // 文字数が長すぎる
       return TodoValidationResult.tooLongText;
     }
