@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:my_app/state/notifiers/logger.dart';
 import 'package:my_app/logic/types/todo.dart';
 import 'package:my_app/state/providers/todo_list.dart';
+import 'package:my_app/view/logger.dart';
 import 'package:my_app/view/router/page_path.dart';
 import 'package:my_app/view/router/go_router.dart';
 import 'package:my_app/view/widgets/add_button.dart';
@@ -19,7 +19,7 @@ class HomePage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     /// ログ
-    logger.info('ホーム画面をビルドします');
+    viewLogger.info('ホーム画面をビルドします');
 
     /// Todo一覧
     final asyncTodoList = ref.watch(todoListProvider);
