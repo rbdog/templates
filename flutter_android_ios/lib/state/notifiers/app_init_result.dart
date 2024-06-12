@@ -1,16 +1,16 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:my_app/logic/validators/app_version.dart';
-import 'package:my_app/state/notifiers/logger.dart';
 import 'package:my_app/logic/types/app_init_result.dart';
 import 'package:my_app/logic/types/app_update_policy.dart';
 import 'package:my_app/state/di/external.dart';
+import 'package:my_app/state/logger.dart';
 
 /// アプリ初期化の結果
 class AppInitResultNotifier extends AsyncNotifier<AppInitResult> {
   @override
   Future<AppInitResult> build() async {
     // ログ
-    logger.info('アプリの初期化を開始します');
+    stateLogger.info('アプリの初期化を開始します');
 
     // これはデモなので適当に3秒まって待機画面を見せる
     // この行を消しても問題ない
@@ -40,7 +40,7 @@ class AppInitResultNotifier extends AsyncNotifier<AppInitResult> {
       appVersion: appVersion,
     );
     if (urgency == AppUpdatePolicy.force) {
-      logger.info('アップデートを強制されたため 初期化を中断します');
+      stateLogger.info('アップデートを強制されたため 初期化を中断します');
       return AppInitResult.forceUpdate;
     }
 
@@ -48,7 +48,7 @@ class AppInitResultNotifier extends AsyncNotifier<AppInitResult> {
     final auth = ref.read(authProvider);
     final isSignedIn = await auth.isSignedIn();
 
-    logger.info('アプリの初期化が完了しました');
+    stateLogger.info('アプリの初期化が完了しました');
 
     if (isSignedIn) {
       return AppInitResult.signedIn;

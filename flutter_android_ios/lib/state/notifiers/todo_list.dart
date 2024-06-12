@@ -1,10 +1,10 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:my_app/logic/config/todo.dart';
-import 'package:my_app/state/notifiers/logger.dart';
 import 'package:my_app/logic/creators/todo.dart';
 import 'package:my_app/logic/types/analytics_event.dart';
 import 'package:my_app/logic/types/todo.dart';
 import 'package:my_app/state/di/external.dart';
+import 'package:my_app/state/logger.dart';
 import 'package:my_app/state/providers/user.dart';
 
 /// Todo一覧を管理するノティファイヤ
@@ -12,7 +12,7 @@ class TodoListNotifier extends AsyncNotifier<List<Todo>> {
   @override
   Future<List<Todo>> build() async {
     // ログ
-    logger.info('Todo一覧を初期化します');
+    stateLogger.info('Todo一覧を初期化します');
     // Firestore から取得
     final firestore = ref.read(firestoreProvider);
     final user = await ref.read(userProvider.future);
@@ -23,7 +23,7 @@ class TodoListNotifier extends AsyncNotifier<List<Todo>> {
   /// リストの一番末尾にTodoを追加する
   void add() {
     // ログ
-    logger.info('Todoを追加します');
+    stateLogger.info('Todoを追加します');
 
     // Firebaseにイベントを報告する
     final analytics = ref.read(analyticsProvider);
@@ -42,7 +42,7 @@ class TodoListNotifier extends AsyncNotifier<List<Todo>> {
   /// 指定されたIDのTodoを削除する
   void delete(String id) {
     // ログ
-    logger.info('Todoを削除します');
+    stateLogger.info('Todoを削除します');
 
     // Firebaseにイベントを報告する
     final analytics = ref.read(analyticsProvider);

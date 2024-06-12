@@ -21,7 +21,7 @@ class App extends ConsumerWidget {
     final flavor = ref.watch(flavorProvider);
     final router = ref.watch(goRouterProvider);
 
-    console.info('App is build with FLAVOR: ${flavor.name}');
+    console.yellow('App is build with FLAVOR: ${flavor.name}');
 
     return MaterialApp.router(
       routerDelegate: router.routerDelegate, // GoRouter

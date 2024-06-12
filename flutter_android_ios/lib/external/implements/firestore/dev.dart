@@ -1,4 +1,4 @@
-import 'package:my_app/state/notifiers/logger.dart';
+import 'package:my_app/external/logger.dart';
 import 'package:my_app/external/interfaces/firestore.dart';
 import 'package:my_app/logic/types/todo.dart';
 import 'package:my_app/logic/types/status.dart';
@@ -7,9 +7,9 @@ import 'package:my_app/logic/types/status.dart';
 class DevFirestore implements Firestore {
   @override
   Future<List<Todo>> findTodosByUserId(String userId) async {
-    logger.info('firestoreからTodoを取得します');
+    externalLogger.info('firestoreからTodoを取得します');
     await Future.delayed(const Duration(seconds: 1));
-    logger.info('firestoreからTodoを取得しました');
+    externalLogger.info('firestoreからTodoを取得しました');
     return [
       const Todo(
         id: 'xxxx-example-01-xxxx',

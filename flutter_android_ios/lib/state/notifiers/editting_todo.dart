@@ -1,6 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:my_app/logic/types/todo_validation_result.dart';
-import 'package:my_app/state/notifiers/logger.dart';
+import 'package:my_app/state/logger.dart';
 import 'package:my_app/logic/updaters/todo.dart';
 import 'package:my_app/logic/validators/todo.dart';
 import 'package:my_app/logic/types/todo.dart';
@@ -19,7 +19,7 @@ class EdittingTodoNotifier extends FamilyNotifier<Todo, String> {
   /// ステータスを次に進める
   Future<void> editStatus() async {
     // ログ
-    logger.info('ステータスを編集します');
+    stateLogger.info('ステータスを編集します');
     // ロジックを呼んでステータスを変更する
     const updater = TodoUpdater();
     final todo = updater.switchStatus(state);
@@ -32,7 +32,7 @@ class EdittingTodoNotifier extends FamilyNotifier<Todo, String> {
     String newText,
   ) async {
     // ログ
-    logger.info('テキストを編集します');
+    stateLogger.info('テキストを編集します');
     // ロジックを呼んでステータスを変更する
     const updater = TodoUpdater();
     final todo = updater.updateText(
@@ -49,7 +49,7 @@ class EdittingTodoNotifier extends FamilyNotifier<Todo, String> {
     required void Function() onSuccess,
   }) async {
     // ログ
-    logger.info('編集内容を保存します');
+    stateLogger.info('編集内容を保存します');
     // ロジックを呼んで内容をチェックする
     const validater = TodoValidater();
     final result = validater.validate(state);

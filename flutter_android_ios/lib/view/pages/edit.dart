@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:my_app/state/notifiers/logger.dart';
 import 'package:my_app/state/providers/editting_todo.dart';
+import 'package:my_app/view/logger.dart';
 import 'package:my_app/view/theme/l10n.dart';
 import 'package:my_app/view/theme/colors.dart';
 import 'package:my_app/view/theme/sizes.dart';
@@ -25,7 +25,7 @@ class EditPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     /// ログ
-    logger.info('Todo編集画面をビルドします');
+    viewLogger.info('Todo編集画面をビルドします');
 
     /// 編集中のTodo
     final todo = ref.watch(

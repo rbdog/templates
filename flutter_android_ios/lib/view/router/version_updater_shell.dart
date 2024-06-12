@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:my_app/state/notifiers/logger.dart';
 import 'package:my_app/logic/types/app_update_policy.dart';
 import 'package:my_app/state/providers/app_update_policy.dart';
 import 'package:my_app/view/dialogs/recommend_update.dart';
 import 'package:my_app/view/dialogs/force_update.dart';
+import 'package:my_app/view/logger.dart';
 
 /// アプリアップデートの監視
 class VersionUpdaterShell extends ConsumerWidget {
@@ -27,11 +27,11 @@ class VersionUpdaterShell extends ConsumerWidget {
             // DO NOTHING
             break;
           case AppUpdatePolicy.force:
-            logger.info('アップデート強制を検知しました');
+            viewLogger.info('アップデート強制を検知しました');
             showForceUpdateDialog(context);
             break;
           case AppUpdatePolicy.recommend:
-            logger.info('アップデートおすすめを検知しました');
+            viewLogger.info('アップデートおすすめを検知しました');
             showRecommendUpdateDialog(context);
             break;
         }
