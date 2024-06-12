@@ -1,7 +1,10 @@
+// Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:my_app/logic/validators/app_version.dart';
-import 'package:my_app/logic/types/app_update_policy.dart';
-import 'package:my_app/state/di/external.dart';
+
+// Project imports:
+import '../../logic/types/app_update_policy.dart';
+import '../../logic/validators/app_version.dart';
+import '../di/external.dart';
 
 /// アプリアップデート対応
 class AppUpdatePolicyNotifier extends AsyncNotifier<AppUpdatePolicy> {

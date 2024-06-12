@@ -1,10 +1,15 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:my_app/logic/types/app_update_policy.dart';
-import 'package:my_app/state/providers/app_update_policy.dart';
-import 'package:my_app/view/dialogs/recommend_update.dart';
-import 'package:my_app/view/dialogs/force_update.dart';
-import 'package:my_app/view/logger.dart';
+
+// Project imports:
+import '../../logic/types/app_update_policy.dart';
+import '../../state/providers/app_update_policy.dart';
+import '../dialogs/force_update.dart';
+import '../dialogs/recommend_update.dart';
+import '../logger.dart';
 
 /// アプリアップデートの監視
 class VersionUpdaterShell extends ConsumerWidget {

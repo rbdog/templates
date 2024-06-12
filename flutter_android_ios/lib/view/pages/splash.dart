@@ -1,10 +1,15 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:my_app/logic/types/app_init_result.dart';
-import 'package:my_app/state/providers/app_init_result.dart';
-import 'package:my_app/view/logger.dart';
-import 'package:my_app/view/router/go_router.dart';
-import 'package:my_app/view/router/page_path.dart';
+
+// Project imports:
+import '../../logic/types/app_init_result.dart';
+import '../../state/providers/app_init_result.dart';
+import '../logger.dart';
+import '../router/go_router.dart';
+import '../router/page_path.dart';
 
 /// スプラッシュ画面
 class SplashPage extends ConsumerWidget {
@@ -30,12 +35,12 @@ class SplashPage extends ConsumerWidget {
           case AppInitResult.signedOut:
             viewLogger.info('サインイン画面へ移動します');
             final router = ref.read(goRouterProvider);
-            router.goNamed(PageId.signIn.routeName);
+            router.goNamed(PageId.signIn.name);
             break;
           case AppInitResult.signedIn:
             viewLogger.info('ホーム画面へ移動します');
             final router = ref.read(goRouterProvider);
-            router.goNamed(PageId.home.routeName);
+            router.goNamed(PageId.home.name);
             break;
         }
       },

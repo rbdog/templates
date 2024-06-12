@@ -1,6 +1,9 @@
+// Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:my_app/logic/types/user.dart';
-import 'package:my_app/state/notifiers/user.dart';
+
+// Project imports:
+import '../../logic/types/user.dart';
+import '../notifiers/user.dart';
 
 typedef _Notifier = UserNotifier;
 typedef _State = User?;

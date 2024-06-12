@@ -1,0 +1,77 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "dev - Chrome",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "args": [
+        "--debug",
+        "-d",
+        "chrome",
+        "--dart-define-from-file=scripts/flavors/dev.json"
+      ]
+    },
+    {
+      "name": "stg - Android",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "args": [
+        "--debug",
+        "-d",
+        "chrome",
+        "--web-hostname",
+        "localhost",
+        "--web-port=5000",
+        "--dart-define-from-file=scripts/flavors/stg.json"
+      ]
+    },
+    {
+      "name": "stg - iOS",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "args": [
+        "--debug",
+        "-d",
+        "chrome",
+        "--web-hostname",
+        "localhost",
+        "--web-port=5000",
+        "--dart-define-from-file=scripts/flavors/stg.json"
+      ]
+    },
+    {
+      "name": "prd - Android",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "args": [
+        "--release",
+        "-d",
+        "chrome",
+        "--web-hostname",
+        "localhost",
+        "--web-port=5000",
+        "--dart-define-from-file=scripts/flavors/prd.json"
+      ]
+    },
+    {
+      "name": "prd - iOS",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+      "args": [
+        "--release",
+        "-d",
+        "chrome",
+        "--web-hostname",
+        "localhost",
+        "--web-port=5000",
+        "--dart-define-from-file=scripts/flavors/prd.json"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+name: feature_auth
+description: A Feature
+publish_to: "none"
+version: 0.7.0
+
+environment:
+  sdk: ^3.4.0
+  flutter: ^3.22.0
+
+# パッケージ一覧
+dependencies:
+  flutter: # フレームワーク本体
+    sdk: flutter
+  flutter_localizations: # 多言語
+    sdk: flutter
+  flutter_riverpod:
+  firebase_auth:
+
+  feature_flavor:
+    path: ../feature_flavor/
+  feature_user:
+    path: ../feature_user/
+
+dev_dependencies:
+  flutter_test: # テスト
+    sdk: flutter
+  flutter_lints: ^4.0.0 # 静的解析
+  import_sorter: # インポート並び替え
+
+flutter:
+  generate: true # gen-l10n コマンドを有効化
+  uses-material-design: false
+  assets:
+    - assets/

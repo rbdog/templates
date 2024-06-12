@@ -1,6 +1,7 @@
-import 'package:my_app/external/interfaces/auth.dart';
-import 'package:my_app/logic/types/sign_in_with.dart';
-import 'package:my_app/logic/types/user.dart';
+// Project imports:
+import '../../interfaces/auth.dart';
+import '../../../logic/types/sign_in_with.dart';
+import '../../../logic/types/user.dart';
 
 /// stgフレーバー用の Firebase Auth
 class StgAuth implements Auth {

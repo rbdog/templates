@@ -1,6 +1,11 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:my_app/view/theme/fonts.dart';
+
+// Project imports:
+import '../theme/fonts.dart';
 
 /// 文字編集フィールド
 class MyTextField extends HookWidget {

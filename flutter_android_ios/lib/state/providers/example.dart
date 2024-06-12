@@ -1,5 +1,8 @@
+// Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:my_app/state/notifiers/example.dart';
+
+// Project imports:
+import '../notifiers/example.dart';
 
 typedef _Notifier = ExampleNotifier;
 typedef _State = String;

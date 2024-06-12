@@ -1,7 +1,8 @@
-import 'package:my_app/external/logger.dart';
-import 'package:my_app/external/interfaces/firestore.dart';
-import 'package:my_app/logic/types/todo.dart';
-import 'package:my_app/logic/types/status.dart';
+// Project imports:
+import '../../interfaces/firestore.dart';
+import '../../logger.dart';
+import '../../../logic/types/status.dart';
+import '../../../logic/types/todo.dart';
 
 /// devフレーバー用の Firestore
 class DevFirestore implements Firestore {

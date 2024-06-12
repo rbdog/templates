@@ -1,6 +1,9 @@
+// Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:my_app/state/logger.dart';
-import 'package:my_app/state/di/external.dart';
+
+// Project imports:
+import '../di/external.dart';
+import '../logger.dart';
 
 /// デバッグ用
 class DebugEventNotifier extends Notifier<void> {

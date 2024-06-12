@@ -1,14 +1,19 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:my_app/logic/types/todo.dart';
-import 'package:my_app/state/providers/todo_list.dart';
-import 'package:my_app/view/logger.dart';
-import 'package:my_app/view/router/page_path.dart';
-import 'package:my_app/view/router/go_router.dart';
-import 'package:my_app/view/widgets/add_button.dart';
-import 'package:my_app/view/widgets/loading.dart';
-import 'package:my_app/view/widgets/todo_card.dart';
-import 'package:my_app/view/theme/sizes.dart';
+
+// Project imports:
+import '../../logic/types/todo.dart';
+import '../../state/providers/todo_list.dart';
+import '../logger.dart';
+import '../router/go_router.dart';
+import '../router/page_path.dart';
+import '../theme/sizes.dart';
+import '../widgets/add_button.dart';
+import '../widgets/loading.dart';
+import '../widgets/todo_card.dart';
 
 /// ホーム画面
 class HomePage extends ConsumerWidget {
@@ -78,7 +83,7 @@ class _ListView extends ConsumerWidget {
               // 編集画面へ進む
               final router = ref.read(goRouterProvider);
               router.pushNamed(
-                PageId.edit.routeName,
+                PageId.edit.name,
                 pathParameters: {'id': todo.id},
               );
             },

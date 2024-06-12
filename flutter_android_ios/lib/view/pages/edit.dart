@@ -1,17 +1,22 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:my_app/state/providers/editting_todo.dart';
-import 'package:my_app/view/logger.dart';
-import 'package:my_app/view/theme/l10n.dart';
-import 'package:my_app/view/theme/colors.dart';
-import 'package:my_app/view/theme/sizes.dart';
-import 'package:my_app/view/widgets/gap.dart';
-import 'package:my_app/view/widgets/save_button.dart';
-import 'package:my_app/view/widgets/status_button.dart';
-import 'package:my_app/view/widgets/text_field.dart';
-import 'package:my_app/view/widgets/status_text.dart';
-import 'package:my_app/view/dialogs/warn.dart';
-import 'package:my_app/view/router/go_router.dart';
+
+// Project imports:
+import '../../state/providers/editting_todo.dart';
+import '../dialogs/warn.dart';
+import '../logger.dart';
+import '../router/go_router.dart';
+import '../theme/colors.dart';
+import '../theme/l10n.dart';
+import '../theme/sizes.dart';
+import '../widgets/gap.dart';
+import '../widgets/save_button.dart';
+import '../widgets/status_button.dart';
+import '../widgets/status_text.dart';
+import '../widgets/text_field.dart';
 
 /// 編集画面
 class EditPage extends ConsumerWidget {

@@ -1,5 +1,6 @@
-import 'package:my_app/logic/types/sign_in_with.dart';
-import 'package:my_app/logic/types/user.dart';
+// Project imports:
+import '../../logic/types/sign_in_with.dart';
+import '../../logic/types/user.dart';
 
 /// Firebase Auth
 abstract interface class Auth {

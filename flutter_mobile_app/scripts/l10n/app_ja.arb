@@ -1,0 +1,12 @@
+{
+  "hello": "こんにちは",
+  "statusTodo": "予定",
+  "statusDoing": "進行中",
+  "statusDone": "完了",
+  "edit": "編集",
+  "createNew": "新規作成",
+  "delete": "削除",
+  "save": "保存",
+  "ok": "OK",
+  "tooLongTextMesage": "入力文字が長すぎます"
+}

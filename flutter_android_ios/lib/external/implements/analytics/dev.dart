@@ -1,6 +1,7 @@
-import 'package:my_app/external/interfaces/analytics.dart';
-import 'package:my_app/external/logger.dart';
-import 'package:my_app/logic/types/analytics_event.dart';
+// Project imports:
+import '../../interfaces/analytics.dart';
+import '../../logger.dart';
+import '../../../logic/types/analytics_event.dart';
 
 /// devフレーバー用の Firebase Analytics
 class DevAnalytics implements Analytics {
