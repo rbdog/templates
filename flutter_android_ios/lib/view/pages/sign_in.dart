@@ -1,11 +1,16 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:my_app/logic/types/sign_in_with.dart';
-import 'package:my_app/state/di/external.dart';
-import 'package:my_app/state/providers/user.dart';
-import 'package:my_app/view/logger.dart';
-import 'package:my_app/view/router/go_router.dart';
-import 'package:my_app/view/router/page_path.dart';
+
+// Project imports:
+import '../../logic/types/sign_in_with.dart';
+import '../../state/di/external.dart';
+import '../../state/providers/user.dart';
+import '../logger.dart';
+import '../router/go_router.dart';
+import '../router/page_path.dart';
 
 /// サインイン画面
 class SignInPage extends ConsumerWidget {
@@ -24,7 +29,7 @@ class SignInPage extends ConsumerWidget {
             viewLogger.info('サインインを検知しました');
             viewLogger.info('ホーム画面へ移動します');
             final router = ref.read(goRouterProvider);
-            router.goNamed(PageId.home.routeName);
+            router.goNamed(PageId.home.name);
           }
           break;
         default:

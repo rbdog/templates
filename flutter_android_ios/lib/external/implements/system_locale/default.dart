@@ -1,8 +1,13 @@
+// Flutter imports:
 import 'package:flutter/foundation.dart';
-import 'package:my_app/external/logger.dart';
-import 'package:my_app/external/interfaces/systems_locale.dart';
+
+// Package imports:
 import 'package:intl/intl_browser.dart' as browser;
 import 'package:intl/intl_standalone.dart' as standalone;
+
+// Project imports:
+import '../../interfaces/systems_locale.dart';
+import '../../logger.dart';
 
 /// 共通用システムロケール
 class DefaultSystemLocale implements SystemLocale {

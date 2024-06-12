@@ -1,4 +1,5 @@
-import 'package:my_app/external/interfaces/console.dart';
+// Project imports:
+import '../../external/interfaces/console.dart';
 
 enum LogLevel {
   error(30),
@@ -17,8 +18,8 @@ class LogFilter {
   });
 
   final LogLevel minLevel;
-  final List<Feature>? features;
-  final List<Layer>? layers;
+  final List<Feature> features;
+  final List<Layer> layers;
 }
 
 // TODO: 機能細分化
@@ -52,7 +53,7 @@ class Logger {
   Layer? layer;
 
   void error(String message) {
-    if (_shouldPrint(LogLevel.error)) {
+    if (_filter(LogLevel.error)) {
       // 先頭に ERROR: とつける
       const prefix = 'ERROR: ';
       // 赤い文字で出力
@@ -61,7 +62,7 @@ class Logger {
   }
 
   void warn(String message) {
-    if (_shouldPrint(LogLevel.warn)) {
+    if (_filter(LogLevel.warn)) {
       // 先頭に WARN: とつける
       const prefix = 'WARN: ';
       // 黄色の文字で出力
@@ -70,23 +71,21 @@ class Logger {
   }
 
   void info(String message) {
-    if (_shouldPrint(LogLevel.info)) {
+    if (_filter(LogLevel.info)) {
       // 先頭に INFO: とつける
       const prefix = 'INFO: ';
       console.green(prefix + message);
     }
   }
 
-  bool _shouldPrint(LogLevel level) {
+  // true のときに出力する
+  bool _filter(LogLevel level) {
+    // ログレベルフィルター
     if (filter.minLevel.rawValue > level.rawValue) return false;
-    if (filter.layers != null) {
-      // レイヤーフィルターが設定されていたとき
-      if (!filter.layers!.contains(layer)) return false;
-    }
-    if (filter.features != null) {
-      // フィーチャーフィルターが設定されていたとき
-      if (!filter.features!.contains(feature)) return false;
-    }
+    // レイヤーフィルター
+    if (!filter.layers.contains(layer)) return false;
+    // フィーチャーフィルター
+    if (!filter.features.contains(feature)) return false;
     return true;
   }
 }

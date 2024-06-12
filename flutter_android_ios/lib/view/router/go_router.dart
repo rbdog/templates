@@ -1,12 +1,15 @@
-import 'package:go_router/go_router.dart';
+// Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:my_app/view/pages/edit.dart';
-import 'package:my_app/view/pages/home.dart';
-import 'package:my_app/view/pages/sign_in.dart';
-import 'package:my_app/view/pages/splash.dart';
-import 'package:my_app/view/router/page_path.dart';
-import 'package:my_app/view/router/signed_in_shell.dart';
-import 'package:my_app/view/router/version_updater_shell.dart';
+import 'package:go_router/go_router.dart';
+
+// Project imports:
+import '../pages/edit.dart';
+import '../pages/home.dart';
+import '../pages/sign_in.dart';
+import '../pages/splash.dart';
+import 'page_path.dart';
+import 'signed_in_shell.dart';
+import 'version_updater_shell.dart';
 
 /// Provide GoRouter
 final goRouterProvider = Provider(
@@ -14,14 +17,14 @@ final goRouterProvider = Provider(
     /// スプラッシュ画面
     final splash = GoRoute(
       path: PageId.splash.path,
-      name: PageId.splash.routeName,
+      name: PageId.splash.name,
       builder: (_, __) => const SplashPage(),
     );
 
     /// サインイン画面
     final signIn = GoRoute(
       path: PageId.signIn.path,
-      name: PageId.signIn.routeName,
+      name: PageId.signIn.name,
       builder: (_, __) => const SignInPage(),
     );
 
@@ -29,12 +32,12 @@ final goRouterProvider = Provider(
     final signedInPages = [
       GoRoute(
         path: PageId.home.path,
-        name: PageId.home.routeName,
+        name: PageId.home.name,
         builder: (_, __) => const HomePage(),
       ),
       GoRoute(
         path: PageId.edit.path,
-        name: PageId.edit.routeName,
+        name: PageId.edit.name,
         builder: (context, state) {
           final id = state.pathParameters['id']!;
           return EditPage(todoId: id);

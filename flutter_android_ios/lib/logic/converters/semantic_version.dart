@@ -1,4 +1,5 @@
-import 'package:my_app/logic/types/semantic_version.dart';
+// Project imports:
+import '../types/semantic_version.dart';
 
 class SemanticVersionConverter {
   SemanticVersion fromString(String versionString) {

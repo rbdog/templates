@@ -1,8 +1,11 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:my_app/logic/types/status.dart';
-import 'package:my_app/view/theme/sizes.dart';
-import 'package:my_app/view/theme/colors.dart';
-import 'package:my_app/view/widgets/status_image.dart';
+
+// Project imports:
+import '../../logic/types/status.dart';
+import '../theme/colors.dart';
+import '../theme/sizes.dart';
+import 'status_image.dart';
 
 /// ステータス切り替えボタン
 class StatusButton extends StatelessWidget {

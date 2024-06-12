@@ -1,5 +1,6 @@
-import 'package:my_app/external/interfaces/firebase_core.dart';
-import 'package:my_app/external/logger.dart';
+// Project imports:
+import '../../interfaces/firebase_core.dart';
+import '../../logger.dart';
 
 /// devフレーバー用の Firebase Core
 class DevFirebaseCore implements FirebaseCore {

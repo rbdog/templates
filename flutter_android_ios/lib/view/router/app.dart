@@ -1,12 +1,17 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
-import 'package:my_app/state/di/external.dart';
-import 'package:my_app/state/providers/flavor.dart';
-import 'package:my_app/view/router/mobile_simulator.dart';
-import 'package:my_app/view/theme/fonts.dart';
-import 'package:my_app/view/router/go_router.dart';
+
+// Project imports:
+import '../../state/di/external.dart';
+import '../../state/providers/flavor.dart';
+import 'go_router.dart';
+import 'mobile_simulator.dart';
+import '../theme/fonts.dart';
 
 /// ルーターに従って画面を表示
 class App extends ConsumerWidget {
