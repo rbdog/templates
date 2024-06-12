@@ -1,5 +1,6 @@
-import 'package:my_app/logic/types/todo.dart';
-import 'package:my_app/logic/types/status.dart';
+// Project imports:
+import '../types/status.dart';
+import '../types/todo.dart';
 
 /// Todoの更新ルールを担当するクラス
 class TodoUpdater {

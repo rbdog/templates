@@ -1,5 +1,8 @@
+// Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:my_app/state/notifiers/debug_event.dart';
+
+// Project imports:
+import '../notifiers/debug_event.dart';
 
 typedef _Notifier = DebugEventNotifier;
 typedef _State = void;

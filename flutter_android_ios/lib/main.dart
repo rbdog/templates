@@ -1,6 +1,11 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:my_app/view/router/app.dart';
+
+// Project imports:
+import 'view/router/app.dart';
 
 void main() {
   runApp(

@@ -1,5 +1,6 @@
-import 'package:my_app/external/interfaces/analytics.dart';
-import 'package:my_app/logic/types/analytics_event.dart';
+// Project imports:
+import '../../interfaces/analytics.dart';
+import '../../../logic/types/analytics_event.dart';
 
 /// stgフレーバー用の Firebase Analytics
 class StgAnalytics implements Analytics {

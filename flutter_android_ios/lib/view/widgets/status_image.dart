@@ -1,6 +1,9 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:my_app/logic/types/status.dart';
-import 'package:my_app/view/theme/images.dart';
+
+// Project imports:
+import '../../logic/types/status.dart';
+import '../theme/images.dart';
 
 /// ステータス画像
 class StatusImage extends StatelessWidget {

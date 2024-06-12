@@ -1,4 +1,5 @@
-import 'package:my_app/external/interfaces/firebase_core.dart';
+// Project imports:
+import '../../interfaces/firebase_core.dart';
 
 /// stgフレーバー用の Firebase Core
 class StgFirebaseCore implements FirebaseCore {

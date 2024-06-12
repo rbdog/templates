@@ -1,7 +1,8 @@
-import 'package:my_app/external/logger.dart';
-import 'package:my_app/logic/types/semantic_version.dart';
-import 'package:my_app/external/interfaces/remote_config.dart';
-import 'package:my_app/logic/types/app_version_config.dart';
+// Project imports:
+import '../../interfaces/remote_config.dart';
+import '../../logger.dart';
+import '../../../logic/types/app_version_config.dart';
+import '../../../logic/types/semantic_version.dart';
 
 /// devフレーバー用の Firebase Remote Config
 class DevRemoteConfig implements RemoteConfig {

@@ -1,4 +1,5 @@
-import 'package:my_app/logic/types/analytics_event.dart';
+// Project imports:
+import '../../logic/types/analytics_event.dart';
 
 /// Firebase Analytics
 abstract interface class Analytics {

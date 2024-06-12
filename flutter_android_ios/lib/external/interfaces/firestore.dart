@@ -1,4 +1,5 @@
-import 'package:my_app/logic/types/todo.dart';
+// Project imports:
+import '../../logic/types/todo.dart';
 
 /// Firestore
 abstract interface class Firestore {

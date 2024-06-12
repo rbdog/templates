@@ -1,4 +1,5 @@
-import 'package:my_app/external/interfaces/console.dart';
+// Project imports:
+import '../../external/interfaces/console.dart';
 
 enum LogLevel {
   error(30),

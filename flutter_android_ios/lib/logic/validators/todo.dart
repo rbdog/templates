@@ -1,6 +1,7 @@
-import 'package:my_app/logic/config/todo.dart';
-import 'package:my_app/logic/types/todo.dart';
-import 'package:my_app/logic/types/todo_validation_result.dart';
+// Project imports:
+import '../config/todo.dart';
+import '../types/todo.dart';
+import '../types/todo_validation_result.dart';
 
 /// Todoが正常かチェックするクラス
 class TodoValidater {

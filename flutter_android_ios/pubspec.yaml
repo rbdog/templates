@@ -26,6 +26,7 @@ dev_dependencies:
   flutter_test: # テスト
     sdk: flutter
   flutter_lints: ^4.0.0 # 静的解析
+  import_sorter: # インポート並び替え
 
 flutter:
   generate: true # gen-l10n コマンドを有効化

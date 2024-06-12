@@ -1,6 +1,9 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:my_app/external/implements/console/colored_string.dart';
-import 'package:my_app/external/interfaces/console.dart';
+
+// Project imports:
+import 'colored_string.dart';
+import '../../interfaces/console.dart';
 
 /// Console
 class DefaultConsole implements Console {

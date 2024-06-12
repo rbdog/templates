@@ -1,4 +1,5 @@
-import 'package:my_app/external/interfaces/console.dart';
+// Project imports:
+import '../../interfaces/console.dart';
 
 /// 出力できない Console (リリースモードで利用)
 class DisabledConsole implements Console {

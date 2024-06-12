@@ -1,6 +1,9 @@
+// Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:my_app/logic/types/todo.dart';
-import 'package:my_app/state/notifiers/todo_list.dart';
+
+// Project imports:
+import '../../logic/types/todo.dart';
+import '../notifiers/todo_list.dart';
 
 typedef _N = TodoListNotifier;
 

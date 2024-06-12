@@ -1,5 +1,8 @@
+// Flutter imports:
 import 'package:flutter/foundation.dart';
-import 'package:my_app/external/implements/console/disabled.dart';
+
+// Project imports:
+import 'external/implements/console/disabled.dart';
 import 'external/implements/console/default.dart';
 import 'state/notifiers/logger.dart';
 

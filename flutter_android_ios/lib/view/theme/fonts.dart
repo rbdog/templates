@@ -1,5 +1,8 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
-import 'package:my_app/view/theme/sizes.dart';
+
+// Project imports:
+import 'sizes.dart';
 
 /// フォント
 class BrandFont {

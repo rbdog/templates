@@ -1,11 +1,14 @@
+// Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:my_app/logic/config/todo.dart';
-import 'package:my_app/logic/creators/todo.dart';
-import 'package:my_app/logic/types/analytics_event.dart';
-import 'package:my_app/logic/types/todo.dart';
-import 'package:my_app/state/di/external.dart';
-import 'package:my_app/state/logger.dart';
-import 'package:my_app/state/providers/user.dart';
+
+// Project imports:
+import '../../logic/config/todo.dart';
+import '../../logic/creators/todo.dart';
+import '../../logic/types/analytics_event.dart';
+import '../../logic/types/todo.dart';
+import '../di/external.dart';
+import '../logger.dart';
+import '../providers/user.dart';
 
 /// Todo一覧を管理するノティファイヤ
 class TodoListNotifier extends AsyncNotifier<List<Todo>> {

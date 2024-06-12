@@ -1,12 +1,15 @@
-import 'package:go_router/go_router.dart';
+// Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:my_app/view/pages/edit.dart';
-import 'package:my_app/view/pages/home.dart';
-import 'package:my_app/view/pages/sign_in.dart';
-import 'package:my_app/view/pages/splash.dart';
-import 'package:my_app/view/router/page_path.dart';
-import 'package:my_app/view/router/signed_in_shell.dart';
-import 'package:my_app/view/router/version_updater_shell.dart';
+import 'package:go_router/go_router.dart';
+
+// Project imports:
+import '../pages/edit.dart';
+import '../pages/home.dart';
+import '../pages/sign_in.dart';
+import '../pages/splash.dart';
+import 'page_path.dart';
+import 'signed_in_shell.dart';
+import 'version_updater_shell.dart';
 
 /// Provide GoRouter
 final goRouterProvider = Provider(

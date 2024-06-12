@@ -1,10 +1,13 @@
+// Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:my_app/logic/types/todo_validation_result.dart';
-import 'package:my_app/state/logger.dart';
-import 'package:my_app/logic/updaters/todo.dart';
-import 'package:my_app/logic/validators/todo.dart';
-import 'package:my_app/logic/types/todo.dart';
-import 'package:my_app/state/providers/todo_list.dart';
+
+// Project imports:
+import '../../logic/types/todo.dart';
+import '../../logic/types/todo_validation_result.dart';
+import '../../logic/updaters/todo.dart';
+import '../../logic/validators/todo.dart';
+import '../logger.dart';
+import '../providers/todo_list.dart';
 
 /// 編集中Todoを管理するノティファイヤ
 class EdittingTodoNotifier extends FamilyNotifier<Todo, String> {

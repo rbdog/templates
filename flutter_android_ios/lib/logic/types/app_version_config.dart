@@ -1,4 +1,5 @@
-import 'package:my_app/logic/types/semantic_version.dart';
+// Project imports:
+import 'semantic_version.dart';
 
 /// アプリバージョン設定値
 class AppVersionConfig {

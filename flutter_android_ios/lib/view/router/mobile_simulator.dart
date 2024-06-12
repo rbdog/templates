@@ -1,8 +1,13 @@
+// Flutter imports:
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
+// Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:my_app/state/providers/debug_event.dart';
+
+// Project imports:
+import '../../state/providers/debug_event.dart';
 
 /// ブラウザでもスマホのような画面比率で表示する
 class MobileSimulatorView extends ConsumerWidget {

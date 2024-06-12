@@ -44,5 +44,17 @@
         "**/.github": true,
         "**/.firebaserc": false,
         "**/firebase.json": false
-    }
+    },
+    "search.exclude": {
+        "**/.fvm": true
+    },
+    "files.watcherExclude": {
+        "**/.fvm": true,
+        "pubspec.lock": true
+    },
+    "editor.codeActionsOnSave": {
+        "source.fixAll": "explicit",
+        "source.organizeImports": "explicit",
+        "source.addMissingImports": "explicit"
+    },
 }

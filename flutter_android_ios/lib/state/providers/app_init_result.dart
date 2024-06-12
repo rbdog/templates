@@ -1,6 +1,9 @@
+// Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:my_app/logic/types/app_init_result.dart';
-import 'package:my_app/state/notifiers/app_init_result.dart';
+
+// Project imports:
+import '../../logic/types/app_init_result.dart';
+import '../notifiers/app_init_result.dart';
 
 typedef _Notifier = AppInitResultNotifier;
 typedef _State = AppInitResult;

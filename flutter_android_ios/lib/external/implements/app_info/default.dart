@@ -1,5 +1,6 @@
-import 'package:my_app/external/interfaces/app_info.dart';
-import 'package:my_app/logic/types/semantic_version.dart';
+// Project imports:
+import '../../interfaces/app_info.dart';
+import '../../../logic/types/semantic_version.dart';
 
 /// アプリ情報
 class DefaultAppInfo implements AppInfo {

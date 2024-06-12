@@ -1,6 +1,9 @@
+// Package imports:
 import 'package:uuid/uuid.dart';
-import 'package:my_app/logic/types/todo.dart';
-import 'package:my_app/logic/types/status.dart';
+
+// Project imports:
+import '../types/status.dart';
+import '../types/todo.dart';
 
 /// Todoの作成ルールを担当するクラス
 class TodoCreater {
