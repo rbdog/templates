@@ -35,12 +35,12 @@ class SplashPage extends ConsumerWidget {
           case AppInitResult.signedOut:
             viewLogger.info('サインイン画面へ移動します');
             final router = ref.read(goRouterProvider);
-            router.goNamed(PageId.signIn.routeName);
+            router.goNamed(PageId.signIn.name);
             break;
           case AppInitResult.signedIn:
             viewLogger.info('ホーム画面へ移動します');
             final router = ref.read(goRouterProvider);
-            router.goNamed(PageId.home.routeName);
+            router.goNamed(PageId.home.name);
             break;
         }
       },

@@ -32,7 +32,7 @@ class SignedInShell extends ConsumerWidget {
             viewLogger.info('サインアウトを検知しました');
             viewLogger.info('サインイン画面へ移動します');
             final router = ref.read(goRouterProvider);
-            router.goNamed(PageId.signIn.routeName);
+            router.goNamed(PageId.signIn.name);
           }
           break;
         default:

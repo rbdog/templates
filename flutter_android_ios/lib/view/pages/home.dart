@@ -83,7 +83,7 @@ class _ListView extends ConsumerWidget {
               // 編集画面へ進む
               final router = ref.read(goRouterProvider);
               router.pushNamed(
-                PageId.edit.routeName,
+                PageId.edit.name,
                 pathParameters: {'id': todo.id},
               );
             },

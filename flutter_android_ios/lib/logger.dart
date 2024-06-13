@@ -8,18 +8,24 @@ import 'state/notifiers/logger.dart';
 
 /// デバッグモード
 const _debugFilter = LogFilter(
+  // レベル info 以上のログを記録
   minLevel: LogLevel.info,
-  features: null,
-  layers: null,
+  // 全フィーチャー
+  features: Feature.values,
+  // 全レイヤー
+  layers: Layer.values,
 );
 
 const _debugConsole = DefaultConsole();
 
 /// リリースモード
 const _releaseFilter = LogFilter(
+  // レベル error 以上のログを記録
   minLevel: LogLevel.error,
-  features: null,
-  layers: null,
+  // 全フィーチャー
+  features: Feature.values,
+  // 全レイヤー
+  layers: Layer.values,
 );
 
 const _releaseConsole = DisabledConsole();

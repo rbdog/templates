@@ -17,14 +17,14 @@ final goRouterProvider = Provider(
     /// スプラッシュ画面
     final splash = GoRoute(
       path: PageId.splash.path,
-      name: PageId.splash.routeName,
+      name: PageId.splash.name,
       builder: (_, __) => const SplashPage(),
     );
 
     /// サインイン画面
     final signIn = GoRoute(
       path: PageId.signIn.path,
-      name: PageId.signIn.routeName,
+      name: PageId.signIn.name,
       builder: (_, __) => const SignInPage(),
     );
 
@@ -32,12 +32,12 @@ final goRouterProvider = Provider(
     final signedInPages = [
       GoRoute(
         path: PageId.home.path,
-        name: PageId.home.routeName,
+        name: PageId.home.name,
         builder: (_, __) => const HomePage(),
       ),
       GoRoute(
         path: PageId.edit.path,
-        name: PageId.edit.routeName,
+        name: PageId.edit.name,
         builder: (context, state) {
           final id = state.pathParameters['id']!;
           return EditPage(todoId: id);

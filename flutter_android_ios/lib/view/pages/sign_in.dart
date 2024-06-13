@@ -29,7 +29,7 @@ class SignInPage extends ConsumerWidget {
             viewLogger.info('サインインを検知しました');
             viewLogger.info('ホーム画面へ移動します');
             final router = ref.read(goRouterProvider);
-            router.goNamed(PageId.home.routeName);
+            router.goNamed(PageId.home.name);
           }
           break;
         default:

@@ -1,0 +1,1 @@
+flutter build ipa --release --dart-define-from-file=scripts/flavors/prd.json --export-options-plist="scripts/export_config/ExportOptions.plist"

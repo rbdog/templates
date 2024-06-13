@@ -1,0 +1,20 @@
+name: feature_router
+description: A new Flutter project.
+publish_to: "none"
+version: 0.7.0
+
+environment:
+  sdk: ^3.4.0
+
+# パッケージ一覧
+dependencies:
+  go_router: # 画面遷移
+
+dev_dependencies:
+  freezed: # 不変インスタンス作成 コマンド
+  build_runner: # コード生成
+  flutter_test: # テスト
+    sdk: flutter
+  flutter_lints: ^4.0.0 # 静的解析
+  import_sorter: # インポート並び替え
+
