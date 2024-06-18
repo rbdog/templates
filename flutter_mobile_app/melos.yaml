@@ -1,0 +1,55 @@
+name: project_root
+repository: https://github.com/rbdog/templates/flutter_mobile_app
+packages:
+  - main
+  - feature_app_update
+  - feature_auth
+  - feature_debug_log
+  - feature_flavor
+  - feature_market_analytics
+  - feature_router
+  - feature_theme
+  - feature_todo
+  - feature_user
+
+# melos clean
+# melos bootstrap
+# melos analyze
+# melos format
+# melos publish --no-dry-run
+# melos run
+
+command:
+  clean:
+    hooks:
+      post: |
+        melos exec --flutter -- "flutter clean"
+        melos exec --flutter --file-exists="ios/Podfile.lock" -- "cd ios && rm Podfile.lock"
+  bootstrap:
+    hooks:
+      post: |
+        melos exec --flutter --dir-exists=lib/l10n -- "flutter gen-l10n --arb-dir=scripts/l10n"
+        dart run build_runner build --delete-conflicting-outputs
+
+# melos run update_patch_version --no-select
+
+scripts:
+  update_patch_version:
+    run: |
+      melos version \
+      --all \
+      --no-changelog \
+      --message="NEW {new_package_versions}" \
+      --manual-version=mobile_app:minor \
+      --manual-version=feature_app_update:minor \
+      --manual-version=feature_auth:minor \
+      --manual-version=feature_debug_log:minor \
+      --manual-version=feature_flavor:minor \
+      --manual-version=feature_market_analytics:minor \
+      --manual-version=feature_router:minor \
+      --manual-version=feature_theme:minor \
+      --manual-version=feature_todo:minor \
+      --manual-version=feature_user:minor
+
+# VSCode - Command Pallete
+# Melos: Show package graph
