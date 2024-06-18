@@ -1,12 +1,12 @@
 // Package imports:
-import 'package:feature_auth/feature_auth.dart';
+import 'package:feature_user/feature_user.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // Project imports:
 import '../../logic/config/todo.dart';
 import '../../logic/creators/todo.dart';
 import '../../logic/types/todo.dart';
-import '../di/external.dart';
+import '../../external/firestore/provider.dart';
 
 /// Todo一覧を管理するノティファイヤ
 class TodoListNotifier extends AsyncNotifier<List<Todo>> {
@@ -15,7 +15,8 @@ class TodoListNotifier extends AsyncNotifier<List<Todo>> {
     // Firestore から取得
     final firestore = ref.read(firestoreProvider);
     final user = await ref.read(userProvider.future);
-    final todos = await firestore.findTodosByUserId(user!.id);
+    if (user == null) return [];
+    final todos = await firestore.findTodosByUserId(user.id);
     return todos;
   }
 

@@ -1,7 +1,7 @@
 name: feature_debug_log
 description: A Feature
 publish_to: "none"
-version: 0.8.2
+version: 0.9.0
 
 environment:
   sdk: ^3.4.0
@@ -9,6 +9,8 @@ environment:
 
 # パッケージ一覧
 dependencies:
+  flutter:
+    sdk: flutter
   riverpod:
   intl:
 
@@ -21,5 +23,3 @@ dev_dependencies:
 flutter:
   generate: true # gen-l10n コマンドを有効化
   uses-material-design: false
-  assets:
-    - assets/

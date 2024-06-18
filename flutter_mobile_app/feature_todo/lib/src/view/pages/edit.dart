@@ -1,10 +1,9 @@
 // Flutter imports:
+import 'package:feature_router/feature_router.dart';
 import 'package:feature_theme/feature_theme.dart';
 import 'package:flutter/material.dart';
-
 // Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:go_router/go_router.dart';
 
 // Project imports:
 import '../../state/providers/editting_todo.dart';

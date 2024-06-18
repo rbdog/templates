@@ -6,7 +6,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // Project imports:
 import '../../logic/types/sign_in_with.dart';
-import '../../state/di/external.dart';
+import '../../external/auth/provider.dart';
 
 /// サインイン画面
 class SignInPage extends ConsumerWidget {
