@@ -24,11 +24,3 @@ dev_dependencies:
 flutter:
   generate: true # gen-l10n コマンドを有効化
   uses-material-design: true
-  assets:
-    - assets/fonts/OFL.txt
-    - assets/images/
-  fonts:
-    - family: NotoSansJP
-      fonts:
-        - asset: assets/fonts/NotoSansJP-Bold.otf
-        - asset: assets/fonts/NotoSansJP-Regular.otf
