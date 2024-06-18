@@ -1,7 +1,7 @@
 name: feature_todo
 description: A new Flutter project.
 publish_to: "none"
-version: 0.7.0
+version: 0.8.1
 
 environment:
   sdk: ^3.4.0
@@ -41,8 +41,3 @@ dev_dependencies:
 flutter:
   generate: true # gen-l10n コマンドを有効化
   uses-material-design: true
-  fonts:
-    - family: NotoSansJP
-      fonts:
-        - asset: assets/fonts/NotoSansJP-Bold.otf
-        - asset: assets/fonts/NotoSansJP-Regular.otf
