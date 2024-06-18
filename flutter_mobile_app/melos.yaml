@@ -37,8 +37,10 @@ scripts:
   update_minor_version:
     run: melos version \
       --all \
+      --message="{new_package_versions}" \
       --no-changelog \
       --no-git-tag-version \
+      --no-git-commit-version \
       --manual-version=mobile_app:major \
       --manual-version=feature_app_update:major \
       --manual-version=feature_auth:major \
@@ -50,19 +52,6 @@ scripts:
       --manual-version=feature_todo:major \
       --manual-version=feature_user:major
   update_patch_version:
-    run: melos version \
-      --all \
-      --no-changelog \
-      --no-git-tag-version \
-      --manual-version=mobile_app:minor \
-      --manual-version=feature_app_update:minor \
-      --manual-version=feature_auth:minor \
-      --manual-version=feature_debug_log:minor \
-      --manual-version=feature_flavor:minor \
-      --manual-version=feature_market_analytics:minor \
-      --manual-version=feature_router:minor \
-      --manual-version=feature_theme:minor \
-      --manual-version=feature_todo:minor \
-      --manual-version=feature_user:minor
+    run: sh ./scripts/update_patch_version.sh
 # VSCode - Command Pallete
 # Melos: Show package graph
