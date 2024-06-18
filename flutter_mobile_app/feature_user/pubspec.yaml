@@ -1,7 +1,7 @@
 name: feature_user
 description: A Feature
 publish_to: "none"
-version: 0.8.1
+version: 0.8.2
 
 environment:
   sdk: ^3.4.0
@@ -28,5 +28,3 @@ dev_dependencies:
 flutter:
   generate: true # gen-l10n コマンドを有効化
   uses-material-design: false
-  assets:
-    - assets/

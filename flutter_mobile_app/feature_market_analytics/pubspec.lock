@@ -71,7 +71,7 @@ packages:
       path: "../feature_flavor"
       relative: true
     source: path
-    version: "0.7.0"
+    version: "0.8.1"
   firebase_analytics:
     dependency: "direct main"
     description:
