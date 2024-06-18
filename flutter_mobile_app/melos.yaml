@@ -31,27 +31,5 @@ command:
         melos exec --flutter --dir-exists=lib/l10n -- "flutter gen-l10n --arb-dir=scripts/l10n"
         dart run build_runner build --delete-conflicting-outputs
 
-# melos run update_patch_version --no-select
-
-scripts:
-  update_minor_version:
-    run: melos version \
-      --all \
-      --message="{new_package_versions}" \
-      --no-changelog \
-      --no-git-tag-version \
-      --no-git-commit-version \
-      --manual-version=mobile_app:major \
-      --manual-version=feature_app_update:major \
-      --manual-version=feature_auth:major \
-      --manual-version=feature_debug_log:major \
-      --manual-version=feature_flavor:major \
-      --manual-version=feature_market_analytics:major \
-      --manual-version=feature_router:major \
-      --manual-version=feature_theme:major \
-      --manual-version=feature_todo:major \
-      --manual-version=feature_user:major
-  update_patch_version:
-    run: sh ./scripts/update_patch_version.sh
 # VSCode - Command Pallete
 # Melos: Show package graph
