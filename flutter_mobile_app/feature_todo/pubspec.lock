@@ -191,42 +191,42 @@ packages:
       path: "../feature_auth"
       relative: true
     source: path
-    version: "0.8.1"
+    version: "0.8.2"
   feature_debug_log:
     dependency: "direct main"
     description:
       path: "../feature_debug_log"
       relative: true
     source: path
-    version: "0.8.1"
+    version: "0.8.2"
   feature_flavor:
     dependency: "direct main"
     description:
       path: "../feature_flavor"
       relative: true
     source: path
-    version: "0.8.1"
+    version: "0.8.2"
   feature_router:
     dependency: "direct main"
     description:
       path: "../feature_router"
       relative: true
     source: path
-    version: "0.8.1"
+    version: "0.8.2"
   feature_theme:
     dependency: "direct main"
     description:
       path: "../feature_theme"
       relative: true
     source: path
-    version: "0.8.1"
+    version: "0.8.2"
   feature_user:
-    dependency: transitive
+    dependency: "direct main"
     description:
       path: "../feature_user"
       relative: true
     source: path
-    version: "0.8.1"
+    version: "0.8.2"
   file:
     dependency: transitive
     description:

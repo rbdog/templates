@@ -25,6 +25,8 @@ dependencies:
     path: ../feature_debug_log/
   feature_auth:
     path: ../feature_auth/
+  feature_user:
+    path: ../feature_user/
   feature_router:
     path: ../feature_router/
   feature_theme:

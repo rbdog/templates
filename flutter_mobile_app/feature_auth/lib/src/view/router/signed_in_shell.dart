@@ -1,12 +1,12 @@
 // Flutter imports:
-import 'package:feature_user/feature_user.dart';
 import 'package:flutter/material.dart';
 
 // Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // Project imports:
-import '../../state/providers/user.dart';
+import '../../logic/types/auth_user.dart';
+import '../../state/providers/auth_user.dart';
 import '../pages/sign_in.dart';
 
 /// サインイン限定の画面範囲
@@ -16,12 +16,12 @@ class SignedInShell extends ConsumerWidget {
     required this.builder,
   });
 
-  final Widget Function(User user) builder;
+  final Widget Function(AuthUser user) builder;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     /// ユーザー
-    final asyncUser = ref.watch(userProvider);
+    final asyncUser = ref.watch(authUserProvider);
 
     switch (asyncUser) {
       case AsyncData(:final value):

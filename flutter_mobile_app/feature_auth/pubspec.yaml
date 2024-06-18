@@ -18,8 +18,6 @@ dependencies:
 
   feature_flavor:
     path: ../feature_flavor/
-  feature_user:
-    path: ../feature_user/
 
 dev_dependencies:
   flutter_test: # テスト
