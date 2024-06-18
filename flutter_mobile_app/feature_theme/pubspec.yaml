@@ -1,7 +1,7 @@
 name: feature_theme
 description: A new Flutter project.
 publish_to: "none"
-version: 0.7.0
+version: 0.8.1
 
 environment:
   sdk: ^3.4.0
@@ -14,20 +14,8 @@ dependencies:
   flutter_localizations: # 多言語
     sdk: flutter
   intl: # 国際化
-  uuid: # ID生成
-  flutter_riverpod: # 状態管理 - グローバル
-  flutter_hooks: # 状態管理 -ローカル
-  go_router: # 画面遷移
-  freezed_annotation: # 不変インスタンス作成
-
-  feature_debug_log:
-    path: ../feature_debug_log/
-  feature_todo:
-    path: ../feature_todo/
 
 dev_dependencies:
-  freezed: # 不変インスタンス作成 コマンド
-  build_runner: # コード生成
   flutter_test: # テスト
     sdk: flutter
   flutter_lints: ^4.0.0 # 静的解析
