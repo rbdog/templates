@@ -20,5 +20,3 @@ dev_dependencies:
 flutter:
   generate: true # gen-l10n コマンドを有効化
   uses-material-design: false
-  assets:
-    - assets/
