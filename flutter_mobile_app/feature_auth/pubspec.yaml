@@ -1,7 +1,7 @@
 name: feature_auth
 description: A Feature
 publish_to: "none"
-version: 0.8.2
+version: 0.9.0
 
 environment:
   sdk: ^3.4.0
@@ -18,8 +18,6 @@ dependencies:
 
   feature_flavor:
     path: ../feature_flavor/
-  feature_user:
-    path: ../feature_user/
 
 dev_dependencies:
   flutter_test: # テスト
@@ -30,5 +28,3 @@ dev_dependencies:
 flutter:
   generate: true # gen-l10n コマンドを有効化
   uses-material-design: false
-  assets:
-    - assets/

@@ -1,5 +1,5 @@
 // Project imports:
-import '../../external/interfaces/console.dart';
+import '../../external/console/interface.dart';
 import '../../logic/types/feature.dart';
 import '../../logic/types/layer.dart';
 

@@ -2,9 +2,10 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // Project imports:
+import '../../external/app_pkg/provider.dart';
 import '../../logic/types/app_update_policy.dart';
-import '../../logic/validators/app_version.dart';
-import '../di/external.dart';
+import '../../logic/validators/appver_config.dart';
+import '../../external/remote_config/provider.dart';
 
 /// アプリアップデート対応
 class AppUpdatePolicyNotifier extends AsyncNotifier<AppUpdatePolicy> {
@@ -20,11 +21,11 @@ class AppUpdatePolicyNotifier extends AsyncNotifier<AppUpdatePolicy> {
     final config = await remoteConfig.getAppVersionConfig();
 
     /// このアプリのバージョンを取得
-    final appInfo = ref.read(appInfoProvider);
-    final appVersion = await appInfo.getAppVersion();
+    final appPkg = ref.read(appPkgProvider);
+    final appVersion = await appPkg.getVersion();
 
     /// 2つの情報を比較
-    const validator = AppVersionValidator();
+    const validator = AppverConfigValidator();
     final policy = validator.validate(
       config: config,
       appVersion: appVersion,

@@ -63,21 +63,21 @@ packages:
       path: "../feature_debug_log"
       relative: true
     source: path
-    version: "0.8.1"
+    version: "0.8.2"
   feature_flavor:
     dependency: "direct main"
     description:
       path: "../feature_flavor"
       relative: true
     source: path
-    version: "0.8.1"
+    version: "0.8.2"
   feature_theme:
     dependency: "direct main"
     description:
       path: "../feature_theme"
       relative: true
     source: path
-    version: "0.8.1"
+    version: "0.8.2"
   flutter:
     dependency: "direct main"
     description: flutter
