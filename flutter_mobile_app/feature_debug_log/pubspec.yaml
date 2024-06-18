@@ -9,6 +9,8 @@ environment:
 
 # パッケージ一覧
 dependencies:
+  flutter:
+    sdk: flutter
   riverpod:
   intl:
 
