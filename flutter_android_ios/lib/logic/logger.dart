@@ -1,6 +1,6 @@
 // Project imports:
-import '../state/notifiers/logger.dart';
 import '../logger.dart';
+import '../state/logger/notifier.dart';
 
 Logger get logicLogger {
   featureLogger.layer = Layer.logic;

@@ -1,7 +1,7 @@
 // Project imports:
+import '../../logic/types/todo.dart';
 import 'interface.dart';
 import '../../logic/types/status.dart';
-import '../../logic/types/todo.dart';
 
 /// devフレーバー用の Firestore
 class DevFirestore implements Firestore {

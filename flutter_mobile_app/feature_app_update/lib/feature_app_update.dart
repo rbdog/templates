@@ -1,1 +1,1 @@
-export 'src/view/router/version_updater_shell.dart';
+export 'src/view/router/appver_shell.dart';

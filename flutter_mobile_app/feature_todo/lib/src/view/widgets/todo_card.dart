@@ -2,8 +2,8 @@
 import 'package:flutter/material.dart';
 
 // Project imports:
-import '../../logic/types/todo.dart';
 import 'package:feature_theme/feature_theme.dart';
+import '../../logic/types/todo.dart';
 import 'delete_button.dart';
 import 'status_image.dart';
 

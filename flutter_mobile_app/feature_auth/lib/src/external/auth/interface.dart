@@ -1,12 +1,12 @@
 // Project imports:
 
-import '../../logic/types/auth_user.dart';
+import '../../logic/types/auth_cert.dart';
 import '../../logic/types/sign_in_with.dart';
 
 /// Firebase Auth
 abstract interface class Auth {
-  /// ユーザーの変化を監視
-  Stream<AuthUser?> watchUser();
+  /// 認証の変化を監視
+  Stream<AuthCert?> watchCert();
 
   /// サインインしているかどうか
   Future<bool> isSignedIn();

@@ -1,1 +1,1 @@
-export 'src/state/notifiers/logger.dart';
+export 'src/state/logger/notifier.dart';

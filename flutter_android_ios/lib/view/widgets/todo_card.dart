@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 // Project imports:
-import '../../logic/types/todo.dart';
+import '../../logic/todo/types/todo.dart';
 import '../theme/colors.dart';
 import '../theme/fonts.dart';
 import '../theme/sizes.dart';

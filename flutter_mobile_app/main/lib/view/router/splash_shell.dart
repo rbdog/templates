@@ -5,8 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // Project imports:
-import '../../state/providers/app_init_result.dart';
-import '../pages/error.dart';
+import '../../state/app_init_result/provider.dart';
+import '../widget/error.dart';
+import '../widget/splash.dart';
 
 /// スプラッシュ画面
 class SplashShell extends ConsumerWidget {
@@ -31,15 +32,7 @@ class SplashShell extends ConsumerWidget {
           stackTrace: stackTrace,
         );
       default:
-        return Scaffold(
-          appBar: AppBar(
-            backgroundColor: Colors.orange,
-            title: const Text('スプラッシュ画面'),
-          ),
-          body: const Center(
-            child: FlutterLogo(size: 100),
-          ),
-        );
+        return const Splash();
     }
   }
 }

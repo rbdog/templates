@@ -1,17 +1,12 @@
 {
-  // --- 以下 個別のPCで設定 ---
-  // デバイスのID, Xcodeで確認したものを設定
-  // "ios.simulator": "XXXX-IOS-SIMULATOR-ID-XXXX"
-  // "ios.device": "XXXX-IOS-DEVICE-ID-XXXX"
-  // "android.emulator": "XXXX-ANDROID-EMULATOR-ID-XXXX"
-  // "android.device": "XXXX-ANDROID-DEVICE-ID-XXXX"
-
   "editor.formatOnSave": true,
   "dart.debugExternalPackageLibraries": false,
   "dart.debugSdkLibraries": false,
   "dart.projectSearchDepth": 3,
   "[dart]": {
-    "editor.rulers": [0],
+    "editor.rulers": [
+      0
+    ],
     "editor.defaultFormatter": "Dart-Code.dart-code"
   },
   "[json]": {
@@ -56,5 +51,6 @@
     "source.fixAll": "explicit",
     "source.organizeImports": "explicit",
     "source.addMissingImports": "explicit"
-  }
+  },
+  "dart.flutterSdkPath": ".fvm/versions/3.22.0"
 }
