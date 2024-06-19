@@ -8,6 +8,10 @@ environment:
 
 # パッケージ一覧
 dependencies:
+  flutter:
+    sdk: flutter
+  flutter_web_plugins:
+    sdk: flutter
   go_router: # 画面遷移
 
 dev_dependencies:

@@ -1,6 +1,6 @@
 // Flutter imports:
+import 'package:feature_router/feature_router.dart';
 import 'package:flutter/material.dart';
-
 // Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -8,6 +8,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'view/router/app.dart';
 
 void main() {
+  router.initUrlStrategy();
   runApp(
     // riverpod のルールに従ってアプリ全体を囲む
     const ProviderScope(

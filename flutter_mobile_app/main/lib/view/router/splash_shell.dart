@@ -1,7 +1,4 @@
 // Flutter imports:
-import 'package:feature_app_update/feature_app_update.dart';
-import 'package:feature_auth/feature_auth.dart';
-import 'package:feature_todo/feature_todo.dart';
 import 'package:flutter/material.dart';
 
 // Package imports:
@@ -9,10 +6,17 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // Project imports:
 import '../../state/providers/app_init_result.dart';
+import '../pages/error.dart';
 
 /// スプラッシュ画面
-class SplashPage extends ConsumerWidget {
-  const SplashPage({super.key});
+class SplashShell extends ConsumerWidget {
+  const SplashShell({
+    super.key,
+    required this.builder,
+  });
+
+  /// 初期化が終わったら表示する画面
+  final Widget Function() builder;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -20,22 +24,11 @@ class SplashPage extends ConsumerWidget {
 
     switch (initResult) {
       case AsyncData():
-        return VersionUpdaterShell(
-          child: SignedInShell(
-            builder: (user) {
-              return const HomePage();
-            },
-          ),
-        );
-      case AsyncError():
-        return Scaffold(
-          appBar: AppBar(
-            backgroundColor: Colors.orange,
-            title: const Text('エラー画面'),
-          ),
-          body: const Center(
-            child: FlutterLogo(size: 100),
-          ),
+        return builder();
+      case AsyncError(:final error, :final stackTrace):
+        return ErrorPage(
+          error: error,
+          stackTrace: stackTrace,
         );
       default:
         return Scaffold(
