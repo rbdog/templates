@@ -11,7 +11,7 @@ import '../dialogs/force_update.dart';
 import '../dialogs/recommend_update.dart';
 import '../logger.dart';
 
-/// 最新アプリを使うことを保証するシェル
+/// 新しいアプリを使うことを保証するシェル
 class NewAppShell extends ConsumerWidget {
   const NewAppShell({
     super.key,
