@@ -2,8 +2,8 @@
 import '../../semver/types/semver.dart';
 
 /// アプリバージョン設定値
-class AppVersionConfig {
-  const AppVersionConfig({
+class AppVerConfig {
+  const AppVerConfig({
     required this.latest,
     required this.minRecommended,
     required this.minSupported,
