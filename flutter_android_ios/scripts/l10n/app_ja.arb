@@ -8,5 +8,5 @@
   "delete": "削除",
   "save": "保存",
   "ok": "OK",
-  "tooLongTextMesage": "入力文字が長すぎます"
+  "textIsTooLong": "入力文字が長すぎます"
 }

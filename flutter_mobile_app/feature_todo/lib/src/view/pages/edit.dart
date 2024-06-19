@@ -26,7 +26,7 @@ class EditPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     /// 編集中のTodo
-    final todo = ref.watch(
+    final edittingTodo = ref.watch(
       edittingTodoProvider(todoId),
     );
 
@@ -35,45 +35,42 @@ class EditPage extends ConsumerWidget {
       width: RawSize.p60,
       height: RawSize.p60,
       child: StatusButton(
-        status: todo.status,
+        status: edittingTodo.status,
         onPressed: () {
-          // ユースケースを呼び出す
-          final usecase = ref.read(
+          final notifier = ref.read(
             edittingTodoProvider(todoId).notifier,
           );
-          usecase.editStatus();
+          notifier.editStatus();
         },
       ),
     );
 
     /// ステータス文字
-    final statusText = StatusText(status: todo.status);
+    final statusText = StatusText(status: edittingTodo.status);
 
     /// テキスト編集フォーム
     final field = MyTextField(
-      value: todo.text,
+      value: edittingTodo.text,
       onChanged: (value) {
-        // ユースケースを呼び出す
-        final usecase = ref.read(
+        final notifier = ref.read(
           edittingTodoProvider(todoId).notifier,
         );
-        usecase.editText(value);
+        notifier.editText(value);
       },
     );
 
     /// 保存ボタン
     final saveButton = SaveButton(
       onPressed: () {
-        // ユースケースを呼び出す
-        final usecase = ref.read(
+        final notifier = ref.read(
           edittingTodoProvider(todoId).notifier,
         );
-        usecase.save(
+        notifier.save(
           onValidateFailure: () {
             // 失敗したらダイアログを表示
             showWarnDialog(
               context,
-              context.l10n.tooLongTextMesage,
+              context.l10n.textIsTooLong,
             );
           },
           onSuccess: () {
@@ -90,6 +87,7 @@ class EditPage extends ConsumerWidget {
       appBar: AppBar(
         backgroundColor: BrandColor.bananaYellow,
         title: const Text('編集画面'),
+        automaticallyImplyLeading: true,
       ),
       floatingActionButton: saveButton,
       body: Container(

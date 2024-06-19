@@ -8,5 +8,5 @@
   "delete": "Delete",
   "save": "Save",
   "ok": "OK",
-  "tooLongTextMesage": "Text is Too Long"
+  "textIsTooLong": "Text is Too Long"
 }
