@@ -76,7 +76,7 @@ class _ListView extends ConsumerWidget {
           final todo = todoList[index];
           return TodoCard(
             todo: todoList[index],
-            onPressed: () {
+            onPressedEdit: () {
               // 編集画面へ進む
               final router = GoRouter.of(context);
               router.pushNamed(

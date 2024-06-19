@@ -12,15 +12,15 @@ class TodoCard extends StatelessWidget {
   const TodoCard({
     super.key,
     required this.todo,
-    required this.onPressed,
+    required this.onPressedEdit,
     required this.onPressedDelete,
   });
 
   /// 表示するTodo
   final Todo todo;
 
-  /// コールバック カード全体
-  final VoidCallback onPressed;
+  /// コールバック 編集
+  final VoidCallback onPressedEdit;
 
   /// コールバック 削除
   final VoidCallback onPressedDelete;
@@ -82,7 +82,7 @@ class TodoCard extends StatelessWidget {
     return Card(
       clipBehavior: Clip.hardEdge,
       child: InkWell(
-        onTap: onPressed,
+        onTap: onPressedEdit,
         child: layouts,
       ),
     );

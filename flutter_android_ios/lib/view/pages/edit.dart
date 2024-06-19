@@ -80,7 +80,7 @@ class EditPage extends ConsumerWidget {
             // 失敗したらダイアログを表示
             showWarnDialog(
               context,
-              context.l10n.tooLongTextMesage,
+              context.l10n.textIsTooLong,
             );
           },
           onSuccess: () {

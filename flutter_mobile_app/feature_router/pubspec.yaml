@@ -1,13 +1,17 @@
 name: feature_router
 description: A new Flutter project.
 publish_to: "none"
-version: 0.9.0
+version: 0.10.0
 
 environment:
   sdk: ^3.4.0
 
 # パッケージ一覧
 dependencies:
+  flutter:
+    sdk: flutter
+  flutter_web_plugins:
+    sdk: flutter
   go_router: # 画面遷移
 
 dev_dependencies:

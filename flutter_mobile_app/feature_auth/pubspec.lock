@@ -71,7 +71,7 @@ packages:
       path: "../feature_flavor"
       relative: true
     source: path
-    version: "0.8.2"
+    version: "0.10.0"
   firebase_auth:
     dependency: "direct main"
     description:
