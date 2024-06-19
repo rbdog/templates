@@ -2,9 +2,9 @@
 import 'package:flutter/foundation.dart';
 
 // Project imports:
-import 'external/implements/console/disabled.dart';
-import 'external/implements/console/default.dart';
-import 'state/notifiers/logger.dart';
+import 'external/console/impl_default.dart';
+import 'external/console/impl_disabled.dart';
+import 'state/logger/notifier.dart';
 
 /// デバッグモード
 const _debugFilter = LogFilter(

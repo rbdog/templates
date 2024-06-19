@@ -1,13 +1,13 @@
 // Project imports:
 
-import '../../logic/types/auth_user.dart';
+import '../../logic/types/auth_cert.dart';
 import 'interface.dart';
 import '../../logic/types/sign_in_with.dart';
 
 /// stgフレーバー用の Firebase Auth
 class StgAuth implements Auth {
   @override
-  Stream<AuthUser?> watchUser() {
+  Stream<AuthCert?> watchCert() {
     throw UnimplementedError();
   }
 

@@ -5,12 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // Project imports:
-import '../../logic/types/sign_in_with.dart';
-import '../../state/di/external.dart';
-import '../../state/providers/user.dart';
+import '../../external/auth/provider.dart';
+import '../../logic/auth_cert/types/sign_in_with.dart';
 import '../logger.dart';
-import '../router/go_router.dart';
-import '../router/page_path.dart';
 
 /// サインイン画面
 class SignInPage extends ConsumerWidget {
@@ -20,22 +17,6 @@ class SignInPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     /// ログ
     viewLogger.info('サインイン画面をビルドします');
-
-    // ユーザーを監視
-    ref.listen(userProvider, (_, u) {
-      switch (u) {
-        case AsyncData(:final value):
-          if (value != null) {
-            viewLogger.info('サインインを検知しました');
-            viewLogger.info('ホーム画面へ移動します');
-            final router = ref.read(goRouterProvider);
-            router.goNamed(PageId.home.name);
-          }
-          break;
-        default:
-          break;
-      }
-    });
 
     return Scaffold(
       appBar: AppBar(

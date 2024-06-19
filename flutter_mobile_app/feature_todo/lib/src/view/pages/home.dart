@@ -7,7 +7,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // Project imports:
 import '../../logic/types/todo.dart';
-import '../../state/providers/todo_list.dart';
+import '../../state/todo_list/provider.dart';
 import '../widgets/add_button.dart';
 import '../widgets/loading.dart';
 import '../widgets/todo_card.dart';

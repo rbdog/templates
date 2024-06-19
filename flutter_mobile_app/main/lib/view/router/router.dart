@@ -49,20 +49,20 @@ final routerProvider = Provider(
     );
 
     /// アプリアップデートに守られたすべての画面
-    final updaterShell = ShellRoute(
+    final appverShell = ShellRoute(
       routes: [
         signIn,
         signedInShell,
       ],
       builder: (_, __, child) {
-        return VersionUpdaterShell(child: child);
+        return AppverShell(child: child);
       },
     );
 
     /// スプラッシュ画面に守られたすべての画面
     final splashShell = ShellRoute(
       routes: [
-        updaterShell,
+        appverShell,
       ],
       builder: (_, __, child) {
         return SplashShell(

@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 
 // Project imports:
-import '../../logic/types/status.dart';
+import '../../logic/todo/types/status.dart';
 import '../theme/images.dart';
 
 /// ステータス画像

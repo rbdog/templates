@@ -3,20 +3,20 @@ import 'dart:async';
 
 // Project imports:
 
-import '../../logic/types/auth_user.dart';
+import '../../logic/types/auth_cert.dart';
 import 'interface.dart';
 import '../../logic/types/sign_in_with.dart';
 
 /// devフレーバー用の Firebase Auth
 class DevAuth implements Auth {
-  final streamController = StreamController<AuthUser?>();
+  final streamController = StreamController<AuthCert?>();
 
   @override
-  Stream<AuthUser?> watchUser() {
+  Stream<AuthCert?> watchCert() {
     // 1秒後にサインインを伝える
     Future.delayed(const Duration(seconds: 1)).then((_) {
       streamController.sink.add(
-        const AuthUser(
+        const AuthCert(
           token: 'テストトークン',
           refreshToken: 'テストリフレッシュトークン',
           userId: 'TEST_USER_ID',
@@ -37,7 +37,7 @@ class DevAuth implements Auth {
     switch (signInWith) {
       case SignInWith.google:
         streamController.sink.add(
-          const AuthUser(
+          const AuthCert(
             token: 'テストトークン',
             refreshToken: 'テストリフレッシュトークン',
             userId: 'TEST_GOOGLE_USER_ID',
@@ -46,7 +46,7 @@ class DevAuth implements Auth {
         break;
       case SignInWith.apple:
         streamController.sink.add(
-          const AuthUser(
+          const AuthCert(
             token: 'テストトークン',
             refreshToken: 'テストリフレッシュトークン',
             userId: 'TEST_APPLE_USER_ID',

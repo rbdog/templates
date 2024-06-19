@@ -1,4 +1,3 @@
-// Project imports:
 import '../../logic/types/todo.dart';
 
 /// Firestore

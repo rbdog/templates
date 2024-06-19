@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // Project imports:
-import '../../state/providers/editting_todo.dart';
+import '../../state/editting_todo/provider.dart';
 import '../dialogs/warn.dart';
 import '../widgets/gap.dart';
 import '../widgets/save_button.dart';

@@ -4,23 +4,16 @@ import 'package:go_router/go_router.dart';
 
 // Project imports:
 import '../pages/edit.dart';
-import '../pages/home.dart';
+import '../pages/list.dart';
 import '../pages/sign_in.dart';
-import '../pages/splash.dart';
+import 'new_app_shell.dart';
 import 'page_path.dart';
 import 'signed_in_shell.dart';
-import 'version_updater_shell.dart';
+import 'splash_completed_shell.dart';
 
 /// Provide GoRouter
 final goRouterProvider = Provider(
   (ref) {
-    /// スプラッシュ画面
-    final splash = GoRoute(
-      path: PageId.splash.path,
-      name: PageId.splash.name,
-      builder: (_, __) => const SplashPage(),
-    );
-
     /// サインイン画面
     final signIn = GoRoute(
       path: PageId.signIn.path,
@@ -28,50 +21,64 @@ final goRouterProvider = Provider(
       builder: (_, __) => const SignInPage(),
     );
 
-    /// 一般画面たち
-    final signedInPages = [
-      GoRoute(
-        path: PageId.home.path,
-        name: PageId.home.name,
-        builder: (_, __) => const HomePage(),
-      ),
-      GoRoute(
-        path: PageId.edit.path,
-        name: PageId.edit.name,
-        builder: (context, state) {
-          final id = state.pathParameters['id']!;
-          return EditPage(todoId: id);
-        },
-      ),
-    ];
+    /// ホーム画面
+    final home = GoRoute(
+      path: PageId.home.path,
+      name: PageId.home.name,
+      builder: (_, __) => const ListPage(),
+    );
 
-    /// サインイン限定の画面範囲
-    final signedInRoute = ShellRoute(
-      routes: signedInPages,
-      builder: (_, __, child) {
-        return SignedInShell(child: child);
+    /// 編集画面
+    final edit = GoRoute(
+      path: PageId.edit.path,
+      name: PageId.edit.name,
+      builder: (_, state) {
+        final id = state.pathParameters['id']!;
+        return EditPage(todoId: id);
       },
     );
 
-    /// アプリ アップデート に反応する画面範囲
-    final updaterRoute = ShellRoute(
+    /// サインインしないと見れない画面範囲
+    final signedInRoute = ShellRoute(
       routes: [
-        // サインイン画面
+        home,
+        edit,
+      ],
+      builder: (_, __, child) {
+        return SignedInShell(
+          builder: (_) => child,
+        );
+      },
+    );
+
+    /// 新しいアプリにバージョンアップしないと見れない画面範囲
+    final newAppRoute = ShellRoute(
+      routes: [
         signIn,
-        // サインイン限定の画面範囲
         signedInRoute,
       ],
       builder: (_, __, child) {
-        return VersionUpdaterShell(child: child);
+        return NewAppShell(child: child);
+      },
+    );
+
+    /// スプラッシュ画面が終わらないと見れない画面範囲
+    final splashCompletedShell = ShellRoute(
+      routes: [
+        newAppRoute,
+      ],
+      builder: (_, __, child) {
+        return SplashCompletedShell(
+          builder: () => child,
+        );
       },
     );
 
     return GoRouter(
-      initialLocation: PageId.splash.path,
+      initialLocation: PageId.home.path,
       debugLogDiagnostics: false,
       routes: [
-        splash,
-        updaterRoute,
+        splashCompletedShell,
       ],
     );
   },

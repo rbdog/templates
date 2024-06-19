@@ -7,11 +7,11 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
 
 // Project imports:
-import '../../state/di/external.dart';
-import '../../state/providers/flavor.dart';
-import 'go_router.dart';
-import 'mobile_simulator.dart';
+import '../../external/console/provider.dart';
+import '../../state/flavor/provider.dart';
 import '../theme/fonts.dart';
+import 'go_router.dart';
+import 'mobile_simulator_view.dart';
 
 /// ルーターに従って画面を表示
 class App extends ConsumerWidget {

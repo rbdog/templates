@@ -1,7 +1,7 @@
 name: feature_debug_log
 description: A Feature
 publish_to: "none"
-version: 0.10.0
+version: 0.11.0
 
 environment:
   sdk: ^3.4.0
