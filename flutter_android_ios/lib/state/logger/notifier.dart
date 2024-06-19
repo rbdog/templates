@@ -1,45 +1,6 @@
 // Project imports:
 import '../../external/console/interface.dart';
-
-enum LogLevel {
-  error(30),
-  warn(20),
-  info(10);
-
-  const LogLevel(this.rawValue);
-  final int rawValue;
-}
-
-class LogFilter {
-  const LogFilter({
-    required this.minLevel,
-    required this.features,
-    required this.layers,
-  });
-
-  final LogLevel minLevel;
-  final List<Feature> features;
-  final List<Layer> layers;
-}
-
-// TODO: 機能細分化
-enum Feature {
-  // debugLog,
-  // marketAnalytics,
-  // auth,
-  // appUpdate,
-  // l10n,
-  // todo,
-
-  general,
-}
-
-enum Layer {
-  logic,
-  state,
-  view,
-  external_,
-}
+import 'models.dart';
 
 class Logger {
   Logger({
@@ -49,7 +10,6 @@ class Logger {
 
   final Console console;
   final LogFilter filter;
-  Feature? feature;
   Layer? layer;
 
   void error(String message) {
@@ -84,8 +44,6 @@ class Logger {
     if (filter.minLevel.rawValue > level.rawValue) return false;
     // レイヤーフィルター
     if (!filter.layers.contains(layer)) return false;
-    // フィーチャーフィルター
-    if (!filter.features.contains(feature)) return false;
     return true;
   }
 }
