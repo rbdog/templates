@@ -1,6 +1,6 @@
 // Project imports:
-import 'interface.dart';
 import '../../logic/types/todo.dart';
+import 'interface.dart';
 
 /// stgフレーバー用の Firestore
 class StgFirestore implements Firestore {

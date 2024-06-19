@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // Project imports:
-import '../../logic/types/auth_user.dart';
-import '../../state/providers/auth_user.dart';
+import '../../logic/types/auth_cert.dart';
+import '../../state/auth_cert/provider.dart';
 import '../pages/sign_in.dart';
 
 /// サインイン限定の画面範囲
@@ -16,14 +16,13 @@ class SignedInShell extends ConsumerWidget {
     required this.builder,
   });
 
-  final Widget Function(AuthUser user) builder;
+  final Widget Function(AuthCert cert) builder;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    /// ユーザー
-    final asyncUser = ref.watch(authUserProvider);
+    final asyncCert = ref.watch(authCertProvider);
 
-    switch (asyncUser) {
+    switch (asyncCert) {
       case AsyncData(:final value):
         if (value == null) {
           return const SignInPage();
