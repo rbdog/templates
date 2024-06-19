@@ -1,4 +1,4 @@
-# アプリ テンプレート v0.9
+# アプリ テンプレート v0.12
 
 ## for iOS & Android
 
@@ -57,7 +57,7 @@ flutter gen-l10n --arb-dir=scripts/l10n
 
 ✅ 質問は以下までお願いします。気軽にどうぞ！
 
-- [X (旧 Twitter) ルビー Dog](https://twitter.com/rubydog725)
+- [X (旧 Twitter) Rubydog](https://x.com/rubydog_jp)
 
 <br />
 

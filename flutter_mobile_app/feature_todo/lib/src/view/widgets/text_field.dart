@@ -25,10 +25,15 @@ class MyTextField extends HookWidget {
   Widget build(BuildContext context) {
     /// Hook コントローラー
     final controller = useTextEditingController(text: value);
-    if (controller.text != value) {
-      // 外から変更された時は反映する
-      controller.text = value;
-    }
+
+    useEffect(
+      () {
+        // 外から変更された時は反映する
+        controller.text = value;
+        return null;
+      },
+      [value],
+    );
 
     return TextField(
       style: BrandTextStyle.bodyL,

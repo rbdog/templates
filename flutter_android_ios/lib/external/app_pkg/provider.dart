@@ -6,6 +6,6 @@ import 'impl_default.dart';
 import 'interface.dart';
 
 /// アプリ情報
-final appPackageProvider = Provider<AppPackage>((ref) {
-  return DefaultAppPackage();
+final appPkgProvider = Provider<AppPkg>((ref) {
+  return DefaultAppPkg();
 });

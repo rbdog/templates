@@ -8,6 +8,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../logic/auth_cert/types/auth_cert.dart';
 import '../../state/auth_cert/provider.dart';
 import '../pages/sign_in.dart';
+import '../widgets/splash.dart';
 
 /// サインイン限定の画面範囲
 class SignedInShell extends ConsumerWidget {
@@ -30,11 +31,7 @@ class SignedInShell extends ConsumerWidget {
           return builder(value);
         }
       default:
-        return const Scaffold(
-          body: Center(
-            child: CircularProgressIndicator(),
-          ),
-        );
+        return const Splash();
     }
   }
 }

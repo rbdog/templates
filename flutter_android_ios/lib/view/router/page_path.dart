@@ -1,15 +1,9 @@
 /// 画面ID
 enum PageId {
-  home,
-  signIn,
-  edit,
-}
+  home('/'),
+  signIn('/sign-in'),
+  edit('/:id/edit');
 
-/// 画面パス
-extension PagePath on PageId {
-  String get path => switch (this) {
-        PageId.home => '/',
-        PageId.signIn => '/sign-in',
-        PageId.edit => '/:id/edit',
-      };
+  const PageId(this.path);
+  final String path;
 }
