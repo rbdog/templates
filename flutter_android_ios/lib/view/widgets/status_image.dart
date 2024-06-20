@@ -20,15 +20,15 @@ class StatusImage extends StatelessWidget {
     switch (status) {
       case Status.todo:
         return Image.asset(
-          BrandImage.statusTodo.path,
+          ImageName.statusTodo.path,
         );
       case Status.doing:
         return Image.asset(
-          BrandImage.statusDoing.path,
+          ImageName.statusDoing.path,
         );
       case Status.done:
         return Image.asset(
-          BrandImage.statusDone.path,
+          ImageName.statusDone.path,
         );
     }
   }
