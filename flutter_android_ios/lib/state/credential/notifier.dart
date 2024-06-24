@@ -3,12 +3,12 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // Project imports:
 import '../../external/auth/provider.dart';
-import '../../logic/auth_cert/types/auth_cert.dart';
+import '../../logic/credential/types/credential.dart';
 
-class AuthCertNotifier extends StreamNotifier<AuthCert?> {
+class CredentialNotifier extends StreamNotifier<Credential?> {
   @override
-  Stream<AuthCert?> build() {
+  Stream<Credential?> build() {
     final auth = ref.read(authProvider);
-    return auth.watchCert();
+    return auth.watchCredential();
   }
 }

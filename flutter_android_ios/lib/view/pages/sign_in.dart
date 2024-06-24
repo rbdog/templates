@@ -6,7 +6,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // Project imports:
 import '../../external/auth/provider.dart';
-import '../../logic/auth_cert/types/sign_in_with.dart';
+import '../../logic/credential/types/sign_in_with.dart';
 import '../logger.dart';
 
 /// サインイン画面
