@@ -1,14 +1,14 @@
 // Project imports:
 
 // Project imports:
-import '../../logic/auth_cert/types/auth_cert.dart';
-import '../../logic/auth_cert/types/sign_in_with.dart';
+import '../../logic/credential/types/credential.dart';
+import '../../logic/credential/types/sign_in_with.dart';
 import 'interface.dart';
 
 /// stgフレーバー用の Firebase Auth
-class StgAuth implements Auth {
+class ImplStg implements Auth {
   @override
-  Stream<AuthCert?> watchCert() {
+  Stream<Credential?> watchCredential() {
     throw UnimplementedError();
   }
 

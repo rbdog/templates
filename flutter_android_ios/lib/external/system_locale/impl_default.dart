@@ -10,7 +10,7 @@ import '../logger.dart';
 import 'interface.dart';
 
 /// 共通用システムロケール
-class DefaultSystemLocale implements SystemLocale {
+class ImplDefault implements SystemLocale {
   @override
   Future<void> init() async {
     externalLogger.info('システムローケールの初期化を開始します');

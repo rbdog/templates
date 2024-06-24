@@ -13,8 +13,8 @@ import 'interface.dart';
 final exampleServiceProvider = Provider<ExampleService>((ref) {
   final flavor = ref.watch(flavorProvider);
   return switch (flavor) {
-    Flavor.dev => DevExampleService(),
-    Flavor.stg => StgExampleService(),
-    Flavor.prd => PrdExampleService(),
+    Flavor.dev => ImplDev(),
+    Flavor.stg => ImplStg(),
+    Flavor.prd => ImplPrd(),
   };
 });

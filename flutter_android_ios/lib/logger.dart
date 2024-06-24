@@ -15,7 +15,7 @@ const _debugFilter = LogFilter(
   layers: Layer.values,
 );
 
-const _debugConsole = DefaultConsole();
+const _debugConsole = ImplDefault();
 
 /// リリースモード
 const _releaseFilter = LogFilter(
@@ -25,7 +25,7 @@ const _releaseFilter = LogFilter(
   layers: Layer.values,
 );
 
-const _releaseConsole = DisabledConsole();
+const _releaseConsole = ImplDisabled();
 
 /// ビルドモードに合わせたロガー
 final buildModeLogger = Logger(

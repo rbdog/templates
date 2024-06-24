@@ -5,7 +5,7 @@ import '../../logic/user/types/user.dart';
 import 'interface.dart';
 
 /// prd
-class PrdUserAPi implements UserApi {
+class ImplPrd implements UserApi {
   @override
   Future<User?> getUser({required String id}) async {
     throw UnimplementedError();

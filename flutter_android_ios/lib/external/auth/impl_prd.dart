@@ -1,14 +1,14 @@
 // Project imports:
 
 // Project imports:
-import '../../logic/auth_cert/types/auth_cert.dart';
-import '../../logic/auth_cert/types/sign_in_with.dart';
+import '../../logic/credential/types/credential.dart';
+import '../../logic/credential/types/sign_in_with.dart';
 import 'interface.dart';
 
 /// prdフレーバー用の Firebase Auth
-class PrdAuth implements Auth {
+class ImplPrd implements Auth {
   @override
-  Stream<AuthCert?> watchCert() {
+  Stream<Credential?> watchCredential() {
     throw UnimplementedError();
   }
 
