@@ -7,5 +7,5 @@ import 'interface.dart';
 
 /// Console
 final consoleProvider = Provider<Console>((ref) {
-  return const DefaultConsole();
+  return const ImplDefault();
 });

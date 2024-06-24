@@ -1,9 +1,10 @@
 // Flutter imports:
 import 'package:flutter/material.dart';
 
-/// エラー画面
-class ErrorPage extends StatelessWidget {
-  const ErrorPage({
+/// 何が原因かわからないエラーが起こったときの画面
+/// このエラーは修正できるかどうかわかりません
+class ErrorUnknownPage extends StatelessWidget {
+  const ErrorUnknownPage({
     super.key,
     required this.error,
     required this.stackTrace,

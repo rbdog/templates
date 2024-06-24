@@ -19,13 +19,13 @@ import '../widgets/status_text.dart';
 import '../widgets/text_field.dart';
 
 /// 編集画面
-class EditPage extends ConsumerWidget {
-  const EditPage({
+class TodoEditPage extends ConsumerWidget {
+  const TodoEditPage({
     super.key,
-    required this.todoId,
+    required this.id,
   });
 
-  final String todoId;
+  final String id;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -34,7 +34,7 @@ class EditPage extends ConsumerWidget {
 
     /// 編集中のTodo
     final todo = ref.watch(
-      edittingTodoProvider(todoId),
+      edittingTodoProvider(id),
     );
 
     /// ステータスボタン
@@ -46,7 +46,7 @@ class EditPage extends ConsumerWidget {
         onPressed: () {
           // ユースケースを呼び出す
           final usecase = ref.read(
-            edittingTodoProvider(todoId).notifier,
+            edittingTodoProvider(id).notifier,
           );
           usecase.editStatus();
         },
@@ -62,7 +62,7 @@ class EditPage extends ConsumerWidget {
       onChanged: (value) {
         // ユースケースを呼び出す
         final usecase = ref.read(
-          edittingTodoProvider(todoId).notifier,
+          edittingTodoProvider(id).notifier,
         );
         usecase.editText(value);
       },
@@ -73,7 +73,7 @@ class EditPage extends ConsumerWidget {
       onPressed: () {
         // ユースケースを呼び出す
         final usecase = ref.read(
-          edittingTodoProvider(todoId).notifier,
+          edittingTodoProvider(id).notifier,
         );
         usecase.save(
           onValidateFailure: () {

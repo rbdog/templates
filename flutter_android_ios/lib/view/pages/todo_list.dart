@@ -13,8 +13,8 @@ import '../widgets/add_button.dart';
 import '../widgets/loading.dart';
 import '../widgets/todo_list_view.dart';
 
-class ListPage extends ConsumerWidget {
-  const ListPage({
+class TodoListPage extends ConsumerWidget {
+  const TodoListPage({
     super.key,
   });
 
@@ -48,7 +48,7 @@ class ListPage extends ConsumerWidget {
             // 編集画面へ進む
             final router = ref.read(goRouterProvider);
             router.pushNamed(
-              PageId.edit.name,
+              PagePath.todoEdit.name,
               pathParameters: {'id': todoId},
             );
           },

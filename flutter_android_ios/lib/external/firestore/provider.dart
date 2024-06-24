@@ -13,8 +13,8 @@ import 'interface.dart';
 final firestoreProvider = Provider<Firestore>((ref) {
   final flavor = ref.watch(flavorProvider);
   return switch (flavor) {
-    Flavor.dev => DevFirestore(),
-    Flavor.stg => StgFirestore(),
-    Flavor.prd => PrdFirestore(),
+    Flavor.dev => ImplDev(),
+    Flavor.stg => ImplStg(),
+    Flavor.prd => ImplPrd(),
   };
 });

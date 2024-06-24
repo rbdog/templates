@@ -13,8 +13,8 @@ import 'interface.dart';
 final authProvider = Provider<Auth>((ref) {
   final flavor = ref.watch(flavorProvider);
   return switch (flavor) {
-    Flavor.dev => DevAuth(),
-    Flavor.stg => StgAuth(),
-    Flavor.prd => PrdAuth(),
+    Flavor.dev => ImplDev(),
+    Flavor.stg => ImplStg(),
+    Flavor.prd => ImplPrd(),
   };
 });

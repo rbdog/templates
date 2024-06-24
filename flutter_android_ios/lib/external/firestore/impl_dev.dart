@@ -5,7 +5,7 @@ import '../logger.dart';
 import 'interface.dart';
 
 /// devフレーバー用の Firestore
-class DevFirestore implements Firestore {
+class ImplDev implements Firestore {
   @override
   Future<List<Todo>> findTodosByUserId(String userId) async {
     externalLogger.info('firestoreからTodoを取得します');

@@ -7,5 +7,5 @@ import 'interface.dart';
 
 /// System Locale
 final systemLocaleProvider = Provider<SystemLocale>((ref) {
-  return DefaultSystemLocale();
+  return ImplDefault();
 });

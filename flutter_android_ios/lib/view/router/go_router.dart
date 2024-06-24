@@ -3,10 +3,13 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 // Project imports:
-import '../pages/edit.dart';
-import '../pages/list.dart';
+import '../pages/home.dart';
+import '../pages/todo_edit.dart';
+import '../pages/todo_list.dart';
 import '../pages/sign_in.dart';
-import 'new_app_shell.dart';
+import 'app_maint_shell.dart';
+import 'app_updated_shell.dart';
+import 'notified_shell.dart';
 import 'page_path.dart';
 import 'signed_in_shell.dart';
 import 'splash_completed_shell.dart';
@@ -16,33 +19,41 @@ final goRouterProvider = Provider(
   (ref) {
     /// サインイン画面
     final signIn = GoRoute(
-      path: PageId.signIn.path,
-      name: PageId.signIn.name,
+      path: PagePath.signIn.path,
+      name: PagePath.signIn.name,
       builder: (_, __) => const SignInPage(),
     );
 
     /// ホーム画面
     final home = GoRoute(
-      path: PageId.home.path,
-      name: PageId.home.name,
-      builder: (_, __) => const ListPage(),
+      path: PagePath.home.path,
+      name: PagePath.home.name,
+      builder: (_, __) => const HomePage(),
     );
 
-    /// 編集画面
-    final edit = GoRoute(
-      path: PageId.edit.path,
-      name: PageId.edit.name,
+    /// Todo編集画面
+    final todoEdit = GoRoute(
+      path: PagePath.todoEdit.path,
+      name: PagePath.todoEdit.name,
       builder: (_, state) {
         final id = state.pathParameters['id']!;
-        return EditPage(todoId: id);
+        return TodoEditPage(id: id);
       },
     );
 
+    /// Todoリスト画面
+    final todoList = GoRoute(
+      path: PagePath.todoList.path,
+      name: PagePath.todoList.name,
+      builder: (_, __) => const TodoListPage(),
+    );
+
     /// サインインしないと見れない画面範囲
-    final signedInRoute = ShellRoute(
+    final signedInShell = ShellRoute(
       routes: [
         home,
-        edit,
+        todoList,
+        todoEdit,
       ],
       builder: (_, __, child) {
         return SignedInShell(
@@ -51,21 +62,47 @@ final goRouterProvider = Provider(
       },
     );
 
-    /// 新しいアプリにバージョンアップしないと見れない画面範囲
-    final newAppRoute = ShellRoute(
+    /// 通知を受け取れる画面範囲
+    final notifiedShell = ShellRoute(
       routes: [
         signIn,
-        signedInRoute,
+        signedInShell,
       ],
       builder: (_, __, child) {
-        return NewAppShell(child: child);
+        return NotifiedShell(
+          builder: (_) => child,
+        );
+      },
+    );
+
+    /// メンテナンス中は見れない画面範囲
+    final appMaintShell = ShellRoute(
+      routes: [
+        notifiedShell,
+      ],
+      builder: (_, __, child) {
+        return AppMaintShell(
+          builder: () => child,
+        );
+      },
+    );
+
+    /// 新しいアプリにバージョンアップしないと見れない画面範囲
+    final appUpdatedShell = ShellRoute(
+      routes: [
+        appMaintShell,
+      ],
+      builder: (_, __, child) {
+        return AppUpdatedShell(
+          builder: (_) => child,
+        );
       },
     );
 
     /// スプラッシュ画面が終わらないと見れない画面範囲
     final splashCompletedShell = ShellRoute(
       routes: [
-        newAppRoute,
+        appUpdatedShell,
       ],
       builder: (_, __, child) {
         return SplashCompletedShell(
@@ -75,7 +112,7 @@ final goRouterProvider = Provider(
     );
 
     return GoRouter(
-      initialLocation: PageId.home.path,
+      initialLocation: PagePath.home.path,
       debugLogDiagnostics: false,
       routes: [
         splashCompletedShell,

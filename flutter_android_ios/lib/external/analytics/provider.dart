@@ -13,8 +13,8 @@ import 'interface.dart';
 final analyticsProvider = Provider<Analytics>((ref) {
   final flavor = ref.watch(flavorProvider);
   return switch (flavor) {
-    Flavor.dev => DevAnalytics(),
-    Flavor.stg => StgAnalytics(),
-    Flavor.prd => PrdAnalytics(),
+    Flavor.dev => ImplDev(),
+    Flavor.stg => ImplStg(),
+    Flavor.prd => ImplPrd(),
   };
 });

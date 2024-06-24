@@ -2,8 +2,8 @@
 import 'interface.dart';
 
 /// 出力できない Console (リリースモードで利用)
-class DisabledConsole implements Console {
-  const DisabledConsole();
+class ImplDisabled implements Console {
+  const ImplDisabled();
 
   @override
   void red(String message) {}

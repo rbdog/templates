@@ -6,8 +6,8 @@ import 'colored_string.dart';
 import 'interface.dart';
 
 /// Console
-class DefaultConsole implements Console {
-  const DefaultConsole();
+class ImplDefault implements Console {
+  const ImplDefault();
 
   @override
   void red(String message) {

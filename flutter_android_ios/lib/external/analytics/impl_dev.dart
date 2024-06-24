@@ -4,7 +4,7 @@ import '../logger.dart';
 import 'interface.dart';
 
 /// devフレーバー用の Firebase Analytics
-class DevAnalytics implements Analytics {
+class ImplDev implements Analytics {
   @override
   Future<void> sendEvent(AnalyticsEvent event) async {
     externalLogger.info('アナリティクスにイベントを送信します');

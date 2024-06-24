@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // Project imports:
-import '../../logic/auth_cert/types/auth_cert.dart';
-import '../../state/auth_cert/provider.dart';
+import '../../logic/credential/types/credential.dart';
+import '../../state/credential/provider.dart';
 import '../pages/sign_in.dart';
 import '../widgets/splash.dart';
 
@@ -17,13 +17,13 @@ class SignedInShell extends ConsumerWidget {
     required this.builder,
   });
 
-  final Widget Function(AuthCert cert) builder;
+  final Widget Function(Credential credential) builder;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final asyncCert = ref.watch(authCertProvider);
+    final asyncCredential = ref.watch(credentialProvider);
 
-    switch (asyncCert) {
+    switch (asyncCredential) {
       case AsyncData(:final value):
         if (value == null) {
           return const SignInPage();
@@ -31,7 +31,7 @@ class SignedInShell extends ConsumerWidget {
           return builder(value);
         }
       default:
-        return const Splash();
+        return const Splash(isLoading: true);
     }
   }
 }

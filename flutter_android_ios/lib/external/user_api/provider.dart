@@ -13,9 +13,9 @@ final userApiProvider = Provider<UserApi>(
   (ref) {
     final flavor = ref.watch(flavorProvider);
     return switch (flavor) {
-      Flavor.dev => DevUserApi(),
-      Flavor.stg => StgUserApi(),
-      Flavor.prd => PrdUserAPi(),
+      Flavor.dev => ImplDev(),
+      Flavor.stg => ImplStg(),
+      Flavor.prd => ImplPrd(),
     };
   },
 );
