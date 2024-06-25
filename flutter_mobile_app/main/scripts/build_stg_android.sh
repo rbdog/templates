@@ -1,1 +1,0 @@
-flutter build appbundle --release --dart-define-from-file=scripts/flavors/stg.json

@@ -1,8 +1,0 @@
-name: project_root
-
-environment:
-  sdk: ^3.4.0
-
-dev_dependencies:
-  melos:
-  import_sorter:
