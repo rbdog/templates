@@ -5,7 +5,7 @@
       "name": "dev - Chrome",
       "request": "launch",
       "type": "dart",
-      "program": "main/lib/main.dart",
+      "program": "lib/main.dart",
       "args": [
         "--debug",
         "-d",
@@ -17,7 +17,7 @@
       "name": "stg - Android",
       "request": "launch",
       "type": "dart",
-      "program": "main/lib/main.dart",
+      "program": "lib/main.dart",
       "args": [
         "--debug",
         "-d",
@@ -32,7 +32,7 @@
       "name": "stg - iOS",
       "request": "launch",
       "type": "dart",
-      "program": "main/lib/main.dart",
+      "program": "lib/main.dart",
       "args": [
         "--debug",
         "-d",
@@ -47,7 +47,7 @@
       "name": "prd - Android",
       "request": "launch",
       "type": "dart",
-      "program": "main/lib/main.dart",
+      "program": "lib/main.dart",
       "args": [
         "--release",
         "-d",
@@ -62,7 +62,7 @@
       "name": "prd - iOS",
       "request": "launch",
       "type": "dart",
-      "program": "main/lib/main.dart",
+      "program": "lib/main.dart",
       "args": [
         "--release",
         "-d",
