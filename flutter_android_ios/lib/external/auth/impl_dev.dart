@@ -9,7 +9,7 @@ import 'interface.dart';
 // Project imports:
 
 /// devフレーバー用の Firebase Auth
-class DevAuth implements Auth {
+class ImplDev implements Auth {
   final streamController = StreamController<Credential?>();
 
   @override

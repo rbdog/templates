@@ -6,7 +6,7 @@ import '../../logic/credential/types/sign_in_with.dart';
 import 'interface.dart';
 
 /// stgフレーバー用の Firebase Auth
-class StgAuth implements Auth {
+class ImplStg implements Auth {
   @override
   Stream<Credential?> watchCredential() {
     throw UnimplementedError();

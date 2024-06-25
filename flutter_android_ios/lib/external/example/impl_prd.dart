@@ -2,4 +2,4 @@
 import 'interface.dart';
 
 /// prdフレーバー用の Example
-class PrdExampleService implements ExampleService {}
+class ImplPrd implements ExampleService {}

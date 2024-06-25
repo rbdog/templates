@@ -6,7 +6,7 @@ import '../../logic/credential/types/sign_in_with.dart';
 import 'interface.dart';
 
 /// prdフレーバー用の Firebase Auth
-class PrdAuth implements Auth {
+class ImplPrd implements Auth {
   @override
   Stream<Credential?> watchCredential() {
     throw UnimplementedError();

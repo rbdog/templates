@@ -7,5 +7,5 @@ import 'interface.dart';
 
 /// アプリ情報
 final appPkgProvider = Provider<AppPkg>((ref) {
-  return DefaultAppPkg();
+  return ImplDefault();
 });

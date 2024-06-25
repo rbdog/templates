@@ -1,9 +1,10 @@
 /// 画面ID
-enum PageId {
+enum PagePath {
   home('/'),
   signIn('/sign-in'),
-  edit('/:id/edit');
+  todoList('/todos'),
+  todoEdit('/todos/:id/edit');
 
-  const PageId(this.path);
+  const PagePath(this.path);
   final String path;
 }

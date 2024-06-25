@@ -31,7 +31,7 @@ class SignedInShell extends ConsumerWidget {
           return builder(value);
         }
       default:
-        return const Splash();
+        return const Splash(isLoading: true);
     }
   }
 }

@@ -3,7 +3,7 @@ import '../logger.dart';
 import 'interface.dart';
 
 /// devフレーバー用の Firebase Core
-class DevFirebaseCore implements FirebaseCore {
+class ImplDev implements FirebaseCore {
   @override
   Future<void> init() async {
     externalLogger.info('firebase core の初期化を開始します');
