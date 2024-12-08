@@ -6,18 +6,18 @@
 class AppVerConfig {
   const AppVerConfig({
     required this.latest,
-    required this.min_recommended,
-    required this.min_supported,
+    required this.yellow_line,
+    required this.red_line,
   });
 
   /// 最新
   final String latest;
 
   /// 推奨される最低バージョン
-  final String min_recommended;
+  final String yellow_line;
 
   /// サポートされる最低バージョン
-  final String min_supported;
+  final String red_line;
 }
 
 /// アプリメンテナンス設定値
