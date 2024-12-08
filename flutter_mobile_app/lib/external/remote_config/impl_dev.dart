@@ -14,17 +14,17 @@ class ImplDev implements RemoteConfig {
     await Future.delayed(const Duration(seconds: 1));
 
     const res = models.AppVerConfig(
-      latest: '1.8.0',
-      min_recommended: '1.6.0',
-      min_supported: '1.4.0',
+      latest: '1.0.0',
+      yellow_line: '0.1.0',
+      red_line: '0.0.1',
     );
 
     externalLogger.info('最新のアプリバージョンを取得完了しました');
 
     final converter = SemverConverter();
     final latest = converter.fromString(res.latest);
-    final minRecommended = converter.fromString(res.min_recommended);
-    final minSupported = converter.fromString(res.min_supported);
+    final minRecommended = converter.fromString(res.yellow_line);
+    final minSupported = converter.fromString(res.red_line);
 
     return AppVerConfig(
       latest: latest,

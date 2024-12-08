@@ -1,7 +1,7 @@
 name: mobile_app
 description: A mobile app project.
 publish_to: "none"
-version: 0.14.0
+version: 0.1.0
 
 environment:
   sdk: ^3.4.0
@@ -15,6 +15,7 @@ dependencies:
     sdk: flutter
   intl: # 国際化
   uuid: # ID生成
+  package_info_plus: # アプリバージョン
   flutter_riverpod: # 状態管理 - グローバル
   flutter_hooks: # 状態管理 -ローカル
   go_router: # 画面遷移

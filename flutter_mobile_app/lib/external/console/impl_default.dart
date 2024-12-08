@@ -17,13 +17,13 @@ class ImplDefault implements Console {
 
   @override
   void green(String message) {
-    final logString = ColoredString.yellow(message);
+    final logString = ColoredString.green(message);
     debugPrint(logString);
   }
 
   @override
   void yellow(String message) {
-    final logString = ColoredString.green(message);
+    final logString = ColoredString.yellow(message);
     debugPrint(logString);
   }
 }
