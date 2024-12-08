@@ -6,26 +6,21 @@
       "request": "launch",
       "type": "dart",
       "program": "lib/main.dart",
-      "args": [
-        "--debug",
-        "-d",
-        "chrome",
-        "--dart-define-from-file=scripts/flavors/dev.json"
-      ]
+      "args": ["--debug", "-d", "chrome", "--flavor", "dev"]
     },
     {
       "name": "stg - Mobile",
       "request": "launch",
       "type": "dart",
       "program": "lib/main.dart",
-      "args": ["--debug", "--dart-define-from-file=scripts/flavors/stg.json"]
+      "args": ["--debug", "--flavor", "stg"]
     },
     {
       "name": "prd - Mobile",
       "request": "launch",
       "type": "dart",
       "program": "lib/main.dart",
-      "args": ["--debug", "--dart-define-from-file=scripts/flavors/prd.json"]
+      "args": ["--debug", "--flavor", "prd"]
     }
   ]
 }

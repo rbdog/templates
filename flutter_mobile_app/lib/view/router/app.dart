@@ -23,10 +23,9 @@ class App extends ConsumerWidget {
     // 初回のアクセスでグローバルにキャッシュされる。
     // 以降、ref.watch せずに 'logger' として呼び出せる
     final console = ref.watch(consoleProvider);
-    final flavor = ref.watch(flavorProvider);
     final router = ref.watch(goRouterProvider);
 
-    console.yellow('App is build with FLAVOR: ${flavor.name}');
+    console.yellow('App.build() called FLAVOR: ${flavor.name}');
 
     return MaterialApp.router(
       routerDelegate: router.routerDelegate, // GoRouter

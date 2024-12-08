@@ -11,7 +11,6 @@ import 'interface.dart';
 
 /// Remote Config
 final remoteConfigProvider = Provider<RemoteConfig>((ref) {
-  final flavor = ref.watch(flavorProvider);
   return switch (flavor) {
     Flavor.dev => ImplDev(),
     Flavor.stg => ImplStg(),

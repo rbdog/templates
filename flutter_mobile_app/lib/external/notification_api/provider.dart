@@ -11,7 +11,6 @@ import 'interface.dart';
 
 final notificationApiProvider = Provider<NotificationApi>(
   (ref) {
-    final flavor = ref.watch(flavorProvider);
     return switch (flavor) {
       Flavor.dev => ImplDev(),
       Flavor.stg => ImplStg(),
