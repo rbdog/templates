@@ -11,7 +11,6 @@ import 'interface.dart';
 
 /// Firebase Core
 final firebaseCoreProvider = Provider<FirebaseCore>((ref) {
-  final flavor = ref.watch(flavorProvider);
   return switch (flavor) {
     Flavor.dev => ImplDev(),
     Flavor.stg => ImplStg(),

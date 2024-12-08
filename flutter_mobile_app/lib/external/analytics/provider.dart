@@ -11,7 +11,6 @@ import 'interface.dart';
 
 /// Firebase Analytics
 final analyticsProvider = Provider<Analytics>((ref) {
-  final flavor = ref.watch(flavorProvider);
   return switch (flavor) {
     Flavor.dev => ImplDev(),
     Flavor.stg => ImplStg(),
