@@ -1,1 +1,1 @@
-flutter build ipa --release --dart-define-from-file=scripts/flavors/stg.json --export-options-plist="scripts/export_config/ExportOptions.plist"
+flutter build ipa --release --flavor stg --export-options-plist="scripts/export_config/ExportOptions.plist"

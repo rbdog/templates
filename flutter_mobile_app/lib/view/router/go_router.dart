@@ -4,9 +4,9 @@ import 'package:go_router/go_router.dart';
 
 // Project imports:
 import '../pages/home.dart';
+import '../pages/sign_in.dart';
 import '../pages/todo_edit.dart';
 import '../pages/todo_list.dart';
-import '../pages/sign_in.dart';
 import 'app_maint_shell.dart';
 import 'app_updated_shell.dart';
 import 'notified_shell.dart';

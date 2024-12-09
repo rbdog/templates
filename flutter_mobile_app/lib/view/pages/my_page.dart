@@ -1,9 +1,13 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+// Project imports:
 import '../../state/user/provider.dart';
-import '../widgets/error_unknown.dart';
 import '../widgets/error_bad_program.dart';
+import '../widgets/error_unknown.dart';
 import '../widgets/splash.dart';
 
 class MyPage extends ConsumerWidget {
