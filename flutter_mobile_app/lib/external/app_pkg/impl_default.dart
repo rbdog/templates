@@ -1,8 +1,9 @@
+// Package imports:
 import 'package:package_info_plus/package_info_plus.dart';
 
 // Project imports:
-import '../../logic/semver/types/semver.dart';
 import '../../logic/semver/converter.dart';
+import '../../logic/semver/types/semver.dart';
 import 'interface.dart';
 
 /// アプリ情報

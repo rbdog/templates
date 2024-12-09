@@ -1,5 +1,7 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
 
+// Project imports:
 import '../theme/colors.dart';
 
 class MaintSoonBanner extends StatelessWidget {
