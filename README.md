@@ -2,12 +2,12 @@
 
 <br />
 
-### /flutter_android_ios
+### /flutter_mobile_app
 
-Flutter で iOS, Android のアプリを開発するときのテンプレート。[詳細はこちら](https://github.com/rbdog/templates/tree/main/flutter_android_ios)
+Flutter で iOS, Android のアプリを開発するときのテンプレート。[詳細はこちら](./flutter_mobile_app/)
 
 <br />
 
 # ダウンロード方法
 
-![image](https://github.com/rbdog/templates/blob/main/docs/static/images/download.png?raw=true)
+![image](./docs/static/images/download.png?raw=true)
