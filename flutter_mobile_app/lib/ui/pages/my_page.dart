@@ -10,8 +10,8 @@ import '../widgets/error_bad_program.dart';
 import '../widgets/error_unknown.dart';
 import '../widgets/splash.dart';
 
-class MyPage extends ConsumerWidget {
-  const MyPage({super.key});
+class MyPagePage extends ConsumerWidget {
+  const MyPagePage({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -24,18 +24,11 @@ class MyPage extends ConsumerWidget {
             message: 'サインインしていない状態でマイページを表示しました',
           );
         } else {
-          return Scaffold(
-            body: Center(
-              child: Text(value.nickname),
-            ),
-          );
+          return Scaffold(body: Center(child: Text(value.nickname)));
         }
 
       case AsyncError(:final error, :final stackTrace):
-        return ErrorUnknownPage(
-          error: error,
-          stackTrace: stackTrace,
-        );
+        return ErrorUnknownPage(error: error, stackTrace: stackTrace);
 
       default:
         return const Splash(isLoading: true);

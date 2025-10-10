@@ -2,8 +2,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // Project imports:
-import '../../external/firebase_core/provider.dart';
-import '../../external/system_locale/provider.dart';
+import '../../adapter/firebase_core/provider.dart';
+import '../../adapter/system_locale/provider.dart';
 import '../logger.dart';
 import 'models.dart';
 

@@ -2,7 +2,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // Project imports:
-import '../../external/auth/provider.dart';
+import '../../adapter/auth/provider.dart';
 import '../logger.dart';
 
 /// デバッグ用

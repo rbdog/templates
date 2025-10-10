@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // Project imports:
-import '../../logic/app_maint_announce/types/app_maint_announce.dart';
+import '../../logic/maint/types/app_maint_announce.dart';
 import '../../state/app_maint_announce/provider.dart';
 import '../widgets/error_unknown.dart';
 import '../widgets/maint.dart';
@@ -14,10 +14,7 @@ import '../widgets/splash.dart';
 
 /// メンテナンス状態を管理しているシェル
 class AppMaintShell extends ConsumerWidget {
-  const AppMaintShell({
-    super.key,
-    required this.builder,
-  });
+  const AppMaintShell({super.key, required this.builder});
 
   final Widget Function() builder;
 

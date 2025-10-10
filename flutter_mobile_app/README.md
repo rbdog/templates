@@ -1,4 +1,4 @@
-# アプリ テンプレート v0.18
+# アプリ テンプレート v0.19
 
 ## for iOS & Android
 
@@ -39,12 +39,12 @@ flutter gen-l10n --arb-dir=scripts/l10n
 ✅ できるだけシンプルに必要最低限で、実務に耐えられる構成を目指しています
 ✅ オニオンアーキテクチャと DDD 設計 を簡易化したものです
 
-![image](https://github.com/rbdog/templates/blob/main/docs/static/images/minimal-archit.png?raw=true)
+![image](https://github.com/rbdog/templates/blob/main/docs/static/images/nano-archit.png?raw=true)
 
-- `view`: ... `presentation` を簡易化
+- `ui`: ... `presentation` を簡易化
 - `logic`: ... `domain` を簡易化
 - `state`: ... `application` を簡易化
-- `external`: ... `infrastructure` を簡易化
+- `adapter`: ... `infrastructure` を簡易化
 
 <br />
 

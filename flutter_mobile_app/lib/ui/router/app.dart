@@ -7,7 +7,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
 
 // Project imports:
-import '../../external/console/provider.dart';
+import '../../adapter/console/provider.dart';
 import '../../state/flavor/provider.dart';
 import '../theme/fonts.dart';
 import 'go_router.dart';
@@ -33,17 +33,13 @@ class App extends ConsumerWidget {
       routeInformationProvider: router.routeInformationProvider, // GoRouter
       debugShowCheckedModeBanner: false,
       builder: (_, child) {
-        return MobileSimulatorView(
-          child: child ?? const SizedBox.shrink(),
-        );
+        return MobileSimulatorView(child: child ?? const SizedBox.shrink());
       },
       localizationsDelegates:
           AppLocalizations.localizationsDelegates, // localizations
       supportedLocales: AppLocalizations.supportedLocales, // localizations
       locale: Locale(Intl.systemLocale),
-      theme: ThemeData(
-        fontFamily: BrandFont.general,
-      ),
+      theme: ThemeData(fontFamily: BrandFont.general),
     );
   }
 }

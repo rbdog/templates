@@ -1,5 +1,5 @@
 // Project imports:
-import '../../logic/analytics_event/types/analytics_event.dart';
+import '../../logic/analytics/types/analytics_event.dart';
 import '../logger.dart';
 import 'interface.dart';
 

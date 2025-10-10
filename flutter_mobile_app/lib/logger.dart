@@ -2,8 +2,8 @@
 import 'package:flutter/foundation.dart';
 
 // Project imports:
-import 'external/console/impl_default.dart';
-import 'external/console/impl_disabled.dart';
+import 'adapter/console/impl_default.dart';
+import 'adapter/console/impl_disabled.dart';
 import 'state/logger/models.dart';
 import 'state/logger/notifier.dart';
 

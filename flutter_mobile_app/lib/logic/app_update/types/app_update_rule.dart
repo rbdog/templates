@@ -1,5 +1,5 @@
-/// アプリのアップデート緊急度
-enum AppUpdatePolicy {
+/// アプリのアップデート設定
+enum AppUpdateRule {
   /// 対応不要
   none,
 
@@ -9,8 +9,6 @@ enum AppUpdatePolicy {
   /// アップデートを強制する
   force,
 }
-
-
 
 // --- latest ---
 

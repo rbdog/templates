@@ -9,10 +9,7 @@ import '../theme/sizes.dart';
 
 /// アップデートを強制ダイアログ
 class ForceUpdateDialog extends StatelessWidget {
-  const ForceUpdateDialog({
-    super.key,
-    required this.onPressedOk,
-  });
+  const ForceUpdateDialog({super.key, required this.onPressedOk});
 
   final VoidCallback onPressedOk;
 
@@ -43,9 +40,7 @@ class ForceUpdateDialog extends StatelessWidget {
         onPressed: onPressedOk,
         child: Text(
           context.l10n.ok,
-          style: BrandTextStyle.titleS.copyWith(
-            color: BrandColor.white,
-          ),
+          style: BrandTextStyle.titleS.copyWith(color: BrandColor.white),
         ),
       ),
     );
@@ -65,12 +60,7 @@ class ForceUpdateDialog extends StatelessWidget {
             borderRadius: BorderRadius.circular(RawSize.p8),
           ),
           alignment: Alignment.center,
-          child: Column(
-            children: [
-              messageArea,
-              buttonArea,
-            ],
-          ),
+          child: Column(children: [messageArea, buttonArea]),
         ),
       ),
     );

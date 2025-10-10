@@ -2,9 +2,9 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // Project imports:
-import '../../external/remote_config/provider.dart';
-import '../../logic/app_maint_announce/creator.dart';
-import '../../logic/app_maint_announce/types/app_maint_announce.dart';
+import '../../adapter/remote_config/provider.dart';
+import '../../logic/maint/creator.dart';
+import '../../logic/maint/types/app_maint_announce.dart';
 
 class AppMaintAnnounceNotifier extends AsyncNotifier<AppMaintAnnounce> {
   @override
@@ -18,10 +18,7 @@ class AppMaintAnnounceNotifier extends AsyncNotifier<AppMaintAnnounce> {
 
     const creator = AppMaintAnnounceCreator();
     final now = DateTime.now();
-    final announce = creator.create(
-      config: config,
-      now: now,
-    );
+    final announce = creator.create(config: config, now: now);
 
     return announce;
   }

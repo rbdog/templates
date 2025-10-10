@@ -1,12 +1,9 @@
 // Project imports:
-import '../../external/console/interface.dart';
+import '../../adapter/console/interface.dart';
 import 'models.dart';
 
 class Logger {
-  Logger({
-    required this.console,
-    required this.filter,
-  });
+  Logger({required this.console, required this.filter});
 
   final Console console;
   final LogFilter filter;

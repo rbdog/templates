@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // Project imports:
-import '../../external/auth/provider.dart';
+import '../../adapter/auth/provider.dart';
 import '../../logic/credential/types/sign_in_with.dart';
 import '../logger.dart';
 

@@ -4,8 +4,8 @@ publish_to: "none"
 version: 0.1.0
 
 environment:
-  sdk: ^3.4.0
-  flutter: ^3.22.0
+  sdk: ^3.9.0
+  flutter: ^3.35.0
 
 # パッケージ一覧
 dependencies:
@@ -26,7 +26,7 @@ dev_dependencies:
   build_runner: # コード生成
   flutter_test: # テスト
     sdk: flutter
-  flutter_lints: ^4.0.0 # 静的解析
+  flutter_lints: ^6.0.0 # 静的解析
   import_sorter: # インポート並び替え
 
 flutter:

@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // Project imports:
-import '../../external/app_store/provider.dart';
-import '../../logic/app_update_policy/types/app_update_policy.dart';
-import '../../state/app_update_policy/provider.dart';
+import '../../adapter/app_store/provider.dart';
+import '../../logic/app_update/types/app_update_rule.dart';
+import '../../state/app_update_rule/provider.dart';
 import '../dialogs/force_update.dart';
 import '../logger.dart';
 import '../widgets/error_unknown.dart';
@@ -15,27 +15,24 @@ import '../widgets/splash.dart';
 
 /// 新しいアプリを使うことを保証するシェル
 class AppUpdatedShell extends ConsumerWidget {
-  const AppUpdatedShell({
-    super.key,
-    required this.builder,
-  });
+  const AppUpdatedShell({super.key, required this.builder});
 
   final Widget Function(bool recommendUpdate) builder;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final asyncPolicy = ref.watch(appUpdatePolicyProvider);
+    final asyncRule = ref.watch(appUpdateRuleProvider);
 
-    switch (asyncPolicy) {
+    switch (asyncRule) {
       case AsyncData(:final value):
         switch (value) {
-          case AppUpdatePolicy.none:
+          case AppUpdateRule.none:
             return builder(false);
 
-          case AppUpdatePolicy.recommend:
+          case AppUpdateRule.recommend:
             return builder(true);
 
-          case AppUpdatePolicy.force:
+          case AppUpdateRule.force:
             return Stack(
               alignment: Alignment.center,
               children: [
@@ -51,10 +48,7 @@ class AppUpdatedShell extends ConsumerWidget {
             );
         }
       case AsyncError(:final error, :final stackTrace):
-        return ErrorUnknownPage(
-          error: error,
-          stackTrace: stackTrace,
-        );
+        return ErrorUnknownPage(error: error, stackTrace: stackTrace);
       default:
         return const Splash(isLoading: true);
     }

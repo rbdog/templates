@@ -2,9 +2,9 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 // Project imports:
-import '../../external/analytics/provider.dart';
-import '../../external/firestore/provider.dart';
-import '../../logic/analytics_event/types/analytics_event.dart';
+import '../../adapter/analytics/provider.dart';
+import '../../adapter/firestore/provider.dart';
+import '../../logic/analytics/types/analytics_event.dart';
 import '../../logic/todo/config.dart';
 import '../../logic/todo/creator.dart';
 import '../../logic/todo/types/todo.dart';
@@ -34,9 +34,7 @@ class TodoListNotifier extends AsyncNotifier<List<Todo>> {
     analytics.sendEvent(AnalyticsEvent.addNewTodo);
 
     // ドメインを呼んで新しいTodoを作成
-    final creator = TodoCreator(
-      defaultText: todoConfig.defaultText,
-    );
+    final creator = TodoCreator(defaultText: todoConfig.defaultText);
     final todo = creator.createNewTodo();
 
     final newList = [...state.value!, todo];
@@ -53,9 +51,7 @@ class TodoListNotifier extends AsyncNotifier<List<Todo>> {
     analytics.sendEvent(AnalyticsEvent.deleteTodo);
 
     final newList = List.of(state.value!);
-    newList.removeWhere(
-      (todo) => todo.id == id,
-    );
+    newList.removeWhere((todo) => todo.id == id);
     state = AsyncData(newList);
   }
 
