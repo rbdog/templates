@@ -1,18 +1,16 @@
-// Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-// Project imports:
-import '../../adapter/user_api/provider.dart';
-import '../../logic/user/types/user.dart';
-import '../credential/provider.dart';
+import '../../logic/user/index.dart';
+import '../auth/provider.dart';
+import '../di/adapters.dart';
 
-class UserNotifier extends AsyncNotifier<User?> {
+class UserNotifier extends AutoDisposeAsyncNotifier<User?> {
   @override
   Future<User?> build() async {
-    final credential = await ref.read(credentialProvider.future);
+    final credential = await ref.read(signInCredentialProvider.future);
     if (credential == null) return null;
     final api = ref.read(userApiProvider);
-    final user = api.getUser(id: credential.userID);
+    final user = api.getUser(id: credential.userId);
     return user;
   }
 }

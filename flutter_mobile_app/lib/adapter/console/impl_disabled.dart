@@ -1,4 +1,3 @@
-// Project imports:
 import 'interface.dart';
 
 /// 出力できない Console (リリースモードで利用)

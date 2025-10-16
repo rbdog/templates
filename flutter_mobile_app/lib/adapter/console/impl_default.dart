@@ -1,7 +1,5 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
-// Project imports:
 import 'colored_string.dart';
 import 'interface.dart';
 

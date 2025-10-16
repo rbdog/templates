@@ -1,7 +1,5 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
-// Project imports:
 import '../theme/colors.dart';
 import '../theme/fonts.dart';
 import '../theme/l10n.dart';
@@ -24,11 +22,7 @@ class WarnDialog extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(RawSize.p4),
         alignment: Alignment.center,
-        child: Text(
-          message,
-          style: BrandTextStyle.bodyM,
-          maxLines: 5,
-        ),
+        child: Text(message, style: BrandTextStyle.bodyM, maxLines: 5),
       ),
     );
 
@@ -45,9 +39,7 @@ class WarnDialog extends StatelessWidget {
         onPressed: onPressedOk,
         child: Text(
           context.l10n.ok,
-          style: BrandTextStyle.titleS.copyWith(
-            color: BrandColor.white,
-          ),
+          style: BrandTextStyle.titleS.copyWith(color: BrandColor.white),
         ),
       ),
     );
@@ -67,22 +59,14 @@ class WarnDialog extends StatelessWidget {
             borderRadius: BorderRadius.circular(RawSize.p8),
           ),
           alignment: Alignment.center,
-          child: Column(
-            children: [
-              messageArea,
-              buttonArea,
-            ],
-          ),
+          child: Column(children: [messageArea, buttonArea]),
         ),
       ),
     );
   }
 }
 
-void showWarnDialog(
-  BuildContext context,
-  String message,
-) {
+void showWarnDialog(BuildContext context, String message) {
   showDialog(
     context: context,
     builder: (context) {

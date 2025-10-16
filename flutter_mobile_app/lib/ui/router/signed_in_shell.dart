@@ -1,27 +1,20 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
-
-// Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-// Project imports:
-import '../../logic/credential/types/credential.dart';
-import '../../state/credential/provider.dart';
+import '../../logic/auth/index.dart';
+import '../../state/auth/provider.dart';
 import '../pages/sign_in.dart';
-import '../widgets/splash.dart';
+import '../stateless_components/splash_view.dart';
 
 /// サインイン限定の画面範囲
 class SignedInShell extends ConsumerWidget {
-  const SignedInShell({
-    super.key,
-    required this.builder,
-  });
+  const SignedInShell({super.key, required this.builder});
 
-  final Widget Function(Credential credential) builder;
+  final Widget Function(SignInCredential credential) builder;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final asyncCredential = ref.watch(credentialProvider);
+    final asyncCredential = ref.watch(signInCredentialProvider);
 
     switch (asyncCredential) {
       case AsyncData(:final value):
@@ -31,7 +24,7 @@ class SignedInShell extends ConsumerWidget {
           return builder(value);
         }
       default:
-        return const Splash(isLoading: true);
+        return const SplashView(isLoading: true);
     }
   }
 }

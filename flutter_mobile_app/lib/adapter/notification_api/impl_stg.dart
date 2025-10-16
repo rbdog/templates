@@ -1,13 +1,10 @@
-// Project imports:
-
-// Project imports:
-import '../../logic/notification/type/notification.dart';
+import '../../logic/app_notification/index.dart';
 import 'interface.dart';
 
 /// stg
 class ImplStg implements NotificationApi {
   @override
-  Future<List<MyNotification>> getNotifications() async {
+  Future<List<AppNotification>> getNotifications() async {
     return [];
   }
 }

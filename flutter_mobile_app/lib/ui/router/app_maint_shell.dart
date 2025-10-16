@@ -1,16 +1,12 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
-
-// Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-// Project imports:
-import '../../logic/maint/types/app_maint_announce.dart';
-import '../../state/app_maint_announce/provider.dart';
-import '../widgets/error_unknown.dart';
-import '../widgets/maint.dart';
-import '../widgets/maint_banner.dart';
-import '../widgets/splash.dart';
+import '../../logic/support/index.dart';
+import '../../state/support/provider.dart';
+import '../pages/error_unknown.dart';
+import '../pages/maint.dart';
+import '../stateless_components/maint_soon_banner.dart';
+import '../stateless_components/splash_view.dart';
 
 /// メンテナンス状態を管理しているシェル
 class AppMaintShell extends ConsumerWidget {
@@ -29,10 +25,12 @@ class AppMaintShell extends ConsumerWidget {
             return builder();
           case AppMaintAnnounceSoon(:final startAt, :final endAt):
             return Scaffold(
-              appBar: AppBar(
-                title: MaintSoonBanner(startAt: startAt, endAt: endAt),
+              body: Column(
+                children: [
+                  MaintSoonBanner(startAt: startAt, endAt: endAt),
+                  Expanded(child: builder()),
+                ],
               ),
-              body: builder(),
             );
           case AppMaintAnnounceInProgress(:final endAt):
             return MaintPage(endAt: endAt);
@@ -40,7 +38,7 @@ class AppMaintShell extends ConsumerWidget {
       case AsyncError(:final error, :final stackTrace):
         return ErrorUnknownPage(error: error, stackTrace: stackTrace);
       default:
-        return const Splash(isLoading: true);
+        return const SplashView(isLoading: true);
     }
   }
 }

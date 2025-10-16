@@ -1,7 +1,5 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
-// Project imports:
 import '../theme/colors.dart';
 import '../theme/fonts.dart';
 import '../theme/l10n.dart';

@@ -1,4 +1,4 @@
-// Project imports:
+
 import 'interface.dart';
 
 /// アプリストア

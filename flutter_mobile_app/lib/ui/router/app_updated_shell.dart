@@ -1,17 +1,14 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
-
-// Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-// Project imports:
-import '../../adapter/app_store/provider.dart';
-import '../../logic/app_update/types/app_update_rule.dart';
-import '../../state/app_update_rule/provider.dart';
+import '../../logic/debug/index.dart';
+import '../../logic/support/index.dart';
+import '../../state/debug/provider.dart';
+import '../../state/di/adapters.dart';
+import '../../state/support/provider.dart';
 import '../dialogs/force_update.dart';
-import '../logger.dart';
-import '../widgets/error_unknown.dart';
-import '../widgets/splash.dart';
+import '../pages/error_unknown.dart';
+import '../stateless_components/splash_view.dart';
 
 /// 新しいアプリを使うことを保証するシェル
 class AppUpdatedShell extends ConsumerWidget {
@@ -36,12 +33,13 @@ class AppUpdatedShell extends ConsumerWidget {
             return Stack(
               alignment: Alignment.center,
               children: [
-                const Splash(isLoading: true),
+                const SplashView(isLoading: true),
                 ForceUpdateDialog(
-                  onPressedOk: () {
-                    viewLogger.info('強制アップデート案内');
+                  onPressedOk: () async {
+                    final logger = ref.read(loggerProvider(Layer.ui));
+                    logger.info('強制アップデート案内');
                     final store = ref.read(appStoreProvider);
-                    store.open();
+                    await store.open();
                   },
                 ),
               ],
@@ -50,7 +48,7 @@ class AppUpdatedShell extends ConsumerWidget {
       case AsyncError(:final error, :final stackTrace):
         return ErrorUnknownPage(error: error, stackTrace: stackTrace);
       default:
-        return const Splash(isLoading: true);
+        return const SplashView(isLoading: true);
     }
   }
 }

@@ -1,7 +1,7 @@
-// Project imports:
 
-// Project imports:
-import '../../logic/user/types/user.dart';
+
+
+import '../../logic/user/index.dart';
 import 'interface.dart';
 
 /// prd

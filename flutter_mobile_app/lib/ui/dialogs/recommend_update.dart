@@ -1,7 +1,5 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
-// Project imports:
 import '../theme/colors.dart';
 import '../theme/fonts.dart';
 import '../theme/l10n.dart';
@@ -9,10 +7,7 @@ import '../theme/sizes.dart';
 
 /// アップデートをおすすめダイアログ
 class RecommendUpdateDialog extends StatelessWidget {
-  const RecommendUpdateDialog({
-    super.key,
-    required this.onPressedOk,
-  });
+  const RecommendUpdateDialog({super.key, required this.onPressedOk});
 
   final VoidCallback onPressedOk;
 
@@ -43,9 +38,7 @@ class RecommendUpdateDialog extends StatelessWidget {
         onPressed: onPressedOk,
         child: Text(
           context.l10n.ok,
-          style: BrandTextStyle.titleS.copyWith(
-            color: BrandColor.white,
-          ),
+          style: BrandTextStyle.titleS.copyWith(color: BrandColor.white),
         ),
       ),
     );
@@ -65,12 +58,7 @@ class RecommendUpdateDialog extends StatelessWidget {
             borderRadius: BorderRadius.circular(RawSize.p8),
           ),
           alignment: Alignment.center,
-          child: Column(
-            children: [
-              messageArea,
-              buttonArea,
-            ],
-          ),
+          child: Column(children: [messageArea, buttonArea]),
         ),
       ),
     );

@@ -1,0 +1,5 @@
+# l10n.yaml（プロジェクト直下に置く）
+arb-dir: scripts/l10n
+template-arb-file: app_en.arb
+output-dir: lib/__gen__/l10n
+output-localization-file: l10n.dart

@@ -1,20 +1,13 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
-
-// Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-// Project imports:
-import '../../state/splash_completed/provider.dart';
-import '../widgets/error_unknown.dart';
-import '../widgets/splash.dart';
+import '../../state/support/provider.dart';
+import '../pages/error_unknown.dart';
+import '../stateless_components/splash_view.dart';
 
 /// スプラッシュが完了しないと見れない画面範囲
 class SplashCompletedShell extends ConsumerWidget {
-  const SplashCompletedShell({
-    super.key,
-    required this.builder,
-  });
+  const SplashCompletedShell({super.key, required this.builder});
 
   final Widget Function() builder;
 
@@ -26,12 +19,9 @@ class SplashCompletedShell extends ConsumerWidget {
       case AsyncData():
         return builder();
       case AsyncError(:final error, :final stackTrace):
-        return ErrorUnknownPage(
-          error: error,
-          stackTrace: stackTrace,
-        );
+        return ErrorUnknownPage(error: error, stackTrace: stackTrace);
       default:
-        return const Splash(isLoading: true);
+        return const SplashView(isLoading: true);
     }
   }
 }

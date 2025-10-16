@@ -1,13 +1,9 @@
-// Flutter imports:
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
-// Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-// Project imports:
-import '../../state/debug_event/provider.dart';
+import '../../state/debug/provider.dart';
 
 /// ブラウザでもスマホのような画面比率で表示する
 class MobileSimulatorView extends ConsumerWidget {
@@ -64,10 +60,7 @@ class MobileSimulatorView extends ConsumerWidget {
                 aspectRatio: aspectRatio,
                 child: Container(
                   decoration: BoxDecoration(
-                    border: Border.all(
-                      color: Colors.black,
-                      width: 5,
-                    ),
+                    border: Border.all(color: Colors.black, width: 5),
                   ),
                   child: child,
                 ),

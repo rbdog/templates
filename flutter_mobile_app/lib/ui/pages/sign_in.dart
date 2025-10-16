@@ -1,13 +1,11 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
-
-// Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-// Project imports:
-import '../../adapter/auth/provider.dart';
-import '../../logic/credential/types/sign_in_with.dart';
-import '../logger.dart';
+import '../../logic/auth/index.dart';
+import '../../logic/debug/index.dart';
+import '../../state/debug/provider.dart';
+import '../../state/di/adapters.dart';
+import '../theme/colors.dart';
 
 /// サインイン画面
 class SignInPage extends ConsumerWidget {
@@ -15,29 +13,26 @@ class SignInPage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    /// ログ
-    viewLogger.info('サインイン画面をビルドします');
+    final logger = ref.read(loggerProvider(Layer.ui));
+    logger.info('サインイン画面をビルドします');
 
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.orange,
-        title: const Text('サインイン画面'),
-      ),
+      backgroundColor: BrandColor.pageBackground,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             ElevatedButton(
-              onPressed: () {
-                final auth = ref.read(authProvider);
-                auth.signIn(SignInWith.google);
+              onPressed: () async {
+                final auth = ref.read(firebaseAuthProvider);
+                await auth.signIn(AuthProvider.google);
               },
               child: const Text('Googleでサインイン'),
             ),
             ElevatedButton(
-              onPressed: () {
-                final auth = ref.read(authProvider);
-                auth.signIn(SignInWith.apple);
+              onPressed: () async {
+                final auth = ref.read(firebaseAuthProvider);
+                await auth.signIn(AuthProvider.apple);
               },
               child: const Text('Appleでサインイン'),
             ),

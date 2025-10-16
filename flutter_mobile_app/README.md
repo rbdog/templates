@@ -1,52 +1,51 @@
-# アプリ テンプレート v0.19
+# アプリ テンプレート for Android, iOS
 
-## for iOS & Android
+## Ver.0.20
 
-[ダウンロードはこちらから](https://github.com/rbdog/templates)
+[ダウンロードはこちら](https://github.com/rbdog/templates)
 
-> **Warning**
-> まだ仮の部分が含まれています。今後大きく変更される可能性があります。
+> まだ仮の部分が含まれます。今後大きく変更される可能性があります。
 
-<br />
-
-# こんにちは
-
-✅ このアプリには以下のテンプレートがセットアップ済みです。
-
-- アプリアップデートのお知らせ
-- アプリメンテナンスのお知らせ
-- サインイン / サインアウト機能
-- 通知を受け取る
-- データベース接続
-- 開発用のログ収集
-- マーケティング用のデータ収集
-- 英語その他の言語
 
 <br />
 
-✅ アプリ実行前にプロジェクト直下で以下のコマンドを実行してください. `scripts/l10n` フォルダ内にある多言語翻訳が適用されます.
+## 含まれるもの
+
+- ✅ アップデートのお知らせ
+- ✅ メンテナンスのお知らせ
+- ✅ サインイン / サインアウト (Firebase Auth)
+- ✅ 通知を受け取る
+- ✅ データベース接続 (Cloud Firestore)
+- ✅ 開発用のログ収集 (コンソール)
+- ✅ マーケティング用のデータ収集 (Firebase Analytics)
+- ✅ 英語その他の言語
+
+<br />
+
+## セットアップ
+
+アプリ実行前にプロジェクト直下で以下のコマンドを実行してください. `scripts/l10n` フォルダ内にある多言語翻訳が適用されます.
 
 ```sh
-flutter pub run
-
-flutter gen-l10n --arb-dir=scripts/l10n
+flutter gen-l10n
 ```
 
 <br />
 
-# 設計
+## 説明
 
-✅ できるだけシンプルに必要最低限で、実務に耐えられる構成を目指しています
-✅ オニオンアーキテクチャと DDD 設計 を簡易化したものです
+✅ 一般的な クリーンアーキテクチャ 及び DDD 設計 を実務に耐えられる最小限まで極力簡易化したテンプレートです
+
+- `adapter`: ... `infrastructure` を簡易化
+- `logic`: ... `domain` を簡易化
+- `state`: ... `application` を簡易化
+- `ui`: ... `presentation` を簡易化
 
 ![image](https://github.com/rbdog/templates/blob/main/docs/static/images/nano-archit.png?raw=true)
 
-- `ui`: ... `presentation` を簡易化
-- `logic`: ... `domain` を簡易化
-- `state`: ... `application` を簡易化
-- `adapter`: ... `infrastructure` を簡易化
-
 <br />
+
+## サポート
 
 ✅ 質問は以下までどうぞ
 
@@ -54,6 +53,6 @@ flutter gen-l10n --arb-dir=scripts/l10n
 
 <br />
 
-✅ 検索キーワード
+## 検索用キーワード
 
 `go_router`, `firebase`, `認証`, `アナリティクス`, `Firestore`, `riverpod`, `アップデート`, `メンテナンス`, `l10n`,

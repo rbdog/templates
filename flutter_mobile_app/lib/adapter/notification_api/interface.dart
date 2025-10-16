@@ -1,10 +1,7 @@
-// Project imports:
-
-// Project imports:
-import '../../logic/notification/type/notification.dart';
+import '../../logic/app_notification/index.dart';
 
 /// Notification API
 abstract interface class NotificationApi {
   /// ユーザーを取得
-  Future<List<MyNotification>> getNotifications();
+  Future<List<AppNotification>> getNotifications();
 }

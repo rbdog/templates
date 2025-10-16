@@ -1,11 +1,11 @@
 // Dart imports:
 import 'dart:async';
 
-// Project imports:
-import '../../logic/user/types/user.dart';
+
+import '../../logic/user/index.dart';
 import 'interface.dart';
 
-// Project imports:
+
 
 /// dev
 class ImplDev implements UserApi {

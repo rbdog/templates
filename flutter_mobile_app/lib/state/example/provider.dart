@@ -1,15 +1,9 @@
-// Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-// Project imports:
-import 'notifier.dart';
+import '../../logic/example/index.dart';
+import 'example_record.dart';
 
-typedef _Notifier = ExampleNotifier;
-typedef _State = String;
-
-/// Example
-final exampleStateProvider = NotifierProvider<_Notifier, _State>(
-  () {
-    return _Notifier();
-  },
-);
+final exampleRecordProvider =
+    AutoDisposeNotifierProvider<ExampleRecordNotifier, ExampleRecord>(() {
+      return ExampleRecordNotifier();
+    });

@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Mobile App Dev",
+      "type": "dart",
+      "request": "launch",
+      "program": "${workspaceFolder}/flutter_mobile_app/lib/main.dart",
+      "cwd": "${workspaceFolder}/flutter_mobile_app",
+      "args": ["-d", "chrome", "--flavor=dev", "--web-port=4200"]
+    }
+  ]
+}

@@ -1,4 +1,3 @@
-// Project imports:
 import 'interface.dart';
 
 /// stgフレーバー用の Firebase Core

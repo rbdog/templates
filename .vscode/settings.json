@@ -1,3 +1,18 @@
 {
-  "cSpell.words": ["Deleter", "Maint", "Noto", "usecase"]
+  // 保存時に自動フォーマット
+  "editor.formatOnSave": true,
+
+  // 保存時に import を整理
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "always"
+  },
+
+  "cSpell.words": [
+    "Deleter",
+    "Firestore",
+    "Maint",
+    "Noto",
+    "Rubydog",
+    "usecase"
+  ]
 }

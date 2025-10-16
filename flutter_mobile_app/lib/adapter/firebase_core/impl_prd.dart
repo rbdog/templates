@@ -1,4 +1,3 @@
-// Project imports:
 import 'interface.dart';
 
 /// prdフレーバー用の Firebase Core

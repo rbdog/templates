@@ -1,14 +1,8 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
-
-// Package imports:
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/intl.dart';
 
-// Project imports:
-import '../../adapter/console/provider.dart';
-import '../../state/flavor/provider.dart';
+import '../../__gen__/l10n/l10n.dart';
 import '../theme/fonts.dart';
 import 'go_router.dart';
 import 'mobile_simulator_view.dart';
@@ -19,13 +13,7 @@ class App extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // ログ用のコンソールオブジェクト
-    // 初回のアクセスでグローバルにキャッシュされる。
-    // 以降、ref.watch せずに 'logger' として呼び出せる
-    final console = ref.watch(consoleProvider);
     final router = ref.watch(goRouterProvider);
-
-    console.yellow('App.build() called FLAVOR: ${flavor.name}');
 
     return MaterialApp.router(
       routerDelegate: router.routerDelegate, // GoRouter

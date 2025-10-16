@@ -1,8 +1,10 @@
-// Flutter imports:
 import 'package:flutter/material.dart';
 
 /// ブランドカラー
 class BrandColor {
+  static const pageBackground = Color(0xFFFEF7FF);
+  static const tileForeground = Color(0xFFF7F2FA);
+
   static const bananaYellow = Color(0xFFF4B400);
   static const grey = Color(0xFFAAAAAA);
   static const lightGrey = Color(0xFFEEEEEE);
