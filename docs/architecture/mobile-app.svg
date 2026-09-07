@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 540" width="1000" height="540" role="img" aria-label="flutter_mobile_app の ports and adapters 構成図">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#94a3b8"/>
+    </marker>
+    <style>
+      .box   { stroke-width: 1.5; }
+      .label { font-family: "Hiragino Sans", "Noto Sans JP", system-ui, sans-serif; font-size: 15px; font-weight: 600; text-anchor: middle; }
+      .line  { fill: none; stroke: #94a3b8; stroke-width: 1.5; marker-end: url(#arrow); }
+      .gray  { fill: #f1f5f9; stroke: #94a3b8; }
+      .blue  { fill: #e0f2fe; stroke: #38bdf8; }
+      .red   { fill: #fee2e2; stroke: #f87171; }
+      .green { fill: #dcfce7; stroke: #4ade80; }
+      .amber { fill: #fef3c7; stroke: #fbbf24; }
+      .t-gray  { fill: #334155; }
+      .t-blue  { fill: #075985; }
+      .t-red   { fill: #991b1b; }
+      .t-green { fill: #166534; }
+      .t-amber { fill: #92400e; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="1000" height="540" fill="#ffffff"/>
+
+  <!-- アプリ本体の領域 -->
+  <rect x="60" y="115" width="880" height="380" rx="14" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.5" stroke-dasharray="8 5"/>
+
+  <!-- 外界 -->
+  <rect class="box gray" x="120" y="30" width="200" height="48" rx="8"/>
+  <text class="label t-gray" x="220" y="59">利用者</text>
+  <rect class="box gray" x="680" y="30" width="200" height="48" rx="8"/>
+  <text class="label t-gray" x="780" y="59">外部システム</text>
+
+  <!-- 受け側 / 出す側 -->
+  <rect class="box blue" x="120" y="160" width="200" height="48" rx="8"/>
+  <text class="label t-blue" x="220" y="189">ui</text>
+  <rect class="box green" x="680" y="160" width="200" height="48" rx="8"/>
+  <text class="label t-green" x="780" y="189">adapters</text>
+
+  <!-- 操作と境界 -->
+  <rect class="box red" x="120" y="290" width="200" height="48" rx="8"/>
+  <text class="label t-red" x="220" y="319">usecases</text>
+  <rect class="box green" x="680" y="290" width="200" height="48" rx="8"/>
+  <text class="label t-green" x="780" y="319">ports</text>
+
+  <!-- 全てから依存される -->
+  <rect class="box amber" x="120" y="430" width="760" height="48" rx="8"/>
+  <text class="label t-amber" x="500" y="459">domain</text>
+
+  <path class="line" d="M220,78 L220,156"/>
+  <path class="line" d="M780,158 L780,82"/>
+  <path class="line" d="M220,208 L220,286"/>
+  <path class="line" d="M320,314 L676,314"/>
+  <path class="line" d="M780,208 L780,286"/>
+  <path class="line" d="M220,338 L220,426"/>
+  <path class="line" d="M780,338 L780,426"/>
+  <path class="line" d="M120,184 L90,184 L90,454 L116,454"/>
+  <path class="line" d="M880,184 L910,184 L910,454 L884,454"/>
+</svg>

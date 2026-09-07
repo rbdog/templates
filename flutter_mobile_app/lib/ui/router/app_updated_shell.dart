@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../logic/debug/index.dart';
-import '../../logic/support/index.dart';
-import '../../state/debug/provider.dart';
-import '../../state/di/adapters.dart';
-import '../../state/support/provider.dart';
+import '../../domain/debug/index.dart';
+import '../../domain/support/index.dart';
+import '../../usecases/debug/provider.dart';
+import '../../usecases/support/index.dart';
 import '../dialogs/force_update.dart';
 import '../pages/error_unknown.dart';
 import '../stateless_components/splash_view.dart';
@@ -38,8 +37,7 @@ class AppUpdatedShell extends ConsumerWidget {
                   onPressedOk: () async {
                     final logger = ref.read(loggerProvider(Layer.ui));
                     logger.info('強制アップデート案内');
-                    final store = ref.read(appStoreProvider);
-                    await store.open();
+                    await ref.read(openAppStoreProvider)();
                   },
                 ),
               ],

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../logic/debug/index.dart';
-import '../../state/debug/provider.dart';
-import '../../state/todo/provider.dart';
+import '../../domain/debug/index.dart';
+import '../../usecases/debug/provider.dart';
+import '../../usecases/todo/provider.dart';
 import '../containers/todo_form.dart';
 import '../dialogs/warn.dart';
 import '../router/go_router.dart';

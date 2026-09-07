@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../state/user/index.dart';
+import '../../usecases/user/index.dart';
 import '../pages/error_unknown.dart';
 
 class UserNameContainer extends ConsumerWidget {

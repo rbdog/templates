@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../state/support/provider.dart';
+import '../../usecases/support/provider.dart';
 import '../pages/error_unknown.dart';
 import '../stateless_components/splash_view.dart';
 

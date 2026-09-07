@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../logic/todo/index.dart';
+import '../../domain/todo/index.dart';
 import '../theme/images.dart';
 
 /// ステータス画像

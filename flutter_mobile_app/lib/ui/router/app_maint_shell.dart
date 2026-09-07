@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../logic/support/index.dart';
-import '../../state/support/provider.dart';
+import '../../domain/support/index.dart';
+import '../../usecases/support/provider.dart';
 import '../pages/error_unknown.dart';
 import '../pages/maint.dart';
 import '../stateless_components/maint_soon_banner.dart';

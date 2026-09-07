@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../state/todo/index.dart';
+import '../../usecases/todo/index.dart';
 import '../stateless_components/error_retry_view.dart';
 import '../stateless_components/todo_form.dart';
 

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../logic/auth/index.dart';
-import '../../logic/debug/index.dart';
-import '../../state/debug/provider.dart';
-import '../../state/di/adapters.dart';
+import '../../domain/auth/index.dart';
+import '../../domain/debug/index.dart';
+import '../../usecases/debug/provider.dart';
+import '../../usecases/auth/index.dart';
 import '../theme/colors.dart';
 
 /// サインイン画面
@@ -24,15 +24,13 @@ class SignInPage extends ConsumerWidget {
           children: [
             ElevatedButton(
               onPressed: () async {
-                final auth = ref.read(firebaseAuthProvider);
-                await auth.signIn(AuthProvider.google);
+                await ref.read(signInProvider)(AuthProvider.google);
               },
               child: const Text('Googleでサインイン'),
             ),
             ElevatedButton(
               onPressed: () async {
-                final auth = ref.read(firebaseAuthProvider);
-                await auth.signIn(AuthProvider.apple);
+                await ref.read(signInProvider)(AuthProvider.apple);
               },
               child: const Text('Appleでサインイン'),
             ),

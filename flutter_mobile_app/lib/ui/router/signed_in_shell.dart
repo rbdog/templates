@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../logic/auth/index.dart';
-import '../../state/auth/provider.dart';
+import '../../domain/auth/index.dart';
+import '../../usecases/auth/provider.dart';
 import '../pages/sign_in.dart';
 import '../stateless_components/splash_view.dart';
 

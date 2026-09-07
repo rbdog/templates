@@ -34,14 +34,23 @@ flutter gen-l10n
 
 ## 説明
 
-✅ 一般的な クリーンアーキテクチャ 及び DDD 設計 を実務に耐えられる最小限まで極力簡易化したテンプレートです
+✅ ports & adapters (ヘキサゴナルアーキテクチャ) で組んだテンプレートです
 
-- `adapter`: ... `infrastructure` を簡易化
-- `logic`: ... `domain` を簡易化
-- `state`: ... `application` を簡易化
-- `ui`: ... `presentation` を簡易化
+![image](https://github.com/rbdog/templates/blob/main/docs/architecture/mobile-app.svg?raw=true)
 
-![image](https://github.com/rbdog/templates/blob/main/docs/static/images/nano-archit.png?raw=true)
+- `ui`: 相手からのアクセス (依存) に応答する側
+- `adapters`: こちらからアクセス (依存) する側。port の実装
+- `usecases`: アプリの操作単位
+- `ports`: usecases から見える唯一の外界。abstract interface
+- `domain`: 型と純粋関数のみ。全レイヤーから依存される
+- `di.dart`: 起動時に adapter を port へ注入する
+
+依存は `ui → usecases → ports` の一方向。`domain` は他のどこにも依存しません。
+向きが守られているかは以下で検査できます。
+
+```sh
+python3 scripts/check_layers.py
+```
 
 <br />
 

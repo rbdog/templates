@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../logic/todo/index.dart';
+import '../../domain/todo/index.dart';
 import '../stateful_components/my_text_field.dart';
 import '../theme/sizes.dart';
 import 'gap.dart';

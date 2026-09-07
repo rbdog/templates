@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../logic/app_notification/index.dart';
-import '../../logic/debug/index.dart';
-import '../../state/app_notification/provider.dart';
-import '../../state/debug/provider.dart';
+import '../../domain/app_notification/index.dart';
+import '../../domain/debug/index.dart';
+import '../../usecases/app_notification/provider.dart';
+import '../../usecases/debug/provider.dart';
 import '../pages/error_unknown.dart';
 import '../stateless_components/splash_view.dart';
 

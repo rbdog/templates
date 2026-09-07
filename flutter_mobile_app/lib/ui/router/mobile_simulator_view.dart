@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../state/debug/provider.dart';
+import '../../usecases/debug/provider.dart';
 
 /// ブラウザでもスマホのような画面比率で表示する
 class MobileSimulatorView extends ConsumerWidget {
