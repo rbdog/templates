@@ -4,7 +4,7 @@ import '../../logic/user/index.dart';
 import '../auth/provider.dart';
 import '../di/adapters.dart';
 
-class UserNotifier extends AutoDisposeAsyncNotifier<User?> {
+class UserNotifier extends AsyncNotifier<User?> {
   @override
   Future<User?> build() async {
     final credential = await ref.read(signInCredentialProvider.future);

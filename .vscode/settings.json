@@ -7,6 +7,9 @@
     "source.organizeImports": "always"
   },
 
+  // FVM の Flutter SDK
+  "dart.flutterSdkPath": ".fvm/versions/3.47.2",
+
   "cSpell.words": [
     "Deleter",
     "Firestore",

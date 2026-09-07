@@ -3,8 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../logic/support/index.dart';
 import '../di/adapters.dart';
 
-class AppMaintAnnounceNotifier
-    extends AutoDisposeAsyncNotifier<AppMaintAnnounce> {
+class AppMaintAnnounceNotifier extends AsyncNotifier<AppMaintAnnounce> {
   @override
   Future<AppMaintAnnounce> build() async {
     final remoteConfig = ref.read(firebaseRemoteConfigProvider);

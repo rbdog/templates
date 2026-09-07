@@ -5,6 +5,10 @@ analyzer:
     - lib/__gen__/**
     - "**/*.g.dart"
     - "**/*.freezed.dart"
+    - build/**
+    - android/**
+    - ios/**
+    - web/**
 
 linter:
   rules:

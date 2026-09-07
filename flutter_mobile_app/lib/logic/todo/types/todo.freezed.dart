@@ -1,6 +1,6 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: type=lint
+// coverage:ignore-file
+// ignore_for_file: type=lint, type=warning, deprecated_member_use, deprecated_member_use_from_same_package
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'todo.dart';
@@ -9,172 +9,283 @@ part of 'todo.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
 /// @nodoc
 mixin _$Todo {
-  /// ID
-  String get id => throw _privateConstructorUsedError;
 
-  /// ステータス
-  Status get status => throw _privateConstructorUsedError;
+/// ID
+ String get id;/// ステータス
+ Status get status;/// 書かれた文字
+ String get text;
+/// Create a copy of Todo
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$TodoCopyWith<Todo> get copyWith => _$TodoCopyWithImpl<Todo>(this as Todo, _$identity);
 
-  /// 書かれた文字
-  String get text => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
-  $TodoCopyWith<Todo> get copyWith => throw _privateConstructorUsedError;
+
+@override
+bool operator ==(Object other) {
+  final _this = this as Todo;
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Todo&&(identical(other.id, _this.id) || other.id == _this.id)&&(identical(other.status, _this.status) || other.status == _this.status)&&(identical(other.text, _this.text) || other.text == _this.text));
+}
+
+
+@override
+int get hashCode {
+  final _this = this as Todo;
+  return Object.hash(runtimeType,_this.id,_this.status,_this.text);
+}
+
+@override
+String toString() {
+  final _this = this as Todo;
+  return 'Todo(id: ${_this.id}, status: ${_this.status}, text: ${_this.text})';
+}
+
+
 }
 
 /// @nodoc
-abstract class $TodoCopyWith<$Res> {
-  factory $TodoCopyWith(Todo value, $Res Function(Todo) then) =
-      _$TodoCopyWithImpl<$Res, Todo>;
-  @useResult
-  $Res call({String id, Status status, String text});
-}
+abstract mixin class $TodoCopyWith<$Res>  {
+  factory $TodoCopyWith(Todo value, $Res Function(Todo) _then) = _$TodoCopyWithImpl;
+@useResult
+$Res call({
+ String id, Status status, String text
+});
 
+
+
+
+}
 /// @nodoc
-class _$TodoCopyWithImpl<$Res, $Val extends Todo>
+class _$TodoCopyWithImpl<$Res>
     implements $TodoCopyWith<$Res> {
-  _$TodoCopyWithImpl(this._value, this._then);
+  _$TodoCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final Todo _self;
+  final $Res Function(Todo) _then;
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? status = null,
-    Object? text = null,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as Status,
-      text: null == text
-          ? _value.text
-          : text // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
-  }
+/// Create a copy of Todo
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? status = null,Object? text = null,}) {
+  return _then(Todo(
+id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
+as Status,text: null == text ? _self.text : text // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+}
+
+
+/// Adds pattern-matching-related methods to [Todo].
+extension TodoPatterns on Todo {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _Todo value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _Todo() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _Todo value)  $default,){
+final _that = this;
+switch (_that) {
+case _Todo():
+return $default(_that);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _Todo value)?  $default,){
+final _that = this;
+switch (_that) {
+case _Todo() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  Status status,  String text)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _Todo() when $default != null:
+return $default(_that.id,_that.status,_that.text);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  Status status,  String text)  $default,) {final _that = this;
+switch (_that) {
+case _Todo():
+return $default(_that.id,_that.status,_that.text);case _:
+  throw StateError('Unexpected subclass');
+
+}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  Status status,  String text)?  $default,) {final _that = this;
+switch (_that) {
+case _Todo() when $default != null:
+return $default(_that.id,_that.status,_that.text);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
-abstract class _$$TodoImplCopyWith<$Res> implements $TodoCopyWith<$Res> {
-  factory _$$TodoImplCopyWith(
-          _$TodoImpl value, $Res Function(_$TodoImpl) then) =
-      __$$TodoImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String id, Status status, String text});
+
+
+class _Todo implements Todo {
+  const _Todo({required this.id, required this.status, required this.text});
+  
+
+/// ID
+@override final  String id;
+/// ステータス
+@override final  Status status;
+/// 書かれた文字
+@override final  String text;
+
+/// Create a copy of Todo
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$TodoCopyWith<_Todo> get copyWith => __$TodoCopyWithImpl<_Todo>(this, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+    return identical(this, other) || (other.runtimeType == runtimeType&&other is _Todo&&(identical(other.id, id) || other.id == id)&&(identical(other.status, status) || other.status == status)&&(identical(other.text, text) || other.text == text));
 }
 
-/// @nodoc
-class __$$TodoImplCopyWithImpl<$Res>
-    extends _$TodoCopyWithImpl<$Res, _$TodoImpl>
-    implements _$$TodoImplCopyWith<$Res> {
-  __$$TodoImplCopyWithImpl(_$TodoImpl _value, $Res Function(_$TodoImpl) _then)
-      : super(_value, _then);
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = null,
-    Object? status = null,
-    Object? text = null,
-  }) {
-    return _then(_$TodoImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      status: null == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as Status,
-      text: null == text
-          ? _value.text
-          : text // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
+@override
+int get hashCode {
+    return Object.hash(runtimeType,id,status,text);
 }
 
-/// @nodoc
-
-class _$TodoImpl implements _Todo {
-  const _$TodoImpl(
-      {required this.id, required this.status, required this.text});
-
-  /// ID
-  @override
-  final String id;
-
-  /// ステータス
-  @override
-  final Status status;
-
-  /// 書かれた文字
-  @override
-  final String text;
-
-  @override
-  String toString() {
+@override
+String toString() {
     return 'Todo(id: $id, status: $status, text: $text)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$TodoImpl &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.status, status) || other.status == status) &&
-            (identical(other.text, text) || other.text == text));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, id, status, text);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$TodoImplCopyWith<_$TodoImpl> get copyWith =>
-      __$$TodoImplCopyWithImpl<_$TodoImpl>(this, _$identity);
 }
 
-abstract class _Todo implements Todo {
-  const factory _Todo(
-      {required final String id,
-      required final Status status,
-      required final String text}) = _$TodoImpl;
 
-  @override
-
-  /// ID
-  String get id;
-  @override
-
-  /// ステータス
-  Status get status;
-  @override
-
-  /// 書かれた文字
-  String get text;
-  @override
-  @JsonKey(ignore: true)
-  _$$TodoImplCopyWith<_$TodoImpl> get copyWith =>
-      throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+abstract mixin class _$TodoCopyWith<$Res> implements $TodoCopyWith<$Res> {
+  factory _$TodoCopyWith(_Todo value, $Res Function(_Todo) _then) = __$TodoCopyWithImpl;
+@override @useResult
+$Res call({
+ String id, Status status, String text
+});
+
+
+
+
+}
+/// @nodoc
+class __$TodoCopyWithImpl<$Res>
+    implements _$TodoCopyWith<$Res> {
+  __$TodoCopyWithImpl(this._self, this._then);
+
+  final _Todo _self;
+  final $Res Function(_Todo) _then;
+
+/// Create a copy of Todo
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? status = null,Object? text = null,}) {
+  return _then(_Todo(
+id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
+as Status,text: null == text ? _self.text : text // ignore: cast_nullable_to_non_nullable
+as String,
+  ));
+}
+
+
+}
+
+// dart format on

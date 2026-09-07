@@ -5,7 +5,7 @@ import '../di/adapters.dart';
 import 'provider.dart';
 
 /// デバッグ用
-class DebugEventNotifier extends AutoDisposeNotifier<void> {
+class DebugEventNotifier extends Notifier<void> {
   @override
   void build() {}
 

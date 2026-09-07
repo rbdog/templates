@@ -4,6 +4,6 @@ import '../../logic/example/index.dart';
 import 'example_record.dart';
 
 final exampleRecordProvider =
-    AutoDisposeNotifierProvider<ExampleRecordNotifier, ExampleRecord>(() {
+    NotifierProvider.autoDispose<ExampleRecordNotifier, ExampleRecord>(() {
       return ExampleRecordNotifier();
     });

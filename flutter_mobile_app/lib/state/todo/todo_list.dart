@@ -8,7 +8,7 @@ import '../di/adapters.dart';
 import '../user/provider.dart';
 
 /// Todo一覧を管理するノティファイヤ
-class TodoListNotifier extends AutoDisposeAsyncNotifier<List<Todo>> {
+class TodoListNotifier extends AsyncNotifier<List<Todo>> {
   @override
   Future<List<Todo>> build() async {
     final logger = ref.read(loggerProvider(Layer.state));

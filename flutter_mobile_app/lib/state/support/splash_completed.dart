@@ -6,8 +6,7 @@ import '../debug/provider.dart';
 import '../di/adapters.dart';
 
 /// アプリ初期化の結果
-class SplashCompletedNotifier
-    extends AutoDisposeAsyncNotifier<SplashCompleted> {
+class SplashCompletedNotifier extends AsyncNotifier<SplashCompleted> {
   @override
   Future<SplashCompleted> build() async {
     final logger = ref.read(loggerProvider(Layer.state));

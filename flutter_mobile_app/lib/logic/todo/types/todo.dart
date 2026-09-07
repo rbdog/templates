@@ -5,7 +5,7 @@ import 'status.dart';
 part 'todo.freezed.dart';
 
 @freezed
-class Todo with _$Todo {
+abstract class Todo with _$Todo {
   const factory Todo({
     /// ID
     required String id,

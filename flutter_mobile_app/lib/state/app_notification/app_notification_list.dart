@@ -4,8 +4,7 @@ import '../../logic/app_notification/index.dart';
 import '../di/adapters.dart';
 
 /// アプリ通知
-class AppNotificationListNotifier
-    extends AutoDisposeAsyncNotifier<List<AppNotification>> {
+class AppNotificationListNotifier extends AsyncNotifier<List<AppNotification>> {
   @override
   Future<List<AppNotification>> build() async {
     final api = ref.read(notificationApiProvider);

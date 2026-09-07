@@ -1,6 +1,6 @@
 # アプリ テンプレート for Android, iOS
 
-## Ver.0.20
+## Ver.0.21
 
 [ダウンロードはこちら](https://github.com/rbdog/templates)
 

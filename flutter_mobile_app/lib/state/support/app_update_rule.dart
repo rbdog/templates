@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../logic/support/index.dart';
 import '../di/adapters.dart';
 
-class AppUpdatePolicyNotifier extends AutoDisposeAsyncNotifier<AppUpdateRule> {
+class AppUpdatePolicyNotifier extends AsyncNotifier<AppUpdateRule> {
   @override
   Future<AppUpdateRule> build() async {
     return _getPolicy();
