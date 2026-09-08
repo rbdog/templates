@@ -1,6 +1,6 @@
 # アプリ テンプレート for Android, iOS
 
-## Ver.0.22
+## Ver.0.23
 
 [ダウンロードはこちら](https://github.com/rbdog/templates)
 
@@ -34,23 +34,16 @@ flutter gen-l10n
 
 ## 説明
 
-✅ ports & adapters (ヘキサゴナルアーキテクチャ) で組んだテンプレートです
+✅ ports & adapters で組んだテンプレートです
 
 ![image](https://github.com/rbdog/templates/blob/main/docs/architecture/mobile-app.svg?raw=true)
 
 - `ui`: 相手からのアクセス (依存) に応答する側
-- `adapters`: こちらからアクセス (依存) する側。port の実装
+- `adapters`: こちらからアクセス (依存) する側
 - `usecases`: アプリの操作単位
-- `ports`: usecases から見える唯一の外界。abstract interface
-- `domain`: 型と純粋関数のみ。全レイヤーから依存される
+- `ports`: usecases から見える唯一の外界
+- `domain`: 型と純粋関数のみ
 - `di.dart`: 起動時に adapter を port へ注入する
-
-依存は `ui → usecases → ports` の一方向。`domain` は他のどこにも依存しません。
-向きが守られているかは以下で検査できます。
-
-```sh
-python3 scripts/check_layers.py
-```
 
 <br />
 
